@@ -8,11 +8,9 @@
 
 body {
 	padding-top:80px;
-	font-family: 'codigofacilito';
 }
 
 .menu-bar {
-	font-family: 'codigofacilito';
 	display:inline-block;
 	position: fixed;
 	top:0;
@@ -52,6 +50,11 @@ header nav ul li {
 
 header nav ul li:hover {
 	background:#E6344A;
+	-webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    transition: .3s;
 }
 
 header nav ul li a {
@@ -94,6 +97,7 @@ header nav ul li .children li a span {
 	top:3px;
 	margin-right:0;
 	margin-left:10px;
+	
 }
 
 header nav ul li .caret {
