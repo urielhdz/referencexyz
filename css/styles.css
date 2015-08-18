@@ -35,7 +35,7 @@ body {
 }
 
 header nav {
-	width: 80%;
+	width: 50%;
 	height: calc(100% - 80px);
 	position: fixed;
 	right:100%;/*push*/
@@ -102,6 +102,7 @@ header nav ul li .caret {
 
 @media screen and (max-width: 800px) {
 	header nav {
+	width:80%;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	}
