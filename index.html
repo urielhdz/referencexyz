@@ -25,7 +25,25 @@
           <p id="presentacion">Aprende a programar aplicaciones web, aplicaciones móviles, juegos y más</p>
         </header>
       </div>
-      
+
+      <script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#ver").fadeToggle(1000);
+        $("#logo-codigo").fadeIn(5000);
+    });
+});
+</script>
+
+  <header id = "logo-codigo" style="display:none" class = "block-en-linea posicion-fixed gran-porcentaje-espacio-izquierda espacio-pequeño-arriba">
+    <a href= "http://codigofacilito.com/" class = "decoration-font golden-font">
+      <div class = " circulo-blanco" > 
+        <img src="./imgs/logo_black_1024.png" width='100%' class = " espacio-pequeño-logo-arriba">
+      </div>
+    </a>
+    
+  </header>
+
 	<header class="borde-header">
 		<div class="row borde-row">
 			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
@@ -107,24 +125,6 @@
 		</div>
 	</header>
 >>>>>>> 64d22f629c4cfbb8dee32f329070e68b8ab32ead
-
-<script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $("#ver").fadeToggle(1000);
-        $("#logo-codigo").fadeIn(5000);
-    });
-});
-</script>
-
-  <header id = "logo-codigo" style="display:none" class = "block-en-linea posicion-fixed gran-porcentaje-espacio-izquierda espacio-pequeño-arriba">
-    <a href= "http://codigofacilito.com/" class = "decoration-font golden-font">
-      <div class = " circulo-blanco" > 
-        <img src="./imgs/logo_black_1024.png" width='100%' class = " espacio-pequeño-logo-arriba">
-      </div>
-    </a>
-    
-  </header>
 
 	 <!-- Footer
 ================================================== -->
