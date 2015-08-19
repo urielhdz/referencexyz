@@ -4,10 +4,44 @@
 	<title>Reference.xyz</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+  	<link rel="stylesheet" type="text/css" href="CSS/estilo.css">
 </head>
 <body>
 
+	<!-- Header
+	=============================================== -->
+	<div id='ver'>
+        <header id="cabecera">
+          <button type="button" class="close">x</button>
+          <p id="texto-imagen">
+          Un proyecto de 
+          <a href="https://codigofacilito.com/"> 
+          <img id="imagen-cabecera" src="imgs/logo_black.png" align="center">
+          </a>
+          </p>
+          <p id="presentacion">Aprende a programar aplicaciones web, aplicaciones móviles, juegos y más</p>
+        </header>
+      </div>
 
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#ver").fadeToggle(1000);
+        $("#logo-codigo").fadeIn(5000);
+    });
+});
+</script>
+
+  <header id = "logo-codigo" style="display:none" class = "block-en-linea posicion-fixed gran-porcentaje-espacio-izquierda espacio-pequeño-arriba">
+    <a href= "http://codigofacilito.com/" class = "decoration-font golden-font">
+      <div class = " circulo-blanco" > 
+        <img src="./imgs/logo_black_1024.png" width='100%' class = " espacio-pequeño-logo-arriba">
+      </div>
+    </a>
+    
+  </header>
 
 	 <!-- Footer
 ================================================== -->
