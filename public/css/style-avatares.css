@@ -1,0 +1,165 @@
+.texto-blanco{
+	color: white;
+}
+.fondo-equipo
+	{
+	  background-color: #36474F;
+	}
+.color-grupo
+	{
+		text-decoration:none;
+	}
+.centrar
+	{
+		text-align: center;
+	}
+.margen-sup50
+	{
+		padding-top: 50px;
+	}
+.letra-ruluko
+	{
+		font-family: 'Ruluko', sans-serif;
+	}
+.letra-roboto
+	{
+		font-family: 'Roboto Condensed', sans-serif;
+	}
+.letra-nunito
+	{
+		font-family: 'Nunito', sans-serif;
+	}
+.tamano-50px
+	{
+		font-size: 50px;
+	}
+.tamano-30
+	{
+		font-size: 30px;
+	}
+.color-grupo
+	{
+		text-decoration:none;
+	}
+
+.color-twitter:hover
+	{ /*Formato al pasar el ratón por encima*/
+	    color: #00ACED; /*Color del icono*/
+	}
+.color-github:hover
+	{
+		color: #000000;
+	}
+
+
+.cuadricula {
+	margin: 15px;
+	padding: 0;
+	list-style: none;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.cuadricula li {
+	width: 280px;
+	height: 280px;
+	display: inline-block;
+	margin: 20px;
+}
+
+.cuadricula-item {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	cursor: default;
+	
+}
+.cuadricula-info{
+	position: absolute;
+	background: rgba(0,0,0, 0.5);
+	width: inherit;
+	height: inherit;
+	border-radius: 50%;
+	overflow: hidden;
+	opacity: 0;
+	transition: all 0.4s ease-in-out;
+	transform: scale(0);
+}
+
+.cuadricula-item:hover .cuadricula-info{
+	transform: scale(1);
+	opacity: 1;
+}
+.img-grupo
+	{
+		background-image: url(../imgs/grupo.png);
+		background-position: center;
+		background-size: 100%; 
+	}
+
+.avatar-rodrigo
+	{ 
+		background-image: url(../imgs/rodrigo.jpg);
+		background-position: center;
+		background-size: cover;
+	}
+
+.avatar-andrea
+	{
+		background-image: url(../imgs/andrea.jpg);
+		background-position: center;
+		background-size: cover;
+	}
+.avatar-victor
+	{
+		background-image: url(../imgs/victor.jpg);
+		background-position: center;
+		background-size: cover;
+	}
+.avatar-uriel
+	{
+		background-image: url(../imgs/uriel.jpg);
+		background-position: center;
+		background-size: cover;
+	}
+.avatar-andres
+	{
+		background-image: url(../imgs/andres.jpg);
+		background-position: center;
+		background-size: cover;
+	}
+.avatar-ernesto
+	{
+		background-image: url(../imgs/ernesto.jpg);
+		background-position: center;
+		background-size: cover;
+	}
+.avatar-diana
+	{
+		background-image: url(../imgs/diana.jpg);
+		background-position: center;
+		background-size: cover;
+	}
+.avatar-edgardo
+	{
+		background-image: url(../imgs/edgardo.jpg);
+		background-position: center;
+		background-size: cover;
+	}
+.avatar-javier
+	{
+		background-image: url(../imgs/javier.jpg);
+		background-position: center;
+		background-size: cover;
+	}
+.avatar-nancy
+	{
+		background-image: url(../imgs/nancy.jpg);
+		background-position: center;
+		background-size: cover;
+	}
+
+
