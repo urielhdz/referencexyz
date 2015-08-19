@@ -11,7 +11,7 @@
 }
 .fondo-chica-computadora{
 
-	background-image: url(../img/portada.jpg);
+	background-image: url(/imgs/portada.jpg);
 	height: 347px;
 	width: 100%; 
 	background-position: center;
