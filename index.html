@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>Reference.xyz</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="wea.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="diseno.css">
 	<link rel = "stylesheet" type= "text/css" href="css/font-awesome.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -38,7 +38,15 @@
 			</form>				
 		</div>
 	</section>
-      
+	
+  <header id = "logo-codigo" style="display:none" class = "block-en-linea posicion-fixed gran-porcentaje-espacio-izquierda espacio-pequeño-arriba">
+    <a href= "http://codigofacilito.com/" class = "decoration-font golden-font">
+      <div class = " circulo-blanco" > 
+        <img src="./imgs/logo_black_1024.png" width='100%' class = " espacio-pequeño-logo-arriba">
+      </div>
+    </a>    
+  </header>
+
 	<header class="borde-header">
 		<div class="row borde-row">
 			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
@@ -120,24 +128,6 @@
 		</div>
 	</header>
 
-<script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $("#ver").fadeToggle(1000);
-        $("#logo-codigo").fadeIn(5000);
-    });
-});
-</script>
-
-  <header id = "logo-codigo" style="display:none" class = "block-en-linea posicion-fixed gran-porcentaje-espacio-izquierda espacio-pequeño-arriba">
-    <a href= "http://codigofacilito.com/" class = "decoration-font golden-font">
-      <div class = " circulo-blanco" > 
-        <img src="./imgs/logo_black_1024.png" width='100%' class = " espacio-pequeño-logo-arriba">
-      </div>
-    </a>
-    
-  </header>
-
 	 <!-- Footer
 ================================================== -->
 	<footer class="bs-docs-footer" role="contentinfo">
@@ -156,7 +146,18 @@ $(document).ready(function(){
 				</ul>
 			</div>
 		</div>
+
 		<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 	</footer>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		    $("button").click(function(){
+		        $("#ver").fadeToggle(1000);
+		        $("#logo-codigo").fadeIn(5000);
+		    });
+		});
+	</script>
 </body>
 </html>
