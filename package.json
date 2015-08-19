@@ -1,0 +1,30 @@
+{
+  "name": "ReferenceXYZ",
+  "version": "1.0.0",
+  "description": "Language's Reference",
+  "keywords": [
+    "CSS",
+    "HTML"
+  ],
+  "author": {
+    "name": "Team Facilito",
+    "email": "info@codigofacilito.com",
+    "url": "http://codigofacilito.com"
+  },
+  "homepage": "http://reference.xyz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/urielhdz/referencexyz"
+  },
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "cloudinary": "^1.2.1",
+    "express": "^4.12.3",
+    "jade": "^1.9.2",
+    "method-override": "^2.3.3",
+    "mongoose": "^4.0.1",
+    "multer": "^0.1.8"
+  },
+  "devDependencies": {},
+  "bundleDependencies": []
+}
