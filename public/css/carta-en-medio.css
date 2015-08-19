@@ -1,0 +1,67 @@
+
+/*Edgardo*/
+
+.boton-derecha{
+	margin-left: 80%;
+}
+.color-blanco{
+	color:white;
+}
+.color-azul{
+	color: blue;
+}
+.sin-borde{
+	border: none;
+}
+
+.borde-blanco{
+	border-top: solid 30px white;
+	border-right: solid 30px white;
+	border-left: solid 30px white;
+}
+.linea-negra{
+	border-bottom: solid 1px gray;
+	padding-bottom: 20px; 
+}
+
+.fondo-blanco{
+		background-color: white; 
+}
+
+.letra-tam{
+	font-size: 1em;
+}
+
+
+.posicion-absoluta{
+	position: absolute;
+	margin-left: 25%;
+	margin-top: -10%;
+}
+
+.ancho-alto{
+	 width: 50%;
+	 height: auto;
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	
+	.letra-tam{
+		font-size: 0.5em;
+	}
+
+	.boton-derecha{
+		margin-left: 70%;
+	}
+	
+}
+
+@media only screen and (min-device-width : 1500px) and (max-device-width : 30000px) {
+	
+	.letra-tam{
+		font-size: 2.5em;
+	}
+	
+}
+

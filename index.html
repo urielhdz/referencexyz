@@ -142,7 +142,51 @@
 			<section class=" img-responsive fondo-chica-computadora">
 				
 			</section>
+			<section class = "posicion-absoluta ancho-alto fondo-blanco">
+					<div>
+						<p class = "fondo-blanco borde-blanco text-center letra-tam linea-negra">hasodijs s masd km kadsl msd lkasjdl kjsldk jslakjdlaskj dlksjak lskjd kjask dkljask jdskljd lkjsalkj kljasdklaskjld kljskld askj kldjaskl jdklasjdl kjaslkdj klsajdklaskldjaslkdj</p>
+					</div>
+				<div class="container boton-derecha ">
+					  
+					  <button type="button" class="color-azul sin-borde fondo-blanco" data-toggle="modal" data-target="#myModal">+ Saber más</button>
 
+					 
+					  <div class="modal fade" id="myModal" role="dialog">
+					    <div class="modal-dialog modal-lg">
+					    
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <button id = "cerrar"  type="button" class="close" data-dismiss="modal">&times;</button>
+					          <h4 class="modal-title"></h4>
+					        </div>
+					        <div class="modal-body" >
+
+					          <p style="text-align: center;"><video id ="myVideo"  width="100%"  controls ><source src="video.mp4" type="video/mp4"></video></p>
+					        </div>
+
+					      </div>
+					      
+					    </div>
+					  </div>
+					  
+					</div>
+				
+			</section>
+			<script> 
+
+
+			$(document).ready(function(){
+
+				$("#cerrar").click(function(){
+
+			        document.getElementById('myVideo').pause();
+			           
+				});
+			 
+			}); 
+
+			</script> 
 			<!--======================================SECCION DEL FONDO AZUL =======================================-->
 			<section class= "row fondo-azul alto-fondo-azul">
 				
