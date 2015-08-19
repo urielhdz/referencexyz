@@ -1,0 +1,105 @@
+.letra-titulo{
+	font-family: fuente, sans-serif;
+	font-size: 50px;
+}
+.letra-subtitulo{
+	font-family: 'Open Sans', sans-serif;
+	font-weight:bold;
+}
+.centrar-texto{
+	text-align: center;
+}
+.espacio-peque-arriba{
+	margin-top: 50px;
+}
+.espacio-peque-izquierda{
+	width: 95%;
+	margin-left:auto;
+}
+.espacio-grande-arriba{
+	margin-top: 150px;
+}
+.misma-linea{
+	display: inline;
+}
+.color-blanco{
+	color: white;
+}
+.color-rojo{
+	color: red;
+}
+.sin-fondo{
+	background: none;
+}
+.sin-bordes{
+	border-bottom: none;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	outline:none;
+}
+.enviar{
+	color: white; /*Color del icono*/
+	background: red; /*Fondo del icono*/
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	font-size: 25px; /*Tamaño del icono*/
+	padding: 10px;
+}
+
+.enviar-raton:hover{ /*Formato al pasar el ratón por encima*/
+	color: red; /*Color del icono*/
+	background: white; /*Fondo del icono*/
+	border-radius: 50%;
+	width: 40px;
+	height: 40px
+}
+
+input::-webkit-input-placeholder::before { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	}
+input::-moz-placeholder::before  { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	} /* firefox 19+ */
+input:-ms-input-placeholder::before  { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	} /* ie */
+input:-moz-placeholder::before  { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	}
+input{
+	font-family: 'Open Sans', sans-serif;
+	font-weight:bold;
+	color: red;
+	height:40px;
+	width: 450px;
+	background: none;
+	border-style: solid double;
+	border-bottom: 1px solid #A4A4A4;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	outline:none;
+}
+
+input::-webkit-input-placeholder {
+    color:    white;
+}
+input::-moz-placeholder {
+    color:    white;
+}
+input:-moz-placeholder {
+    color:    white;
+}
+input:-ms-input-placeholder {
+    color:    white;
+}
