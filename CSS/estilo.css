@@ -1,0 +1,57 @@
+*{
+	padding: 0;
+	margin:0;
+
+}
+#cabecera {
+	background: white;
+	color: white;
+	height: 80px;
+	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+}	
+
+#imagen-cabecera{
+	height: 50px;
+	width: 10%;
+}
+#texto-imagen{
+	text-align: center;
+	color:#87C3FF;
+	margin: 0px;
+}
+#presentacion{
+	color:#87C3FF;
+	text-align: center;
+}
+
+body{
+	background-color: blue;
+}
+.circulo-blanco {
+     width: 100px;
+     height: 100px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 100%;
+     background: #FFFFFF;
+}
+.posicion-fixed{
+	position: fixed;
+	z-index: 2;
+}
+
+.gran-porcentaje-espacio-izquierda{
+	margin-left: 85%;
+}
+.espacio-pequeño-arriba{
+	padding-top:2%;
+}
+.espacio-pequeño-logo-arriba{
+	padding-top:25%;
+}
+.block-en-linea{
+	display: inline-block;
+	margin-right: -4px;
+}
