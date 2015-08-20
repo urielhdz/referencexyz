@@ -1,0 +1,228 @@
+
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+
+/*clases que contienen background */
+.fondo-azul{
+	background: rgb(22, 113, 158);
+}
+.fondo-chica-computadora{
+
+	background-image: url(/imgs/portada.jpg);
+	height: 347px;
+	width: 100%; 
+	background-position: center;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size: cover;
+}
+
+
+
+
+/*clases de posiciones de elementos*/
+.posicion-imagen-book{
+	float: right;
+	position: relative;
+	top: 227px;
+	right: 35px; 
+}
+
+.posicion-texto-fondo-azul{
+ 	position: relative;
+	top: 163px;
+
+}
+
+
+/* clases con tamaño de elementos*/
+
+.alto-fondo-azul{
+	height: 347px;
+}
+.ancho-container{
+	width: 100%;
+}
+
+
+.tam-imagen-libro{
+	width: 120px;
+	height: 120px;
+}
+
+.tam-texto-fondo-azul{
+	font-size: 368%;
+}
+
+
+/* medias queries*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.tam-texto-fondo-azul{
+			font-size:199%;
+	}
+	.posicion-texto-fondo-azul{
+		position: relative;
+		top: 50px;
+		right: -44px;
+	}
+	.ancho-container{
+		width: 100%;
+	}
+	.fondo-chica-computadora{
+		background-image: url(../img/portada.jpg);
+		height: 100px;
+		background-size:cover;
+	}
+}
+
+* {
+	padding:0;
+	margin:0;
+}
+
+body {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.menu-header {
+	display:block;
+	position:fixed;
+	height:85px;
+	width:100%;
+}
+
+.contenedor-header {
+	position:fixed;
+	display:block;
+	width:inherit;
+	height:inherit;
+}
+
+.contenedor-menu {
+    right: 0;
+	padding-top:80px;
+    height: inherit;
+}
+.menu-bar {
+	top:0;
+	display:inline-block;
+	position: fixed;
+}
+
+.menu-bar .bt-menu {
+	display: inline-block;
+	padding: 20px;
+	color: #fff;
+	overflow: hidden;
+	font-size: 25px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.menu-bar span {
+	float: left;
+	font-size: 40px;
+}
+
+header nav {
+	width: 50%;
+	height: calc(100% - 80px);
+	position: fixed;
+	right:100%;/*push*/
+	margin: 0;
+	background:#37474f;
+	z-index:1000;
+}
+
+header nav ul li {
+	position: relative;
+	display: block;
+	border-bottom:1px solid rgba(255,255,255,.5);
+}
+
+header nav ul li:hover {
+	background:#E6344A;
+	-webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    transition: .3s;
+}
+
+header nav ul li a {
+	color:#fff;
+	display:block;
+	text-decoration:none;
+	padding: 20px;
+}
+
+header nav ul li a span {
+	margin-right:10px;
+}
+
+header nav ul li .children {
+	display: none;
+	background:#415259;
+	z-index:1000;
+	width: 100%;
+	position: relative;
+}
+
+header nav ul li:hover .children {
+	display:none;
+}
+
+header nav ul li .children li {
+	display:block;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+header nav ul li .children li a {
+	display: block;
+	margin-left:20px;
+}
+
+header nav ul li .children li a span {
+	float: right;
+	position: relative;
+	top:3px;
+	margin-right:0;
+	margin-left:10px;
+	
+}
+
+header nav ul li .caret {
+	float: right;
+}
+
+@media screen and (max-width: 800px) {
+	header nav {
+	width:80%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	}
+}
+
+.contenedor-pagina{
+	background-color: #16719E;
+	width:100%;
+	min-height:1000px;
+	height:100%;
+}
+
+.seccion-principal {
+	display:block;
+	background:url("../imgs/laptop.png") center bottom no-repeat #36474F;
+	-webkit-background-size: auto auto;
+    -moz-background-size: auto auto;
+    background-size: 45% 52%;
+	min-height:800px;
+}
+
