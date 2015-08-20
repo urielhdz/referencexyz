@@ -50,7 +50,6 @@
 
 
 /* medias queries*/
-<<<<<<< HEAD
 @media only screen and (max-width: 400px) {
     #texto-azul{ 
     	position: absolute;
@@ -80,7 +79,7 @@
 
     }                 
  }
-=======
+/*=======*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	.tam-texto-fondo-azul{
 			font-size:199%;
@@ -247,4 +246,3 @@ header nav ul li .caret {
 	min-height:800px;
 }
 
->>>>>>> 3148d19174862ed180291087d522c58beed4a2cc
