@@ -43,10 +43,10 @@
 }
 
 .gran-porcentaje-espacio-izquierda{
-	margin-left: 85%;
+	left: 85%;
 }
 .espacio-pequeño-arriba{
-	padding-top:2%;
+	top:2%;
 }
 .espacio-pequeño-logo-arriba{
 	padding-top:25%;
