@@ -3,14 +3,19 @@
 	margin:0;
 
 }
-#cabecera {
+.cabecera-principal {
 	background: white;
 	color: white;
 	height: 80px;
-	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
-	left: 0; /* Posicionamos la cabecera al lado izquierdo */
-	top: 0; /* Posicionamos la cabecera pegada arriba */
+	width: 100%;
+	left: 0;
+	top: 0;
 }	
+.close{
+	position: relative;
+	top:10px;
+	left: -23px;
+}
 
 #imagen-cabecera{
 	height: 50px;

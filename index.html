@@ -21,18 +21,18 @@
 </head>
 
 <body>
-	<div id='ver'>
-    <header id="cabecera">
+ <div id='ver'>
+    <header id="cabecera" class="cabecera-principal">
       <button type="button" class="close">x</button>
       <p id="texto-imagen">
       Un proyecto de 
-      <a href="https://codigofacilito.com/"> 
+      <a target="_blank" href="https://codigofacilito.com/"> 
       <img id="imagen-cabecera" src="imgs/logo_black.png">
       </a>
       </p>
       <p id="presentacion">Aprende a programar aplicaciones web, aplicaciones móviles, juegos y más</p>
     </header>
-  </div>
+ </div>
 	<section>
 		<div  class = "centrar-texto espacio-grande-arriba">
 			<h1 class = "misma-linea color-blanco letra-titulo">REFERENCE.</h1><h1 class = "misma-linea color-rojo letra-titulo">XYZ</h1>
@@ -340,13 +340,13 @@
 		</div>
 
 	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-
 	</footer>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script>
 		$(document).ready(function(){
 		    $("button").click(function(){
+		    	$("button").off("click");
 		        $("#ver").fadeToggle(1000);
 		        $("#logo-codigo").fadeIn(5000);
 		    });
