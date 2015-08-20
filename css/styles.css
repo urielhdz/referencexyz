@@ -1,19 +1,38 @@
 * {
 	padding:0;
 	margin:0;
+}
+
+body {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-body {
-	padding-top:80px;
+header {
+	display:block;
+	position:fixed;
+	background:#36474F;
+	height:85px;
+	width:100%;
 }
 
+.contenedor-header {
+	position:fixed;
+	display:block;
+	width:inherit;
+	height:inherit;
+}
+
+.contenedor-menu {
+    right: 0;
+	padding-top:80px;
+    height: inherit;
+}
 .menu-bar {
+	top:0;
 	display:inline-block;
 	position: fixed;
-	top:0;
 	background:#37474f;
 }
 
@@ -111,3 +130,20 @@ header nav ul li .caret {
 	overflow-y: scroll;
 	}
 }
+
+.contenedor-pagina{
+	background-color: #16719E;
+	width:100%;
+	min-height:1000px;
+	height:100%;
+}
+
+.seccion-principal {
+	display:block;
+	background:url("../imgs/laptop.png") center bottom no-repeat #36474F;
+	-webkit-background-size: auto auto;
+    -moz-background-size: auto auto;
+    background-size: 45% 52%;
+	min-height:800px;
+}
+
