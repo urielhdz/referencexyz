@@ -4,6 +4,8 @@
 	<title>Reference.xyz</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="wea.css">
@@ -47,7 +49,7 @@
 	</section>
 	
   <header id = "logo-codigo" style="display:none" class = "block-en-linea posicion-fixed gran-porcentaje-espacio-izquierda espacio-pequeño-arriba">
-    <a href= "http://codigofacilito.com/" class = "decoration-font golden-font">
+    <a target="_blank" href= "http://codigofacilito.com/" class = "decoration-font golden-font">
       <div class = " circulo-blanco" > 
         <img src="./imgs/logo_black_1024.png" width='100%' class = " espacio-pequeño-logo-arriba">
       </div>
@@ -172,20 +174,20 @@
 					</div>
 				
 			</section>
+
 			<script> 
+				$(document).ready(function(){
 
 
-			$(document).ready(function(){
-
-				$("#cerrar").click(function(){
-
-			        document.getElementById('myVideo').pause();
-			           
-				});
-			 
-			}); 
+					$('#myModal').on('hidden.bs.modal', function (e) {
+					        document.getElementById('myVideo').pause();
+					           
+					});
+				 
+				}); 
 
 			</script> 
+
 			<!--======================================SECCION DEL FONDO AZUL =======================================-->
 			<section class= "row fondo-azul alto-fondo-azul">
 				
