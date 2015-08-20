@@ -1,24 +1,32 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-//mongoose.connect("mongodb://localhost/primera_pagina");
+var mongoose = require('mongoose'),
+		Schema = mongoose.Schema,
+		relationship = require("mongoose-relationship");
 
-var productSchemaJSON = {
+
+/* TODO: Change to use environment variables */
+mongoose.connect("mongodb://localhost/referencexyz");
+
+var languageSchemaJSON = {
 	title:String,
 	description:String,
-	imageUrl:String,
-	pricing:Number
+	properties:[{type: Schema.ObjectId, ref: "Property"}]
 };
 
-var productSchema = new Schema(productSchemaJSON);
+var language_schema = new Schema(languageSchemaJSON);
 
-productSchema.virtual("image.url").get(function(){
-	if(this.imageUrl === "" || this.imageUrl === "data.png"){
-		return "default.jpg";
-	}
 
-	return this.imageUrl;
-});
 
-var Product = mongoose.model("Product",productSchema);
+var propertySchemaJSON = {
+	title:String,
+	description:String,
+	language: {type: Schema.ObjectId, ref: "Language",childPath: "properties"}
+};
 
-module.exports.Product = Product;
+var property_schema = new Schema(propertySchemaJSON).plugin(relationship,{relationshipPathName: "language"})
+
+var Language = mongoose.model("Language",language_schema);
+var Property = mongoose.model("Property",property_schema);
+
+module.exports.Language = Language;
+module.exports.Property = Property;
+

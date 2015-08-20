@@ -19,10 +19,13 @@
   "dependencies": {
     "body-parser": "^1.12.3",
     "cloudinary": "^1.2.1",
+    "ejs": "^1.0.0",
+    "ejs-mate": "^2.3.0",
     "express": "^4.12.3",
     "jade": "^1.9.2",
     "method-override": "^2.3.3",
     "mongoose": "^4.0.1",
+    "mongoose-relationship": "^0.1.4",
     "multer": "^0.1.8"
   },
   "devDependencies": {},
