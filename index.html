@@ -4,16 +4,16 @@
 	<title>Reference.xyz</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="public/wea.css">
-	<link rel="stylesheet" href="public/diseno.css">
-	<link rel = "stylesheet" type= "text/css" href="css/font-awesome.css">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="wea.css">
+	<link rel="stylesheet" href="diseno.css">
+	<link rel="stylesheet" href="css/carta-en-medio.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<meta charset="utf-8">	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<link rel="stylesheet" type="text/css" href="/css/estilo.css">
- 	<link rel="stylesheet" href="public/css/style-avatares.css">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+ 	<link rel="stylesheet" href="css/style-avatares.css">
     <link href='http://fonts.googleapis.com/css?family=Ruluko' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
@@ -134,6 +134,68 @@
 			</div>
 		</div>
 	</header>
+	<!--==========================CONTAINER TIENE LA SECCION DE LA CHICA CON COMPUTADORA Y FONDO AZUL ==================-->
+		<section class="container ancho-container " style="padding: 0px;">
+
+			<!--==================================SECCION DE LA CHICA CON COMPUTADORA ===================================-->
+			<section class=" img-responsive fondo-chica-computadora">
+				
+			</section>
+			<section class = "posicion-absoluta ancho-alto fondo-blanco">
+					<div>
+						<p class = "fondo-blanco borde-blanco text-center letra-tam linea-negra">hasodijs s masd km kadsl msd lkasjdl kjsldk jslakjdlaskj dlksjak lskjd kjask dkljask jdskljd lkjsalkj kljasdklaskjld kljskld askj kldjaskl jdklasjdl kjaslkdj klsajdklaskldjaslkdj</p>
+					</div>
+				<div class="container boton-derecha ">
+					  
+					  <button type="button" class="color-azul sin-borde fondo-blanco" data-toggle="modal" data-target="#myModal">+ Saber más</button>
+
+					 
+					  <div class="modal fade" id="myModal" role="dialog">
+					    <div class="modal-dialog modal-lg">
+					    
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <button id = "cerrar"  type="button" class="close" data-dismiss="modal">&times;</button>
+					          <h4 class="modal-title"></h4>
+					        </div>
+					        <div class="modal-body" >
+
+					          <p style="text-align: center;"><video id ="myVideo"  width="100%"  controls ><source src="video.mp4" type="video/mp4"></video></p>
+					        </div>
+
+					      </div>
+					      
+					    </div>
+					  </div>
+					  
+					</div>
+				
+			</section>
+			<script> 
+
+
+			$(document).ready(function(){
+
+				$("#cerrar").click(function(){
+
+			        document.getElementById('myVideo').pause();
+			           
+				});
+			 
+			}); 
+
+			</script> 
+			<!--======================================SECCION DEL FONDO AZUL =======================================-->
+			<section class= "row fondo-azul alto-fondo-azul">
+				
+					<div>
+						<img class="img-responsive  posicion-imagen-book tam-imagen-libro" src="imgs/book.png" alt="noFound">
+						<p class="text-center  posicion-texto-fondo-azul tam-texto-fondo-azul" style="color:white">Tenemos registradas más de 123123123 propiedades</p>
+					</div>
+		
+			</section>
+		</section>
 	<section class="fondo-equipo">
       <div class="centrar">
         <p class="letra-roboto tamano-50px texto-blanco">Conoce al equipo</p>
@@ -219,6 +281,8 @@
             </div>
           </li>
 
+		
+		</div>
           <li>
             <div class="cuadricula-item avatar-edgardo">
               <div class="cuadricula-info" style="padding-top: 15%">
