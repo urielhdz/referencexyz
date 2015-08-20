@@ -32,17 +32,10 @@
 	right: 35px; 
 }
 
-.posicion-texto-fondo-azul{
- 	position: relative;
-	top: 163px;
-
-}
-
-
 /* clases con tamaño de elementos*/
 
 .alto-fondo-azul{
-	height: 347px;
+	min-height: 347px;
 }
 .ancho-container{
 	width: 100%;
@@ -54,27 +47,35 @@
 	height: 120px;
 }
 
-.tam-texto-fondo-azul{
-	font-size: 368%;
-}
 
 
 /* medias queries*/
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-	.tam-texto-fondo-azul{
-			font-size:199%;
-	}
-	.posicion-texto-fondo-azul{
-		position: relative;
-		top: 50px;
-		right: -44px;
-	}
-	.ancho-container{
-		width: 100%;
-	}
-	.fondo-chica-computadora{
-		background-image: url(../img/portada.jpg);
-		height: 100px;
-		background-size:cover;
-	}
-}
+@media only screen and (max-width: 400px) {
+    #texto-azul{ 
+    	position: absolute;
+    	font-size:2em;
+    	text-align: center;
+    	padding-right: 20%; 
+    	padding-left:20%;
+    	padding-top: 15%;
+ 
+    }                 
+ }
+@media only screen and (min-width: 600px) {
+    #texto-azul{ font-size:400%;
+    	position:absolute;
+    	text-align: center;
+    	padding-left: 5%;
+    	padding-top: 7%;
+
+    }                 
+ }
+ @media only screen and (min-width: 401px) and (max-width: 599px) {
+    #texto-azul{ font-size:300%;
+    	position:absolute;
+    	text-align: center;
+    	padding-left: 5%;
+    	padding-top: 7%;
+
+    }                 
+ }
