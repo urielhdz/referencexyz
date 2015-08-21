@@ -5,7 +5,7 @@ var cloudinary = require("cloudinary");
 var method_override = require("method-override");
 var ejs_layout_engine = require("ejs-mate")
 
-var models = require("./models.js");
+//var models = require("./models.js");
 
 // cloudinary.config({
 // 	cloud_name: "codigofacilito",
