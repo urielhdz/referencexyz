@@ -1,331 +1,364 @@
 <% layout('application') -%>
-<div id='ver'>
-  <header id="cabecera">
-    <button type="button" class="close">x</button>
-    <p id="texto-imagen">
-    Un proyecto de 
-    <a href="https://codigofacilito.com/"> 
-    <img id="imagen-cabecera" src="imgs/logo_black.png">
-    </a>
-    </p>
-    <p id="presentacion">Aprende a programar aplicaciones web, aplicaciones móviles, juegos y más</p>
+<section class="contenedor-pagina">
+		<header class="menu-header">
+			<div class="contenedor-header">
+				<div class="contenedor-menu">
+					<div class="menu-bar">
+						<a href="#" class="bt-menu"><span class="fa fa-bars"></span></a>
+					</div>
+					<nav>
+						<ul>
+							<li><a href="#"><span class="fa fa-home"></span>Inicio</a></li>
+							<li><a href="#"><span class="fa fa-suitcase"></span>Elemento 1</a></li>
+							<li class="submenu">
+								<a href="#"><span class="fa fa-rocket"></span>Elemento 2<span class="caret"></span></a>
+								<ul class="children">
+									<li><a href="#">SubElemento 1 <span class="fa fa-circle"></span></a></li>
+									<li><a href="#">SubElemento 2 <span class="fa fa-circle"></span></a></li>
+									<li><a href="#">SubElemento 3 <span class="fa fa-circle"></span></a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span class="fa fa-diamond"></span>Elemento 3</a></li>
+							<li><a href="#"><span class="fa fa-envelope-o"></span>Elemento 4</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<div id='ver'>
+    <header id="cabecera" class="cabecera-principal">
+      <button type="button" class="close">x</button>
+      <p id="texto-imagen">
+      Un proyecto de 
+      <a target="_blank" href="https://codigofacilito.com/"> 
+      <img id="imagen-cabecera" src="imgs/logo_black.png">
+      </a>
+      </p>
+      <p id="presentacion">Aprende a programar aplicaciones web, aplicaciones móviles, juegos y más</p>
+    </header>
+ </div>
+
+	<section class="seccion-principal" style="padding-top:1px;">
+		<div class = "row">
+			<div  class="centrar-texto espacio-grande-arriba col-md-12 col-sm-12 col-xs-12">
+				<p class = "color-rojo letra-titulo">REFERENCE.XYZ</p>
+				<p class = "letra-subtitulo color-rojo">Porque la sintasix es lo de menos, construimos un buscador</p>
+			</div>
+			<form action='https://codigofacilito.com/' method='get' class="misma-linea">
+				<div class="col-md-3 col-sm-2"></div>
+				<div class="col-md-6 col-sm-5 col-xs-8">
+					<input type="search" name="busqueda" placeholder="Busca una etiqueta o una propiedad" required="" maxlength="25" class = "ancho-input">
+				</div>	
+				<div class="col-md-1 col-sm-3 col-xs-4"> 
+					<button type="submit" class="sin-fondo sin-bordes sin-padding">
+						<i class="fa fa-paper-plane enviar enviar-raton " style="font-size: 20px"></i>
+					</button>
+				</div>	
+				<div class ="col-md-2 col-sm-2"></div>
+			</form>	
+		</div>
+ 	</section>
+		
+	
+  <header id = "logo-codigo" style="display:none" class = "block-en-linea posicion-fixed gran-porcentaje-espacio-izquierda espacio-pequeño-arriba">
+    <a target="_blank" href= "http://codigofacilito.com/" class = "decoration-font golden-font">
+      <div class = " circulo-blanco" > 
+        <img src="./imgs/logo_black_1024.png" width='100%' class = " espacio-pequeño-logo-arriba">
+      </div>
+    </a>    
   </header>
-</div>
-<section>
-	<div  class = "centrar-texto espacio-grande-arriba">
-		<h1 class = "misma-linea color-blanco letra-titulo">REFERENCE.</h1><h1 class = "misma-linea color-rojo letra-titulo">XYZ</h1>
-		<p class = "letra-subtitulo color-blanco">Porque la sintasix es lo de menos, construimos un buscador</p>
-		<form action='https://codigofacilito.com/' method='get'> 
-			<input type = "search" name="busqueda" placeholder = "Busca una etiqueta o una propiedad" required>
-			<button type="submit" class="sin-fondo sin-bordes">
-				<i class="fa fa-paper-plane enviar enviar-raton" style="font-size: 20px"></i>
-			</button>
-		</form>				
-	</div>
-</section>
 
-<header id = "logo-codigo" style="display:none" class = "block-en-linea posicion-fixed gran-porcentaje-espacio-izquierda espacio-pequeño-arriba">
-  <a href= "http://codigofacilito.com/" class = "decoration-font golden-font">
-    <div class = " circulo-blanco" > 
-      <img src="./imgs/logo_black_1024.png" width='100%' class = " espacio-pequeño-logo-arriba">
-    </div>
-  </a>    
-</header>
-
-<header class="borde-header">
-	<div class="row borde-row">
-		<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
-			<div class="sombreado">
-				<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-					<div class="bordes-abajo-imagen">
-						<p>Este es el primero de 1 articulos que publicare...</p>
-						<p class="borde-texto tipo-letra color-azul">LEER MÁS</p>
-					</div>	
+	<header class="borde-header">
+		<div class="row borde-row">
+			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
+				<div class="sombreado">
+					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
+						<div class="bordes-abajo-imagen">
+							<p>Este es el primero de 1 articulos que publicare...</p>
+							<p class="borde-texto tipo-letra color-azul">LEER MÁS</p>
+						</div>	
+					</div>
 				</div>
-			</div>
-		<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
-			<div class="sombreado">
-				<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-					<div class="bordes-abajo-imagen">
-						<p>Este es el primero de 1 articulos que publicare...</p>
-						<p class="borde-texto color-azul">LEER MÁS</p>
-					</div>	
+			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
+				<div class="sombreado">
+					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
+						<div class="bordes-abajo-imagen">
+							<p>Este es el primero de 1 articulos que publicare...</p>
+							<p class="borde-texto color-azul">LEER MÁS</p>
+						</div>	
+					</div>
 				</div>
-			</div>
-		<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
-			<div class="sombreado">
-				<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-					<div class="bordes-abajo-imagen">
-						<p>Este es el primero de 1 articulos que publicare...</p>
-						<p class="borde-texto color-azul">LEER MÁS</p>
-					</div>	
+			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
+				<div class="sombreado">
+					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
+						<div class="bordes-abajo-imagen">
+							<p>Este es el primero de 1 articulos que publicare...</p>
+							<p class="borde-texto color-azul">LEER MÁS</p>
+						</div>	
+					</div>
 				</div>
-			</div>
-		<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
-			<div class="sombreado">
-				<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-					<div class="bordes-abajo-imagen">
-						<p>Este es el primero de 1 articulos que publicare...</p>
-						<p class="borde-texto color-azul">LEER MÁS</p>
-					</div>	
+			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
+				<div class="sombreado">
+					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
+						<div class="bordes-abajo-imagen">
+							<p>Este es el primero de 1 articulos que publicare...</p>
+							<p class="borde-texto color-azul">LEER MÁS</p>
+						</div>	
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row borde-row">
-		<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
-			<div class="sombreado">
-				<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-					<div class="bordes-abajo-imagen">
-						<p>Este es el primero de 1 articulos que publicare...</p>
-						<p class="borde-texto color-azul">LEER MÁS</p>
-					</div>	
+		<div class="row borde-row">
+			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
+				<div class="sombreado">
+					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
+						<div class="bordes-abajo-imagen">
+							<p>Este es el primero de 1 articulos que publicare...</p>
+							<p class="borde-texto color-azul">LEER MÁS</p>
+						</div>	
+					</div>
 				</div>
-			</div>
-		<div class=" col-md-3 col-sm-5 col-xs-6.5 borde-col">
-			<div class="sombreado">
-				<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-					<div class="bordes-abajo-imagen">
-						<p>Este es el primero de 1 articulos que publicare...</p>
-						<p class="borde-texto color-azul">LEER MÁS</p>
-					</div>	
+			<div class=" col-md-3 col-sm-5 col-xs-6.5 borde-col">
+				<div class="sombreado">
+					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
+						<div class="bordes-abajo-imagen">
+							<p>Este es el primero de 1 articulos que publicare...</p>
+							<p class="borde-texto color-azul">LEER MÁS</p>
+						</div>	
+					</div>
 				</div>
-			</div>
-		<div class=" col-md-3 col-sm-5 col-xs-6.5 borde-col">
-			<div class="sombreado">
-				<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-					<div class="bordes-abajo-imagen">
-						<p>Este es el primero de 1 articulos que publicare...</p>
-						<p class="borde-texto color-azul">LEER MÁS</p>
-					</div>	
+			<div class=" col-md-3 col-sm-5 col-xs-6.5 borde-col">
+				<div class="sombreado">
+					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
+						<div class="bordes-abajo-imagen">
+							<p>Este es el primero de 1 articulos que publicare...</p>
+							<p class="borde-texto color-azul">LEER MÁS</p>
+						</div>	
+					</div>
 				</div>
-			</div>
-		<div class=" col-md-3 col-sm-5 col-xs-6.5 borde-col">
-			<div class="sombreado">
-				<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-					<div class="bordes-abajo-imagen">
-						<p>Este es el primero de 1 articulos que publicare...</p>
-						<p class="borde-texto color-azul">LEER MÁS</p>
-					</div>	
+			<div class=" col-md-3 col-sm-5 col-xs-6.5 borde-col">
+				<div class="sombreado">
+					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
+						<div class="bordes-abajo-imagen">
+							<p>Este es el primero de 1 articulos que publicare...</p>
+							<p class="borde-texto color-azul">LEER MÁS</p>
+						</div>	
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</header>
-<!--==========================CONTAINER TIENE LA SECCION DE LA CHICA CON COMPUTADORA Y FONDO AZUL ==================-->
-	<section class="container ancho-container " style="padding: 0px;">
+	</header>
+	<!--==========================CONTAINER TIENE LA SECCION DE LA CHICA CON COMPUTADORA Y FONDO AZUL ==================-->
+		<section class="container ancho-container " style="padding: 0px;">
 
-		<!--==================================SECCION DE LA CHICA CON COMPUTADORA ===================================-->
-		<section class=" img-responsive fondo-chica-computadora">
-			
+			<!--==================================SECCION DE LA CHICA CON COMPUTADORA ===================================-->
+			<section class=" img-responsive fondo-chica-computadora" style="padding: 0px;">
+				
+			</section>
+			<section class = "posicion-absoluta ancho-alto fondo-blanco">
+					<div>
+						<p class = "fondo-blanco borde-blanco text-center letra-tam linea-negra">hasodijs s masd km kadsl msd lkasjdl kjsldk jslakjdlaskj dlksjak lskjd kjask dkljask jdskljd lkjsalkj kljasdklaskjld kljskld askj kldjaskl jdklasjdl kjaslkdj klsajdklaskldjaslkdj</p>
+					</div>
+				<div class="container boton-derecha ">
+					  
+					  <button type="button" class="color-azul sin-borde fondo-blanco" data-toggle="modal" data-target="#myModal">+ Saber más</button>
+
+					 
+					  <div class="modal fade" id="myModal" role="dialog">
+					    <div class="modal-dialog modal-lg">
+					    
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <button id = "cerrar"  type="button" class="close" data-dismiss="modal">&times;</button>
+					          <h4 class="modal-title"></h4>
+					        </div>
+					        <div class="modal-body" >
+
+					          <p style="text-align: center;"><video id ="myVideo"  width="100%"  controls ><source src="video.mp4" type="video/mp4"></video></p>
+					        </div>
+
+					      </div>
+					      
+					    </div>
+					  </div>
+					  
+					</div>
+				
+			</section>
+
+			<!--======================================SECCION DEL FONDO AZUL =======================================-->
+			<section class= "row fondo-azul alto-fondo-azul">
+				
+					<div>
+						<img class="img-responsive  posicion-imagen-book tam-imagen-libro" src="imgs/book.png" alt="noFound">
+						<div id="texto-azul">
+							<p style="color:white">Tenemos registradas más de 123123123 propiedades</p>
+						</div>
+					</div>
+		
+			</section>
 		</section>
-		<section class = "posicion-absoluta ancho-alto fondo-blanco">
-				<div>
-					<p class = "fondo-blanco borde-blanco text-center letra-tam linea-negra">hasodijs s masd km kadsl msd lkasjdl kjsldk jslakjdlaskj dlksjak lskjd kjask dkljask jdskljd lkjsalkj kljasdklaskjld kljskld askj kldjaskl jdklasjdl kjaslkdj klsajdklaskldjaslkdj</p>
-				</div>
-			<div class="container boton-derecha ">
-				  
-				  <button type="button" class="color-azul sin-borde fondo-blanco" data-toggle="modal" data-target="#myModal">+ Saber más</button>
+	<section class="fondo-equipo">
+      <div class="centrar">
+        <p class="letra-roboto tamano-50px texto-blanco">Conoce al equipo</p>
+        <p> <a href="integrantes.html" target="_blank"><i class="color-grupo texto-blanco fa fa-users fa-5x"></i></a></p>
+      </div>
+      <ul class="cuadricula">
+        <li>
+            <div class="cuadricula-item avatar-uriel">
+              <div class="cuadricula-info" style="padding-top: 15%">
+                <h1 class="texto-blanco letra-nunito tamano-letra-avatar">Uriel</h1>
+                <div style="padding-top: 3%">
+                   <a href="https://twitter.com/Uriel_Hedz" target="_blank" class="texto-blanco"><i class="fa fa-twitter fa-2x color-twitter"></i></a>
+                  <a href="https://github.com/urielhdz" target="_blank" class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
+                </div>
+              </div>
+            </div>
+        </li>
+         <li>
+            <div class="cuadricula-item avatar-rodrigo">
+              <div class="cuadricula-info" style="padding-top: 15%">
+                <h1 class="texto-blanco letra-nunito tamano-letra-avatar">Rodrigo</h1>
+                <div style="padding-top: 3%">
+                   <a href="https://twitter.com/rodrigo_arreola" target="_blank" class="texto-blanco"><i class="fa fa-twitter fa-2x color-twitter"></i></a>
+                  <a href="https://github.com/rodrigoarreola" target="_blank" class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
+        <li>
+            <div class="cuadricula-item avatar-andrea">
+              <div class="cuadricula-info" style="padding-top: 15%">
+                <h1 class="texto-blanco letra-nunito tamano-letra-avatar">Andrea</h1>
+                <div style="padding-top: 3%">
+                   <a href="https://twitter.com/AndreaaLuis" target="_blank" class="texto-blanco"><i class="fa fa-twitter fa-2x color-twitter"></i></a>
+                  <a href="https://github.com/andrealuis" target="_blank" class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
+                </div>
+              </div>
+            </div>
+          <li>
+            <div class="cuadricula-item avatar-victor ">
+              <div class="cuadricula-info" style="padding-top: 15%">
+                <h1 class="texto-blanco letra-nunito tamano-letra-avatar">Victor</h1>
+                <div style="padding-top: 3%">
+                   <a href="https://twitter.com/TheMexicanito" target="_blank" class="texto-blanco"><i class="fa fa-twitter fa-2x color-twitter"></i></a>
+                  <a href="https://github.com/Victor116" target="_blank" class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
 
-				 
-				  <div class="modal fade" id="myModal" role="dialog">
-				    <div class="modal-dialog modal-lg">
-				    
-				      <!-- Modal content-->
-				      <div class="modal-content">
-				        <div class="modal-header">
-				          <button id = "cerrar"  type="button" class="close" data-dismiss="modal">&times;</button>
-				          <h4 class="modal-title"></h4>
-				        </div>
-				        <div class="modal-body" >
+          <li>
+            <div class="cuadricula-item avatar-andres">
+              <div class="cuadricula-info" style="padding-top: 15%">
+                <h1 class="texto-blanco letra-nunito tamano-letra-avatar">Andres</h1>
+                <div style="padding-top: 3%">
+                   <a href="https://twitter.com/Andres_002" target="_blank" class="texto-blanco"><i class="fa fa-twitter fa-2x color-twitter"></i></a>
+                  <a href="https://github.com/andres002" target="_blank" class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
 
-				          <p style="text-align: center;"><video id ="myVideo"  width="100%"  controls ><source src="video.mp4" type="video/mp4"></video></p>
-				        </div>
+          <li>
+            <div class="cuadricula-item avatar-ernesto">
+              <div class="cuadricula-info" style="padding-top: 15%">
+                <h1 class="texto-blanco letra-nunito tamano-letra-avatar">Ernesto</h1>
+                <div style="padding-top: 3%">
+                  <a href="https://github.com/ernesto1601" target="_blank" class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
 
-				      </div>
-				      
-				    </div>
-				  </div>
-				  
-				</div>
-			
-		</section>
-		<script> 
+          <li>
+            <div class="cuadricula-item avatar-diana">
+              <div class="cuadricula-info" style="padding-top: 15%">
+                <h1 class="texto-blanco letra-nunito tamano-letra-avatar">Diana</h1>
+                <div style="padding-top: 3%">
+                   <a href="https://twitter.com/bexan1818" target="_blank" class="texto-blanco"><i class="fa fa-twitter fa-2x color-twitter"></i></a>
+                  <a href="https://github.com/DianaToledoMaza" target="_blank" class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
 
+		
+		</div>
+          <li>
+            <div class="cuadricula-item avatar-edgardo">
+              <div class="cuadricula-info" style="padding-top: 15%">
+                <h1 class="texto-blanco letra-nunito tamano-letra-avatar">Edgardo</h1>
+                <div style="padding-top: 3%">
+                   <a href="https://twitter.com/Rito_21" target="_blank" class="texto-blanco" ><i class="fa fa-twitter fa-2x color-twitter"></i></a>
+                  <a href="https://github.com/edgardorito" target="_blank"  class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
 
-		$(document).ready(function(){
+          <li>
+            <div class="cuadricula-item avatar-javier">
+              <div class="cuadricula-info" style="padding-top: 15%">
+                <h1 class="texto-blanco letra-nunito tamano-letra-avatar">Javier</h1>
+                <div style="padding-top: 3%">
+                   <a href="https://twitter.com/Harossone" class="texto-blanco"><i class="fa fa-twitter fa-2x color-twitter"></i></a>
+                  <a href="https://github.com/Haross" class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
 
-			$("#cerrar").click(function(){
+          <li>
+            <div class="cuadricula-item avatar-nancy">
+              <div class="cuadricula-info" style="padding-top: 15%">
+                <h1 class="texto-blanco letra-nunito tamano-letra-avatar">Nancy</h1>
+                <div style="padding-top: 3%">
+                  <a href="https://github.com/GitHuberian" target="_blank" class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </section>
+	<footer class="bs-docs-footer" role="contentinfo">
+		<div class="container centrar-texto">
+			<img src="imgs/adventure-cat.png" height="200">
+			<h2>Este es un proyecto de código abierto.</h2>
+			<p>Puedes acceder al código en <a href="https://github.com/urielhdz/referencexyz">github</a></p>
+			<div class="bs-docs-social">
+		  		<ul class="bs-docs-social-buttons list-inline text-center" style="margin: 5%;margin-top:0;">
+				    <li>
+				     	<a class="github-button" href="https://github.com/urielhdz/referencexyz" data-icon="octicon-eye" data-style="mega" data-count-href="/urielhdz/referencexyz/watchers" data-count-api="/repos/urielhdz/referencexyz#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch urielhdz/referencexyz on GitHub">Watch</a>
+				    </li>
+				    <li>
+				      <a class="github-button" href="https://github.com/urielhdz/referencexyz" data-icon="octicon-star" data-style="mega" data-count-href="/urielhdz/referencexyz/stargazers" data-count-api="/repos/urielhdz/referencexyz#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star urielhdz/referencexyz on GitHub">Star</a>
+				    </li>
+				    <li>
+				      <a class="github-button" href="https://github.com/urielhdz/referencexyz/fork" data-icon="octicon-git-branch" data-style="mega" data-count-href="/urielhdz/referencexyz/network" data-count-api="/repos/urielhdz/referencexyz#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork urielhdz/referencexyz on GitHub">Fork</a>
+				    </li>
+				</ul>
+			</div>
+		</div>
 
-		        document.getElementById('myVideo').pause();
-		           
-			});
-		 
-		}); 
-
-		</script> 
-		<!--======================================SECCION DEL FONDO AZUL =======================================-->
-		<section class= "row fondo-azul alto-fondo-azul">
-			
-				<div>
-					<img class="img-responsive  posicion-imagen-book tam-imagen-libro" src="imgs/book.png" alt="noFound">
-					<p class="text-center  posicion-texto-fondo-azul tam-texto-fondo-azul" style="color:white">Tenemos registradas más de 123123123 propiedades</p>
-				</div>
-	
-		</section>
+	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+	</footer>
 	</section>
-<section class="fondo-equipo">
-    <div class="centrar">
-      <p class="letra-roboto tamano-50px texto-blanco">Conoce al equipo</p>
-      <p> <a href="integrantes.html"><i class="color-grupo texto-blanco fa fa-users fa-5x"></i></a></p>
-    </div>
-    <ul class="cuadricula">
-      <li>
-          <div class="cuadricula-item avatar-uriel">
-            <div class="cuadricula-info" style="padding-top: 45%">
-              <h1 class="texto-blanco letra-nunito">Uriel</h1>
-              <div style="padding-top: 3%">
-                 <a href="https://twitter.com/Uriel_Hedz" class="texto-blanco"><i class="fa fa-twitter fa-4x color-twitter"></i></a>
-                <a href="https://github.com/urielhdz  " class="texto-blanco"><i class="fa fa-github fa-4x color-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-       <li>
-          <div class="cuadricula-item avatar-rodrigo">
-            <div class="cuadricula-info" style="padding-top: 45%">
-              <h1 class="texto-blanco letra-nunito">Rodrigo</h1>
-              <div style="padding-top: 3%">
-                 <a href="https://twitter.com/rodrigo_arreola" class="texto-blanco"><i class="fa fa-twitter fa-4x color-twitter"></i></a>
-                <a href="https://github.com/rodrigoarreola" class="texto-blanco"><i class="fa fa-github fa-4x color-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-      <li>
-          <div class="cuadricula-item avatar-andrea">
-            <div class="cuadricula-info" style="padding-top: 45%">
-              <h1 class="texto-blanco letra-nunito">Andrea</h1>
-              <div style="padding-top: 3%">
-                 <a href="https://twitter.com/AndreaaLuis" class="texto-blanco"><i class="fa fa-twitter fa-4x color-twitter"></i></a>
-                <a href="https://github.com/andrealuis" class="texto-blanco"><i class="fa fa-github fa-4x color-github"></i></a>
-              </div>
-            </div>
-          </div>
-        <li>
-          <div class="cuadricula-item avatar-victor ">
-            <div class="cuadricula-info" style="padding-top: 45%">
-              <h1 class="texto-blanco letra-nunito">Victor</h1>
-              <div style="padding-top: 3%">
-                 <a href="https://twitter.com/TheMexicanito" class="texto-blanco"><i class="fa fa-twitter fa-4x color-twitter"></i></a>
-                <a href="https://github.com/Victor116" class="texto-blanco"><i class="fa fa-github fa-4x color-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="cuadricula-item avatar-andres">
-            <div class="cuadricula-info" style="padding-top: 45%">
-              <h1 class="texto-blanco letra-nunito">Andres</h1>
-              <div style="padding-top: 3%">
-                 <a href="https://twitter.com/Andres_002" class="texto-blanco"><i class="fa fa-twitter fa-4x color-twitter"></i></a>
-                <a href="https://github.com/andres002" class="texto-blanco"><i class="fa fa-github fa-4x color-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="cuadricula-item avatar-ernesto">
-            <div class="cuadricula-info" style="padding-top: 45%">
-              <h1 class="texto-blanco letra-nunito">Ernesto</h1>
-              <div style="padding-top: 3%">
-                <a href="https://github.com/ernesto1601" class="texto-blanco"><i class="fa fa-github fa-4x color-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="cuadricula-item avatar-diana">
-            <div class="cuadricula-info" style="padding-top: 45%">
-              <h1 class="texto-blanco letra-nunito">Diana</h1>
-              <div style="padding-top: 3%">
-                 <a href="https://twitter.com/bexan1818" class="texto-blanco"><i class="fa fa-twitter fa-4x color-twitter"></i></a>
-                <a href="https://github.com/DianaToledoMaza" class="texto-blanco"><i class="fa fa-github fa-4x color-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-	
-	</div>
-        <li>
-          <div class="cuadricula-item avatar-edgardo">
-            <div class="cuadricula-info" style="padding-top: 45%">
-              <h1 class="texto-blanco letra-nunito">Edgardo</h1>
-              <div style="padding-top: 3%">
-                 <a href="https://twitter.com/Rito_21" class="texto-blanco"><i class="fa fa-twitter fa-4x color-twitter"></i></a>
-                <a href="https://github.com/edgardorito" class="texto-blanco"><i class="fa fa-github fa-4x color-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="cuadricula-item avatar-javier">
-            <div class="cuadricula-info" style="padding-top: 45%">
-              <h1 class="texto-blanco letra-nunito">Javier</h1>
-              <div style="padding-top: 3%">
-                 <a href="https://twitter.com/Harossone" class="texto-blanco"><i class="fa fa-twitter fa-4x color-twitter"></i></a>
-                <a href="https://github.com/Haross" class="texto-blanco"><i class="fa fa-github fa-4x color-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="cuadricula-item avatar-nancy">
-            <div class="cuadricula-info" style="padding-top: 45%">
-              <h1 class="texto-blanco letra-nunito">Nancy</h1>
-              <div style="padding-top: 3%">
-                <a href="https://github.com/GitHuberian" class="texto-blanco"><i class="fa fa-github fa-4x color-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </li>
-    </ul>
-  </section>
-<footer class="bs-docs-footer" role="contentinfo">
-	<div class="container centrar-texto">
-		<img src="imgs/adventure-cat.png" height="200">
-		<h2>Este es un proyecto de código abierto.</h2>
-		<p>Puedes acceder al código en <a href="https://github.com/urielhdz/referencexyz">github</a></p>
-		<div class="bs-docs-social">
-	  		<ul class="bs-docs-social-buttons list-inline text-center" style="margin: 5%;margin-top:0;">
-			    <li>
-			     	<a class="github-button" href="https://github.com/urielhdz/referencexyz" data-icon="octicon-eye" data-style="mega" data-count-href="/urielhdz/referencexyz/watchers" data-count-api="/repos/urielhdz/referencexyz#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch urielhdz/referencexyz on GitHub">Watch</a>
-			    </li>
-			    <li>
-			      <a class="github-button" href="https://github.com/urielhdz/referencexyz" data-icon="octicon-star" data-style="mega" data-count-href="/urielhdz/referencexyz/stargazers" data-count-api="/repos/urielhdz/referencexyz#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star urielhdz/referencexyz on GitHub">Star</a>
-			    </li>
-			    <li>
-			      <a class="github-button" href="https://github.com/urielhdz/referencexyz/fork" data-icon="octicon-git-branch" data-style="mega" data-count-href="/urielhdz/referencexyz/network" data-count-api="/repos/urielhdz/referencexyz#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork urielhdz/referencexyz on GitHub">Fork</a>
-			    </li>
-			</ul>
-		</div>
-	</div>
-
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-
-</footer>
-
-<script>
-	$(document).ready(function(){
+ 
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#myModal').on('hidden.bs.modal', function (e) {
+				document.getElementById('myVideo').pause();
+			           
+			});
 	    $("button").click(function(){
-	        $("#ver").fadeToggle(1000);
-	        $("#logo-codigo").fadeIn(5000);
+	    	$("button").off("click");
+        $("#ver").fadeToggle(1000);
+        $("#logo-codigo").fadeIn(5000);
 	    });
-	});
-</script>
+		});
+	</script>

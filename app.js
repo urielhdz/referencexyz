@@ -20,11 +20,18 @@ app.set('view engine', 'ejs');
 
 
 app.get("/",function(req,res){
-	res.sendFile(__dirname+"/index.html");
+	res.render("index");
 });
 
 app.get("/index",function(req,res){
-	res.render("index");
+	var articulos = [{title: "Hola ke ase", description: "Este articulo esta interesante", url: "codigofacilito.com"},{title: "Hola mundo", description: "Este articulo esta interesante", url: "codigofacilito.com"}];
+	for (var i = articulos.length - 1; i >= 0; i--) {
+		console.log(articulos[i].title);
+	};
+
+	humano.years
+
+	res.render("index",{ articulos: articulos });
 });
 
 app.listen(8080);
