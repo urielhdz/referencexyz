@@ -23,11 +23,11 @@ app.set('view engine', 'ejs');
 
 var router = express.Router();
 
-router.route("/languages")
-		.post(function(request,response){
+router.route("/lenguajes")
+		.post(function(req,res){
 			var data = {
-				title: request.body.nombre,
-				description: request.body.descripcion
+				title: req.body.nombre,
+				description: req.body.descripcion
 			}
 			var language = Language.new(data);
 			language.save(function(err){
@@ -35,18 +35,17 @@ router.route("/languages")
 			});
 		})
 
-		.get(function(request,response){
-			
+		.get(function(req,res){
 			Language.find({},function(err,languages){
-				res.render("languages.index",{languages: languages});	
+				res.render("languages/index",{languages: languages});	
 			});
 
 		});
 
-router.route("/languages/:id")
+router.route("/lenguajes/:id")
 	.get(function(req,res){
 		Language.findById(req.params.id,function(err,language){
-			res.render("languages.show",{language: language});
+			res.render("languages/show",{language: language});
 		});
 	})
 	.put(function(req,res){
@@ -61,13 +60,13 @@ router.route("/languages/:id")
 		})
 	});
 
-app.get("languages/new",function(req,res){
-	res.render("languages.new");
+app.get("lenguajes/new",function(req,res){
+	res.render("languages/new");
 });
 
-app.get("languages/:id/edit",function(req,res){
+app.get("lenguajes/:id/edit",function(req,res){
 	Language.findById(req.params.id,function(err,language){
-		res.render("languages.edit",{language: language});
+		res.render("languages/edit",{language: language});
 	});	
 });
 
@@ -75,15 +74,5 @@ app.get("/",function(req,res){
 	res.render("index");
 });
 
-app.get("/index",function(req,res){
-	var articulos = [{title: "Hola ke ase", description: "Este articulo esta interesante", url: "codigofacilito.com"},{title: "Hola mundo", description: "Este articulo esta interesante", url: "codigofacilito.com"}];
-	for (var i = articulos.length - 1; i >= 0; i--) {
-		console.log(articulos[i].title);
-	};
-
-	humano.years
-
-	res.render("index",{ articulos: articulos });
-});
-
+app.use("/",router);
 app.listen(8080);
