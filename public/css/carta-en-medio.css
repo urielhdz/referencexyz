@@ -8,7 +8,7 @@
 	color:white;
 }
 .color-azul{
-	color: blue;
+		color: rgb(0,206,209);
 }
 .sin-borde{
 	border: none;
@@ -28,40 +28,297 @@
 		background-color: white; 
 }
 
-.letra-tam{
-	font-size: 1em;
-}
-
-
 .posicion-absoluta{
 	position: absolute;
-	margin-left: 25%;
-	margin-top: -10%;
+	margin-left: 15%;
+	margin-top: -6%;
+}
+.letra-tam{
+	font-size: 1.2em;
 }
 
-.ancho-alto{
+.ancho{
 	 width: 50%;
-	 height: auto;
 }
 
+/*=======*/
+@media only screen and (max-width: 400px) {
+    #letra-tam{
+    	font-size: 0.8em; 
+    }
+    .ancho{
+		 width: 90%;
+	}
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.borde-blanco{
+		border-top: solid 10px white;
+		border-right: solid 10px white;
+		border-left: solid 10px white;
+	}    
 	
-	.letra-tam{
-		font-size: 0.5em;
+	.boton-derecha{
+		margin-left: 40%;
+	}
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-left: 3%;
+		margin-top: -20%;
+	}
+        
+ }
+
+@media (min-width: 401px) and (max-width: 599px) {
+   .boton-derecha{
+		margin-left: 50%;
+	}
+    #letra-tam{
+    	font-size: 0.9em; 
+    }
+    .ancho{
+		 width: 80%;
+	}
+
+	.borde-blanco{
+		border-top: solid 10px white;
+		border-right: solid 10px white;
+		border-left: solid 10px white;
+	}    
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-left: 10%;
+		margin-top: -30%;
+	}
+ }
+
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+	.boton-padding-abajo{
+		padding-bottom: 2%;
 	}
 
 	.boton-derecha{
 		margin-left: 70%;
 	}
+
+	.boton-letra-tam{
+		font-size: 1.3em;
+	}
+
+	.letra-tam{
+		font-size: 1.1em;
+	}
+
+	.ancho-alto{
+		 width: 50%;
+		 height: 10%;
+	}
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-left: 25%;
+		margin-top: -10%;
+	} 
+
+}
+
+
+
+@media only screen and (min-width: 600px) (max-device-width : 768px) {
+   
+    .letra-tam{
+    	font-size: 1em; 
+    }
+
+    .ancho-alto{
+		 min-width: 70%;
+		 height: 10%;
+	}
+
+	.borde-blanco{
+		border-top: solid 10px white;
+		border-right: solid 10px white;
+		border-left: solid 10px white;
+	}    
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-left: 15%;
+		margin-top: -10%;
+	}
+
+ }
+ 
+
+@media only screen and (min-width: 768px) (max-width : 991px){
+	.letra-tam{
+    	font-size: 1em; 
+    }
+
+    .ancho{
+		 width: 70%;
+		 height: 10%;
+	}
+
+	.borde-blanco{
+		border-top: solid 10px white;
+		border-right: solid 10px white;
+		border-left: solid 10px white;
+	}    
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-left: 30%;
+		margin-top: -8%;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+   #letra-tam{
+    	font-size: 0.9em; 
+    }
+
+    .ancho{
+		 width: 65%;
+	}
+
+	.borde-blanco{
+		border-top: solid 10px white;
+		border-right: solid 10px white;
+		border-left: solid 10px white;
+	}    
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-left: 16%;
+		margin-top: -15%;
+	}    
+ }
+ @media only screen and (min-width : 767px) {
+ 	#letra-tam{
+    	font-size: 0.9em; 
+    }
+
+    .ancho{
+		 width: 60%;
+		 height: 10%;
+	}
+
+	.borde-blanco{
+		border-top: solid 10px white;
+		border-right: solid 10px white;
+		border-left: solid 10px white;
+	}    
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-left: 20%;
+		margin-top: -10%;
+	}
+ }
+
+ @media only screen and (min-width : 992px) {
+ 	#letra-tam{
+    	font-size: 1em; 
+    }
+
+    .ancho{
+		 width: 50%;
+	}
+
+	.borde-blanco{
+		border-top: solid 10px white;
+		border-right: solid 10px white;
+		border-left: solid 10px white;
+	}    
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-left: -18%;
+		margin-top: -20%;
+	}
+ }
+
+ @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+		#letra-tam{
+    	font-size: 1em; 
+    }
+
+    .ancho-alto{
+		 width: 10%;
+		 height: 10%;
+	}
+
+	.borde-blanco{
+		border-top: solid 10px white;
+		border-right: solid 10px white;
+		border-left: solid 10px white;
+	}    
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-left: 10%;
+		margin-top: -20%;
+	}
 	
 }
 
-@media only screen and (min-device-width : 1500px) and (max-device-width : 30000px) {
+ @media only screen and (min-width : 1199px) {
+ 	#letra-tam{
+    	font-size: 1.3em; 
+    }
+
+    .ancho{
+		 width: 60%;
+	}
+
+	.borde-blanco{
+		border-top: solid 10px white;
+		border-right: solid 10px white;
+		border-left: solid 10px white;
+	}    
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-left: 10%;
+		margin-top: -10%;
+	}
+ }
+
+@media only screen and (min-width : 992px) {
+	.letra-tam{
+    	font-size: 1em; 
+    }
+
+    .ancho{
+		 width: 70%;
+		 height: 10%;
+	}
+
+	.borde-blanco{
+		border-top: solid 10px white;
+		border-right: solid 10px white;
+		border-left: solid 10px white;
+	}    
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-left: 15%;
+		margin-top: -5%;
+	}
+   }
+
+@media only screen and (min-device-width : 1500px) and (max-device-width : 3000px) {
 	
 	.letra-tam{
 		font-size: 2.5em;
 	}
+
+	.posicion-absoluta{
+		position: absolute;
+		margin-top: -50%;
+	}    
 	
 }
 

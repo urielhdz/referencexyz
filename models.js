@@ -2,10 +2,6 @@ var mongoose = require('mongoose'),
 		Schema = mongoose.Schema,
 		relationship = require("mongoose-relationship");
 
-
-/* TODO: Change to use environment variables */
-mongoose.connect("mongodb://localhost/referencexyz");
-
 var languageSchemaJSON = {
 	title:String,
 	description:String,
