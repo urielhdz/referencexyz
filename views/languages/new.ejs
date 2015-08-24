@@ -1,0 +1,38 @@
+<% layout('application') -%>
+	<html>
+		<head>
+			<meta charset="utf-8" /> 
+			<title>boton busqueda</title>
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+			<!-- Latest compiled and minified JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		</head>
+
+		<body>
+			<div align="center">
+
+			<form id="formulario-lenguaje" action="/lenguajes/" method="POST">
+				<h1>Agregar propiedad</h1>
+				<br>
+				<h4>Título</h4>
+				
+					<div class="form-group input-group">
+    					<input name="nombre" style="width:650px;height:27px" type="text" class="form-control" placeholder="Título">
+    					<span class=" form-control-feedback glyphicon glyphicon-search"></span>
+    				</input>
+    				</div>
+ 					 
+
+ 				<h4>Descripción</h4>
+ 				<textarea name="descripcion" style="width:650px;height:350px" class="form-control"></textarea>
+
+			
+			<input type="submit" value="Enviar" />
+		</form>
+
+	</div>
+		</body>
+	</html>
