@@ -19,16 +19,33 @@ var app = express();
 
 app.engine("ejs",ejs_layout_engine);
 app.use(express.static('public'));
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 app.get("lenguajes/new",function(req,res){
 	res.render("languages/new");
 });
+app.get("/login",function(req,res){
+	res.render("login");
+});
+app.post("/login",function(){
+	//TO DO
+});
 app.get("/propiedades/new",function(req,res){
 	Language.find({},function(err,languages){
-		console.log("\n\n\n\n"+req.params.id+"\n\n\n\n");
+		
 		res.render("properties/new",{languages: languages});	
 	});			
+});
+
+app.get("/search",function(req,res){
+	console.log("\n\n\n\n"+req.query.keyword+"\n\n\n\n");
+	Language.find({title: new RegExp(req.query.keyword,"i")},function(err,docs){
+		if(err){console.log(err);}
+		res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(docs));
+	});
 });
 
 
@@ -42,7 +59,7 @@ router.route("/lenguajes")
 				title: req.body.nombre,
 				description: req.body.descripcion
 			}
-			var language = Language.new(data);
+			var language = new Language(data);
 			language.save(function(err){
 				res.redirect("/languages/"+language._id);
 			});
@@ -94,7 +111,7 @@ router.route("/propiedades")
 				description: req.body.descripcion,
 				lenguaje: req.body.lenguaje_id
 			}
-			var property = Property.new(data);
+			var property = new Property(data);
 			property.save(function(err){
 				res.redirect("/propiedades/"+property._id);
 			});

@@ -40,7 +40,7 @@ exports.setUp = function(callback){
 exports.tearDown = function(callback){
 	try {
 			console.log('Closing connection');
-			mongoose.connection.db.dropDatabase();
+			//mongoose.connection.db.dropDatabase();
 			db.disconnect(callback);
 	}
 	catch (err) {
