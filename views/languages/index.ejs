@@ -9,18 +9,15 @@
 			<th>#</th>
 			<th>Nombre</th>
 			<th>Descripcion</th>
-			<th>Precio</th>
-			<th>Imagenes</th>
 			<th>Acciones</th>
 		</tr>
-			<% for(var i=0; i<=languages.length; i++){ 
+			<% for(var i=0; i<languages.length; i++){ 
 			  %>
-					<tr>
-					<td>languages.id[i]</td>
-					<td>languages.nombre[i]</td>
-					<td>languages.descripcion[i]</td>
-					<td>languages.precio[i]</td>
-					<td><button type="button" class="color-azul sin-borde sin-fondo">Ver imagen</button></td>
+			  <%var lenguaje = languages[i]%>
+				<tr>
+					<td><%=lenguaje._id%></td>
+					<td><%=lenguaje.title%></td>
+					<td><%=lenguaje.description%></td>
 					<td><button type="button" class="color-azul sin-borde sin-fondo">Editar</button>-<button type="button" class="color-azul sin-borde sin-fondo">Eliminar</button></td>
 				</tr>
 				
