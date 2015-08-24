@@ -21,6 +21,17 @@ app.engine("ejs",ejs_layout_engine);
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
+app.get("lenguajes/new",function(req,res){
+	res.render("languages/new");
+});
+app.get("/propiedades/new",function(req,res){
+	Language.find({},function(err,languages){
+		console.log("\n\n\n\n"+req.params.id+"\n\n\n\n");
+		res.render("properties/new",{languages: languages});	
+	});			
+});
+
+
 var router = express.Router();
 
 /* Lenguajes REST */
@@ -69,10 +80,6 @@ router.route("/lenguajes/:id")
 		})
 	});
 
-app.get("lenguajes/new",function(req,res){
-	res.render("languages/new");
-});
-
 app.get("lenguajes/:id/edit",function(req,res){
 	Language.findById(req.params.id,function(err,language){
 		res.render("languages/edit",{language: language});
@@ -100,16 +107,17 @@ router.route("/propiedades")
 
 		});
 
-
 router.route("/propiedades/:id")
 	.get(function(req,res){
-		if(req.params.id === "new"){
+		console.log("\n\n\n\n"+req.params.id+"\n\n\n\n");
+		if(req.params.id == "new" || typeof req.params.id == "undefined"){
 			Language.find({},function(err,languages){
-				console.log("\n\n\n\n"+languages+"\n\n\n\n")
+				
 				res.render("properties/new",{languages: languages});	
 			});			
 		}else{
 			Property.findById(req.params.id,function(err,propiedad){
+				if(err){console.log(err);}
 				Language.findById(propiedad.language,function(err,language){
 					res.render("properties/show",{propiedad: propiedad, language: language});	
 				});			
