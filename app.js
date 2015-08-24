@@ -28,9 +28,18 @@ app.get("lenguajes/new",function(req,res){
 });
 app.get("/propiedades/new",function(req,res){
 	Language.find({},function(err,languages){
-		console.log("\n\n\n\n"+req.params.id+"\n\n\n\n");
+		
 		res.render("properties/new",{languages: languages});	
 	});			
+});
+
+app.get("/search",function(req,res){
+	console.log("\n\n\n\n"+req.query.keyword+"\n\n\n\n");
+	Language.find({title: new RegExp(req.query.keyword,"i")},function(err,docs){
+		if(err){console.log(err);}
+		res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(docs));
+	});
 });
 
 
