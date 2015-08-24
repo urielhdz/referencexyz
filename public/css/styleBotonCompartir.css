@@ -1,0 +1,76 @@
+/**
+ * Floating action button
+ */
+
+ .texto-blanco{
+  color:white;
+ }
+
+.boton-compartir {
+  padding-top: 15px;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+  background-color: black;
+  z-index: 100000;
+}
+
+.boton-red-social {
+   z-index: 100000;
+  padding-top: 7px;
+  position: absolute;
+  display: line-block;
+  opacity:0;
+  width: 42px;
+  height: 42px;
+  border-radius: 42px;
+  right: 10%;
+  bottom: 30px;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: .5s all;   
+  -webkit-transition-delay: 0.5s; 
+  -moz-transition: .5s all;   
+  -moz-transition-delay: 0.5s; 
+  -ms-transition: .5s all;   
+  -ms-transition-delay: 0.5s; 
+  -o-transition: .5s all;   
+  -o-transition-delay: 0.5s; 
+  transition: .5s all;   
+  transition-delay: 0.5s; 
+}
+
+.boton-compartir:hover .first {
+  -webkit-transform: translate(0px, -60px);
+  -moz-transform: translate(0px, -60px);
+  -o-transform: translate(0px, -60px);
+  -ms-transform: translate(0px, -60px);
+  transform: translate(0px, -60px);
+  opacity:1;
+  -webkit-transition:all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s
+   transition: all 1s;
+}
+
+
+.boton-compartir:hover .second {
+  -webkit-transform: translate(0px, -120px);
+  -moz-transform: translate(0px, -120px);
+  -o-transform: translate(0px, -120px);
+  -ms-transform: translate(0px, -120px);
+  transform: translate(0px, -120px);
+  opacity:1;
+  -webkit-transition:all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s
+   transition: all 1s;
+}
+
+
