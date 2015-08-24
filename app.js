@@ -46,12 +46,16 @@ router.route("/lenguajes")
 
 router.route("/lenguajes/:id")
 	.get(function(req,res){
-		Language.findById(req.params.id,function(err,language){
-			properties = Property.find({language: language._id},function(err,propiedades){
-				res.render("languages/show",{language: language, propiedades: propiedades});
+		if(req.params.id === "new"){
+			res.render("languages/new");	
+		}else{
+			Language.findById(req.params.id,function(err,language){
+				properties = Property.find({language: language._id},function(err,propiedades){
+					res.render("languages/show",{language: language, propiedades: propiedades});
+				});
+				
 			});
-			
-		});
+		}
 	})
 	.put(function(req,res){
 		Language.findById(req.params.id,function(err,language){
@@ -96,13 +100,22 @@ router.route("/propiedades")
 
 		});
 
+
 router.route("/propiedades/:id")
 	.get(function(req,res){
-		Property.findById(req.params.id,function(err,propiedad){
-			Language.findById(propiedad.language,function(err,language){
-				res.render("propiedades/show",{propiedad: propiedad, language: language});	
+		if(req.params.id === "new"){
+			Language.find({},function(err,languages){
+				console.log("\n\n\n\n"+languages+"\n\n\n\n")
+				res.render("properties/new",{languages: languages});	
 			});			
-		});
+		}else{
+			Property.findById(req.params.id,function(err,propiedad){
+				Language.findById(propiedad.language,function(err,language){
+					res.render("properties/show",{propiedad: propiedad, language: language});	
+				});			
+			});	
+		}
+		
 	})
 	.put(function(req,res){
 		Property.findById(req.params.id,function(err,propiedad){
@@ -115,10 +128,6 @@ router.route("/propiedades/:id")
 
 		})
 	});
-
-app.get("propiedades/new",function(req,res){
-	res.render("propiedades/new");
-});
 
 app.get("propiedades/:id/edit",function(req,res){
 	Property.findById(req.params.id,function(err,propiedad){
