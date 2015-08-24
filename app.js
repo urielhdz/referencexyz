@@ -19,6 +19,8 @@ var app = express();
 
 app.engine("ejs",ejs_layout_engine);
 app.use(express.static('public'));
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 app.get("lenguajes/new",function(req,res){
@@ -42,7 +44,7 @@ router.route("/lenguajes")
 				title: req.body.nombre,
 				description: req.body.descripcion
 			}
-			var language = Language.new(data);
+			var language = new Language(data);
 			language.save(function(err){
 				res.redirect("/languages/"+language._id);
 			});
@@ -94,7 +96,7 @@ router.route("/propiedades")
 				description: req.body.descripcion,
 				lenguaje: req.body.lenguaje_id
 			}
-			var property = Property.new(data);
+			var property = new Property(data);
 			property.save(function(err){
 				res.redirect("/propiedades/"+property._id);
 			});

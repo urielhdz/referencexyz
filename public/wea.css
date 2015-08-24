@@ -1,0 +1,60 @@
+.fondo{
+  background: url(/halo.jpg);
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  padding: 30px;
+}
+#fondo-blanco{
+  background: white;
+}
+/*Bordes margenes */
+.bordes-abajo-imagen{
+  margin-right: 2px;
+  margin-left: 15px;
+  margin-top: 6px;
+  margin-bottom: 1px;  
+}
+.borde-etiqueta{
+  margin: 1px;
+  margin-top: 3px;
+}
+.borde-header{
+    padding-left: 30px;
+    padding-right: 40px;
+    padding-bottom: 15px;
+    padding-top: 40px;
+}
+.borde-col{
+  padding-right: 0px;
+  padding-left: 10px;
+}
+.borde-row{
+  margin-bottom: 15px;
+}
+.borde-texto{
+  padding-bottom: 15px;
+}
+  
+/*Sombras*/
+.sombreado{
+    width: auto;
+    height: auto;
+    box-shadow: 0 0 10px 0.2px gray;
+    border-radius: 1px;
+}
+
+/*Texto*/
+.centrar-texto{
+  text-align: center;
+}
+.tipo-letra{
+  font-family: arial;
+}
+/*Colores*/
+.color-blanco{
+  color: #FFFFFF;
+}
+.color-azul{
+  color: #26B2FF;
+}
