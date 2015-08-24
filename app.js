@@ -26,6 +26,12 @@ app.set('view engine', 'ejs');
 app.get("lenguajes/new",function(req,res){
 	res.render("languages/new");
 });
+app.get("/login",function(req,res){
+	res.render("login");
+});
+app.post("/login",function(){
+	//TO DO
+});
 app.get("/propiedades/new",function(req,res){
 	Language.find({},function(err,languages){
 		
