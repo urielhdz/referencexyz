@@ -209,7 +209,7 @@ app.get("/",function(req,res){
 			}
 
 		];
-		res.render("index",{total_propiedades: total_propiedades});
+		res.render("index",{total_propiedades: total_propiedades, articles: articles});
 		
 	});
 	
