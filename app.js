@@ -29,6 +29,12 @@ app.get("lenguajes/new",function(req,res){
 app.get("/login",function(req,res){
 	res.render("login");
 });
+app.get("/propiedades/:id/visits",function(req,res){
+	Property.findById(req.params.id,function(err,property){
+		res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(property.visits));
+	});
+});
 app.post("/login",function(){
 	//TO DO
 });
@@ -95,6 +101,12 @@ router.route("/lenguajes/:id")
 			});
 
 		})
+	})
+	.delete(function(req,res){
+		Property.remove({"_id":req.params.id},function(err){
+			if(err){ console.log(err); }
+			res.redirect("/lenguajes");
+		});
 	});
 
 app.get("lenguajes/:id/edit",function(req,res){
@@ -129,18 +141,18 @@ router.route("/propiedades/:id")
 		console.log("\n\n\n\n"+req.params.id+"\n\n\n\n");
 		if(req.params.id == "new" || typeof req.params.id == "undefined"){
 			Language.find({},function(err,languages){
-				
 				res.render("properties/new",{languages: languages});	
 			});			
 		}else{
 			Property.findById(req.params.id,function(err,propiedad){
 				if(err){console.log(err);}
 				Language.findById(propiedad.language,function(err,language){
+					propiedad.visits +=1;
+					propiedad.save();
 					res.render("properties/show",{propiedad: propiedad, language: language});	
 				});			
 			});	
 		}
-		
 	})
 	.put(function(req,res){
 		Property.findById(req.params.id,function(err,propiedad){
