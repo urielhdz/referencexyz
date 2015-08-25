@@ -1,0 +1,44 @@
+<% layout('application') -%>
+<html>
+	<head>
+		<title>show</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="estilo-ernesto.css"> 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<>
+	</head>
+
+
+	<body>
+
+		<div id="borde-negro">
+			<p id="html">HTML<p>
+		</div>
+
+		<div class="table-responsive">
+		<h1>Panel de administracion</h1>
+		<p>Productos actuales</p>
+		
+		<table class="table table-hover">
+		<tr>
+			<th>Titulo</th>
+			<th>Descripcion</th>
+			<th>Visitas</th>
+		</tr>
+			<% for(var i=0; i<propiedades.length; i++){ 
+			  %>
+			  <%var propiedades = propiedades[i]%>
+				<tr>
+					<td><%=propiedades._id%></td>
+					<td><%=propiedades.title%></td>
+					<td><%=propiedades.description%></td>
+					<td><button type="button">Editar</button>-<button type="button">Eliminar</button></td>
+				</tr>
+				
+				<%
+				} 
+			%>
+	</table>
+</div>
+	</body>
+</html>
