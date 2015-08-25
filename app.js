@@ -161,7 +161,11 @@ app.get("propiedades/:id/edit",function(req,res){
 });
 
 app.get("/",function(req,res){
-	res.render("index");
+	Property.count({},function(err,total_propiedades){
+		if(err){console.log(err);}
+		res.render("index",{total_propiedades: total_propiedades});	
+	});
+	
 });
 
 app.use("/",router);
