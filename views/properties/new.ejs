@@ -1,0 +1,55 @@
+<% layout('application') -%>
+<div class="margen-sup50 col-md-8 col-xs-11 col-sm-10 center-block" style="float:none !important;">
+	<h1>Agregar propiedad</h1>
+	<form action="/propiedades" method="POST" id="properties_fomr">
+		<div class="form-group">
+			<label for="nombre">Título</label>
+			<input type="text" required id="nombre" name="nombre" class="form-control" placeholder="Título">	
+		</div>
+
+		<div class="form-group">
+			<label for="descripcion">Descripción</label>
+			<div id="epic_editor" style="height:400px;"></div>
+			<textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" style="display:none;">				
+			</textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="language">Lenguaje</label>
+			<select name="language" id="language" class="form-control">
+				<% for(var i = languages.length; i>= 0;i--){ %>
+					<%language = languages[i]%>
+					<% if(typeof language !== "undefined"){ %>
+						<option value="<%=language._id%>"><%= language.title %></option>
+					<%}%>
+				<%}%>
+			</select>
+		</div>
+		<div class="form-group">
+			<input type="submit" value="Enviar" class="btn">
+		</div>
+		
+	</form>
+</div>
+<script src="/js/epiceditor.js"></script>
+<script>
+	$(document).ready(function(){
+		var editor = new EpicEditor({
+			container: "epic_editor",
+			clientSideStorage: false,
+			theme:{
+				base: "../../../themes/base/epiceditor.css",
+				preview: "../../../themes/preview/github.css",
+				editor: "../../../themes/editor/epic-light.css"
+			},
+			file:{
+				name: "new_property",
+				defaultContent: $("#descripcion").val(	)
+			}
+		});
+		editor.load()
+		$("#properties_fomr").on("submit",function(ev){
+			$("#descripcion").html(editor.exportFile("new_property","html"));
+		});
+	});
+</script>
