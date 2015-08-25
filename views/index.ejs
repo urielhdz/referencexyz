@@ -91,82 +91,21 @@
 
 	<header class="borde-header">
 		<div class="row borde-row">
-			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
-				<div class="sombreado">
-					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-						<div class="bordes-abajo-imagen">
-							<p>Este es el primero de 1 articulos que publicare...</p>
-							<p class="borde-texto color-azul">LEER MÁS</p>
-						</div>	
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
-				<div class="sombreado">
-					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-						<div class="bordes-abajo-imagen">
-							<p>Este es el primero de 1 articulos que publicare...</p>
-							<p class="borde-texto color-azul">LEER MÁS</p>
-						</div>	
-					</div>
-				</div>
-			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
-				<div class="sombreado">
-					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-						<div class="bordes-abajo-imagen">
-							<p>Este es el primero de 1 articulos que publicare...</p>
-							<p class="borde-texto color-azul">LEER MÁS</p>
-						</div>	
-					</div>
-				</div>
-			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
-				<div class="sombreado">
-					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-						<div class="bordes-abajo-imagen">
-							<p>Este es el primero de 1 articulos que publicare...</p>
-							<p class="borde-texto color-azul">LEER MÁS</p>
-						</div>	
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row borde-row">
-			<div class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
-				<div class="sombreado">
-					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-						<div class="bordes-abajo-imagen">
-							<p>Este es el primero de 1 articulos que publicare...</p>
-							<p class="borde-texto color-azul">LEER MÁS</p>
-						</div>	
-					</div>
-				</div>
-			<div class=" col-md-3 col-sm-5 col-xs-6.5 borde-col">
-				<div class="sombreado">
-					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-						<div class="bordes-abajo-imagen">
-							<p>Este es el primero de 1 articulos que publicare...</p>
-							<p class="borde-texto color-azul">LEER MÁS</p>
-						</div>	
-					</div>
-				</div>
-			<div class=" col-md-3 col-sm-5 col-xs-6.5 borde-col">
-				<div class="sombreado">
-					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-						<div class="bordes-abajo-imagen">
-							<p>Este es el primero de 1 articulos que publicare...</p>
-							<p class="borde-texto color-azul">LEER MÁS</p>
-						</div>	
-					</div>
-				</div>
-			<div class=" col-md-3 col-sm-5 col-xs-6.5 borde-col">
-				<div class="sombreado">
-					<div class="fondo tipo-letra centrar-texto color-blanco">La wea fome</div>
-						<div class="bordes-abajo-imagen">
-							<p>Este es el primero de 1 articulos que publicare...</p>
-							<p class="borde-texto color-azul">LEER MÁS</p>
-						</div>	
-					</div>
-				</div>
-			</div>
+			<% for(var i=0; i<articles.length; i++){ 
+				%>
+				<%var articulos = articles[i]%>
+						<div  class="col-md-3 col-sm-5 col-xs-6.5 borde-col">
+							<div class="sombreado">
+								<div  style = "background-image: url(<%= articulos.image%>)" class="fondo tipo-letra centrar-texto color-blanco"><%=articulos.title%></div>
+									<div class="bordes-abajo-imagen ">
+										<p>Descripcion</p>
+										<a href = "<%=articulos.url%>" class="borde-texto color-azul">Leer más</a>
+									</div>	
+							</div>
+						</div>
+				<%
+				}
+			%>
 		</div>
 	</header>
 	<!--==========================CONTAINER TIENE LA SECCION DE LA CHICA CON COMPUTADORA Y FONDO AZUL ==================-->
