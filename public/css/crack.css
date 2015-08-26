@@ -140,6 +140,14 @@
 .color-azul{
   color: #26B2FF;
 }
+.color-azul-rgb{
+	color: rgb(0,206,209);
+
+}
+.color-azul-rgb a:visited{
+		color: rgb(0,206,209);
+		text-decoration: underline;
+}
 .color-azul{
 	color: rgb(0,206,209);
 }

@@ -20,8 +20,12 @@
 					<td><%=lenguaje._id%></td>
 					<td><%=lenguaje.title%></td>
 					<td><%=lenguaje.description%></td>
-					<td><button type="button" class="color-azul sin-borde sin-fondo">Mostrar</button>-<form method="post" action="/lenguajes/<%=lenguaje._id%>?_method=delete" > <button onclick="return confirm('¿Desea Eliminar el elemento?:\n' +  form.action)" type="submit" class="color-azul sin-borde sin-fondo " >Eliminar</button> </form> 
+					<td>
+						<form method="get" action="/lenguajes/<%=lenguaje._id%>"><button onclick="form.action" type="submit" class="color-azul-rgb sin-borde sin-fondo">Mostrar</button>
+						</form>
+						<form method="post" action="/lenguajes/<%=lenguaje._id%>?_method=delete" ><button onclick="return confirm('¿Desea Eliminar el elemento?:\n' +  form.action)" type="submit" class="color-azul-rgb sin-borde sin-fondo " >Eliminar</button> </form>
 					</td>
+					
 				</tr>
 				
 				<%
