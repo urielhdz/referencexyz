@@ -140,7 +140,7 @@
 
     .ancho-alto{
 		 min-width: 70%;
-		 height: 10%;
+		 min-height: 10%;
 	}
 
 	.borde-blanco{
@@ -300,7 +300,7 @@
 
     .ancho{
 		 width: 70%;
-		 height: 10%;
+		 height: auto;
 	}
 
 	.borde-blanco{
