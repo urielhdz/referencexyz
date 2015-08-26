@@ -5,7 +5,9 @@
   height: auto;
   padding: 30px;
 }
-
+#fondo-blanco{
+  background: white;
+}
 /*Bordes margenes */
 .bordes-abajo-imagen{
   margin-right: 2px;
@@ -18,10 +20,10 @@
   margin-top: 3px;
 }
 .borde-header{
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
+  padding-left: 30px;
+  padding-right: 40px;
+  padding-bottom: 15px;
+  padding-top: 40px;
 }
 .borde-col{
   padding-right: 0px;
