@@ -13,12 +13,12 @@
 		</thead>
 			<% for(var i=0; i<properties.length; i++){ 
 			  %>
-			  <%var propiedad = languages[i]%>
+			  <%var propiedad = properties[i]%>
 				<tr>
 					<td><%=propiedad._id%></td>
 					<td><%=propiedad.title%></td>
 					<td><%=propiedad.description%></td>
-					<td><button type="button" class="color-azul sin-borde sin-fondo">Editar</button>-<button type="button" class="color-azul sin-borde sin-fondo">Eliminar</button></td>
+					<td><button type="button" class="btn btn-link">Editar</button><button type="button" class="btn btn-link">Eliminar</button></td>
 				</tr>
 				
 				<%
