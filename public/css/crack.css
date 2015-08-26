@@ -1107,3 +1107,32 @@ header nav ul li .caret {
 .color-click-boton:active{
 	background: #607D8B;
 }
+
+#borde-negro{
+	background-color: #494242;
+	margin-left: 235px;
+	margin-right: 250px;
+	height: 30%;
+	width: 57%;
+}
+
+#html{
+	text-align: center;
+	font-size: 100px;
+	color:white;
+	font-family: verdana;
+}
+#input-buscar{	
+	width: 90%;
+}
+.contenedor-buscador{
+	position: absolute;
+	right:1px;
+	background-color:#E8E8E8 ;
+	height: 100%;
+	
+}
+
+th{
+	color:blue;
+}
