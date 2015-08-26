@@ -1,14 +1,15 @@
 <% layout('application') -%>
 <div class="row">
-	<div class="col-md-2 contenedor-buscador text-center" style="height = 100%">
+	<div class="col-xs-2 col-sm-2 col-md-3 contenedor-buscador text-center" style="height = 100%">
 		<form action="/search" id="buscador" style="padding-top: 5%;">
-		<input id="input-b"  name="keyword" type="text" value="" placeholder="Buscar" required>
+		<input id="input-b" style="width: 100%" name="keyword" type="text" value="" placeholder="Buscar" required>
 		</form>
 		<div id="resultados">
 			<p>Propiedades</p>
 		</div>	
 	</div>
-	<div id="borde-negro">
+	<div class="col-xs-10 col-sm-10 col-md-12">
+		<div  id="borde-negro">
 			<p id="html">HTML<p>
 		</div>
 		<div class="table-responsive ">
@@ -35,4 +36,8 @@
 				%>
 				</table>
 			</div>
+
+
+	</div>
+	
 </div>
