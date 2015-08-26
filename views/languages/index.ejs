@@ -5,12 +5,14 @@
 		<p>Productos actuales</p>
 		
 		<table class="table table-hover">
-		<tr>
-			<th>#</th>
-			<th>Nombre</th>
-			<th>Descripcion</th>
-			<th>Acciones</th>
-		</tr>
+		<thead>	
+			<tr>
+				<th>#</th>
+				<th>Nombre</th>
+				<th>Descripcion</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
 			<% for(var i=0; i<languages.length; i++){ 
 			  %>
 			  <%var lenguaje = languages[i]%>
@@ -18,7 +20,7 @@
 					<td><%=lenguaje._id%></td>
 					<td><%=lenguaje.title%></td>
 					<td><%=lenguaje.description%></td>
-					<td><button type="button" class="color-azul sin-borde sin-fondo">Editar</button>-<button type="button" class="color-azul sin-borde sin-fondo">Eliminar</button></td>
+					<td><button type="button" class="color-azul sin-borde sin-fondo">Mostrar</button>-<button type="button" class="color-azul sin-borde sin-fondo">Editar</button>-<button type="button" class="color-azul sin-borde sin-fondo">Eliminar</button></td>
 				</tr>
 				
 				<%

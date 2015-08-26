@@ -105,7 +105,7 @@ router.route("/lenguajes/:id")
 		})
 	})
 	.delete(function(req,res){
-		Property.remove({"_id":req.params.id},function(err){
+		Language.remove({"_id":req.params.id},function(err){
 			if(err){ console.log(err); }
 			res.redirect("/lenguajes");
 		});
