@@ -1111,26 +1111,24 @@ header nav ul li .caret {
 	background: #607D8B;
 }
 
+
 #borde-negro{
 	background-color: #494242;
-	margin-left: 235px;
-	margin-right: 250px;
+	margin-left: 19%;
 	height: 30%;
 	width: 57%;
 }
 
 #html{
 	text-align: center;
-	font-size: 100px;
+	font-size: 500%;
 	color:white;
 	font-family: verdana;
 }
-#input-buscar{	
-	width: 90%;
-}
+
 .contenedor-buscador{
 	position: absolute;
-	right:1px;
+	right:0.1%;
 	background-color:#E8E8E8 ;
 	height: 100%;
 	
@@ -1140,6 +1138,7 @@ th{
 	color:blue;
 }
 
+<<<<<<< HEAD
 /*show.ejs//////////////////////////////*/
 *{
 	padding: 0%;
@@ -1171,15 +1170,20 @@ th{
 	vertical-align: top;
 }
 
+.margen-referenxyz{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
 .margen-centro{
 	padding:5px ;
-    padding-left: 10px;
-    padding-right: 10px;
+	padding-left: 80px;
+	padding-right: 50px;
 }
 
 .margen-descripcion{
-    margin-bottom: 7px;
-    margin-top: 7px;
+    margin-bottom: 20px;
+    margin-top: 80px;
 }
 .margen-autor{
     padding-top: 2.5px;
@@ -1189,16 +1193,27 @@ th{
     margin-top: 0;
     margin-bottom: 0;
 }
+.margen-historia{
+	padding-left: 80px;
+	padding-top: 50px;
+	padding-right: 50px;
+	padding-bottom: 30px;
+}
+.margen-historia-descripcion{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
 
 .margen-abajo-autor{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 40px;
+    padding-bottom: 45px;
 }
 
 .borde-redondo{
-	padding-left: 5px;
-	padding-right: 5px;
-	border-radius: 5px;
+	width: 65%;
+	padding-left: 50px;
+	padding-right: 10px;
+	border-radius: 50px;
 }
 .centrar-texto{
 	text-align: center;
@@ -1207,17 +1222,27 @@ th{
 	text-align: right;
 }
 
-.tamano-letra-5{
-	font-size: 5px;
+.tamano-letra-20{
+	font-size: 20px;
 }
-.tamano-letra-6{
-	font-size: 6px;
+.tamano-letra-30{
+	font-size: 30px;
+}
+.tamano-letra-40{
+	font-size: 40px;
 }
 
 .sombreado{
-    box-shadow: 0 0 2px 0.2px gray;
+    box-shadow: 0 0 4px 0.2px gray;
 }
 
 .sombreado-autor{
-	box-shadow: 0 0 10px 4.9px rgb(239,240,243) inset;
+	box-shadow: 0 0 70px 4.9px rgb(239,240,243) inset;
 }
+=======
+#tabla-valores{
+	width: 57%;
+	position: absolute;
+	margin-left: 18%;
+}
+>>>>>>> f41b044521edcc4de117a40a9ca98fe46687b6fb
