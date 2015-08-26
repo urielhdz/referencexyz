@@ -71,19 +71,6 @@ input{
 	outline:none;
 }
 
-input::-webkit-input-placeholder {
-    color:    white;
-}
-input::-moz-placeholder {
-    color:    white;
-}
-input:-moz-placeholder {
-    color:    white;
-}
-input:-ms-input-placeholder {
-    color:    white;
-}
-
 .sin-padding{
 	padding-bottom: 0px;
 	padding-left: 0px;
