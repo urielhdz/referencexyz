@@ -1,0 +1,28 @@
+<% layout('application') -%>
+
+<div class="table-responsive">
+		<h1>Panel de administracion</h1>
+		<p>Productos actuales</p>
+		
+		<table class="table table-hover">
+		<thead>
+			<th>#</th>
+			<th>Nombre</th>
+			<th>Descripcion</th>
+			<th>Acciones</th>
+		</thead>
+			<% for(var i=0; i<properties.length; i++){ 
+			  %>
+			  <%var propiedad = languages[i]%>
+				<tr>
+					<td><%=propiedad._id%></td>
+					<td><%=propiedad.title%></td>
+					<td><%=propiedad.description%></td>
+					<td><button type="button" class="color-azul sin-borde sin-fondo">Editar</button>-<button type="button" class="color-azul sin-borde sin-fondo">Eliminar</button></td>
+				</tr>
+				
+				<%
+				} 
+			%>
+	</table>
+</div>
