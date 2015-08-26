@@ -23,8 +23,13 @@
 					<td><%=propiedad._id%></td>
 					<td><%=propiedad.title%></td>
 					<td><%=propiedad.description%></td>
-					<form method="POST" action="/properties/<%=propiedad._id%>?_method=delete" onclick="return confirm('¿Desea Eliminar el elemento?:\n' +  this.action)"><td><button type="submit" class="btn btn-link" onclick="return confirm('Desea eliminar?')">Eliminar</button></td></form>
-					<td><button type="button" class="btn btn-link">Mostrar</button><button type="button" class="btn btn-link">Editar</button><button type="button" class="btn btn-link">Eliminar</button></td>
+					
+					<form method="post" action="/properties/<%=propiedad._id%>?_method=delete">
+						<td><button type="button" class="btn btn-link">Mostrar</button></td>
+						<td><button type="button" class="btn btn-link">Editar</button></td>
+						<td><button onclick="return confirm('¿Desea Eliminar el elemento?:\n' +  form.action)" type="submit" class="btn btn-link " >Eliminar</button></td>
+					</form>
+					
 				</tr>
 				
 				<%
