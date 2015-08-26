@@ -1139,3 +1139,85 @@ header nav ul li .caret {
 th{
 	color:blue;
 }
+
+/*show.ejs//////////////////////////////*/
+*{
+	padding: 0%;
+	margin: 0%;
+}
+.ancho-izquierdo{
+	width: 23%;
+	position: fixed;
+	left: 0%;
+	background: white;
+}
+
+.ancho-centro{
+	width: 54%;
+	position: absolute;
+	left: 23%;
+	background: white;
+}
+
+.ancho-derecho{
+	width: 23%;
+	position: fixed;
+	left: 77%;
+}
+
+.sin-block{
+	display: inline-block;
+	margin-right: -4px;
+	vertical-align: top;
+}
+
+.margen-centro{
+	padding:5px ;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.margen-descripcion{
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+.margen-autor{
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.margen-abajo-autor{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.borde-redondo{
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 5px;
+}
+.centrar-texto{
+	text-align: center;
+}
+.izquierda-texto{
+	text-align: right;
+}
+
+.tamano-letra-5{
+	font-size: 5px;
+}
+.tamano-letra-6{
+	font-size: 6px;
+}
+
+.sombreado{
+    box-shadow: 0 0 2px 0.2px gray;
+}
+
+.sombreado-autor{
+	box-shadow: 0 0 10px 4.9px rgb(239,240,243) inset;
+}
