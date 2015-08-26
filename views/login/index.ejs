@@ -1,0 +1,29 @@
+<% layout('application') -%>
+<!doctype html>
+<html>
+	<head>
+		<title>Login</title>
+		<link rel="stylesheet" href="style-login.css">
+		<meta charset="utf-8">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	</head>
+	<body class="color-fondo-body">
+		<section class="margen-seccion-login padding-seccion-login texto-centrado">
+			<form method="post" action="/login" class="color-form-fondo ancho-form borde-form borde-redondo sombra-form margen-form">
+			<p class="letra-open-sans texto-centrado color-blanco margen-iniciar-sesion">Iniciar Sesión</p>
+			<span class="fa-stack fa-lg margen-iconos">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-envelope fa-stack-1x"></i>
+			</span>
+			<input type="email" name="Email" placeholder="Email" autofocus="autofocus" autocomplete="off" required class="ancho-caja-texto alto-caja-texto padding-caja-texto margen-caja-texto color-caja-texto texto-izq letra-caja-boton"/>
+			<span class="fa-stack fa-lg margen-iconos">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-unlock-alt fa-stack-1x"></i>
+			</span>
+			<input type="password" name="password" placeholder="Password" autocomplete="off" required class="ancho-caja-texto alto-caja-texto padding-caja-texto margen-caja-texto color-caja-texto texto-izq letra-caja-boton"/>
+			<button type="submit" class="ancho-boton alto-boton margen-boton borde-boton sombra-boton letra-caja-boton borde-redondo cambio-color-boton color-click-boton">Login</button>
+		</form>
+		</section>
+	</body>
+</html>

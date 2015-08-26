@@ -140,6 +140,14 @@
 .color-azul{
   color: #26B2FF;
 }
+.color-azul-rgb{
+	color: rgb(0,206,209);
+
+}
+.color-azul-rgb a:visited{
+		color: rgb(0,206,209);
+		text-decoration: underline;
+}
 .color-azul{
 	color: rgb(0,206,209);
 }
@@ -1004,4 +1012,139 @@ header nav ul li .caret {
    transition: all 1s;
 }
 
+/*----------------------------------------------------------CSS login */
+.letra-open-sans{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
+	font-size: 30px;
+}
 
+.margen-seccion-login{
+	margin: 0px;
+}
+.padding-seccion-login{
+	padding: 0px;
+}
+.texto-centrado{
+	text-align: center;
+}
+
+.color-fondo-body{
+	background-color: #607D8B;
+}
+
+.color-form-fondo{
+	background-color: #90A4AE;
+}
+.ancho-form{
+	width: 360px;
+}
+.borde-form{
+	border: 1px solid #4E4D4D;
+}
+.borde-redondo{
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.sombra-form{
+	box-shadow: 0px 0px 10px #000000;
+}
+.margen-form{
+	margin:  100px auto;
+}
+
+.color-blanco{
+	color:#FFFFFF;
+}
+.margen-iniciar-sesion{
+	margin: 15px 25px;
+}
+
+.ancho-caja-texto{
+	width: 10em;
+}
+.alto-caja-texto{
+	height: 2em;
+}
+.paddig-caja-texto{
+	padding: 5px 5px;
+}
+.margen-caja-texto{
+	margin:10px 20px;
+}
+.color-caja-texto{
+	color: #6D6D6D;
+}
+.texto-izq{
+	text-align: left;
+}
+.letra-caja-boton{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+}
+.margen-iconos{
+	margin: 0px 7px;
+}
+
+
+.ancho-boton{
+	width: 135px;
+}
+.margen-boton{
+	margin: 20px 30px;
+}
+.alto-boton{
+	height: 35px;
+}
+.borde-boton{
+	border: 1px solid;
+}
+.sombra-boton{
+	box-shadow: 0px 2px 0px #000000;
+	-moz-box-shadow: 0px 2px 0px #000000;
+	-webkit-box-shadow: 0px 2px 0px #000000;
+}
+
+
+.cambio-color-boton:hover{
+	background: #546E7A
+}
+
+.color-click-boton:active{
+	background: #607D8B;
+}
+
+
+#borde-negro{
+	background-color: #494242;
+	margin-left: 19%;
+	height: 30%;
+	width: 56%;
+}
+
+#html{
+	text-align: center;
+	font-size: 500%;
+	color:white;
+	font-family: verdana;
+}
+
+.contenedor-buscador{
+	position: absolute;
+	right: 0.0001%;
+	background-color:#E8E8E8 ;
+	height: 100%;
+	
+}
+
+th{
+	color:blue;
+}
+
+#tabla-valores{
+	width: 55%;
+	position: absolute;
+	margin-left: 18%;
+}

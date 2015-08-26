@@ -5,12 +5,14 @@
 		<p>Productos actuales</p>
 		
 		<table class="table table-hover">
-		<tr>
-			<th>#</th>
-			<th>Nombre</th>
-			<th>Descripcion</th>
-			<th>Acciones</th>
-		</tr>
+		<thead>	
+			<tr>
+				<th>#</th>
+				<th>Nombre</th>
+				<th>Descripcion</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
 			<% for(var i=0; i<languages.length; i++){ 
 			  %>
 			  <%var lenguaje = languages[i]%>
@@ -18,7 +20,12 @@
 					<td><%=lenguaje._id%></td>
 					<td><%=lenguaje.title%></td>
 					<td><%=lenguaje.description%></td>
-					<td><button type="button" class="color-azul sin-borde sin-fondo">Editar</button>-<button type="button" class="color-azul sin-borde sin-fondo">Eliminar</button></td>
+					<td>
+						<form method="get" action="/lenguajes/<%=lenguaje._id%>"><button onclick="form.action" type="submit" class="color-azul-rgb sin-borde sin-fondo">Mostrar</button>
+						</form>
+						<form method="post" action="/lenguajes/<%=lenguaje._id%>?_method=delete" ><button onclick="return confirm('¿Desea Eliminar el elemento?:\n' +  form.action)" type="submit" class="color-azul-rgb sin-borde sin-fondo " >Eliminar</button> </form>
+					</td>
+					
 				</tr>
 				
 				<%

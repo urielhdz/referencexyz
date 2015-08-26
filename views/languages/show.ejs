@@ -1,30 +1,43 @@
 <% layout('application') -%>
-<div id="borde-negro">
+<div class="row">
+	<div class="col-xs-2 col-sm-2 col-md-3 contenedor-buscador text-center" style="height = 100%">
+		<form action="/search" id="buscador" style="padding-top: 5%;">
+		<input id="input-b" style="width: 100%" name="keyword" type="text" value="" placeholder="Buscar" required>
+		</form>
+		<div id="resultados">
+			<p>Propiedades</p>
+		</div>	
+	</div>
+	<div class="col-xs-10 col-sm-10 col-md-12">
+		<div  id="borde-negro">
 			<p id="html">HTML<p>
 		</div>
+		<div class="table-responsive ">
+			<table class="table table-striped" id="tabla-valores">
+				<thead>
+					<tr>
+						<th>Título</th>
+						<th>Descripción</th>
+						<th>Visitas</th>
+					</tr>
+				</thead>
+				<% for(var i=0; i<propiedades.length; i++){ 
+				  %>
+				  <%var propiedad = propiedades[i]%>
+					<tr>
+						<td><%=propiedades._id%></td>
+						<td><%=propiedades.title%></td>
+						<td><%=propiedades.description%></td>
+						<td><button type="button">Editar</button>-<button type="button">Eliminar</button></td>
+					</tr>
+					
+					<%
+					} 
+				%>
+				</table>
+			</div>
 
-		<div class="table-responsive">
-		<h1>Panel de administracion</h1>
-		<p>Productos actuales</p>
-		
-		<table class="table table-hover">
-		<tr>
-			<th>Titulo</th>
-			<th>Descripcion</th>
-			<th>Visitas</th>
-		</tr>
-		<% for(var i=0; i<propiedades.length; i++){ 
-		  %>
-		  <%var propiedad = propiedades[i]%>
-			<tr>
-				<td><%=propiedades._id%></td>
-				<td><%=propiedades.title%></td>
-				<td><%=propiedades.description%></td>
-				<td><button type="button">Editar</button>-<button type="button">Eliminar</button></td>
-			</tr>
-			
-			<%
-			} 
-		%>
-	</table>
+
+	</div>
+	
 </div>
