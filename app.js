@@ -11,7 +11,7 @@ mongoose.connect("mongodb://localhost/referencexyz");
 var models = require("./models.js"),
 	Language = models.Language,
 	Property = models.Property;
-
+var session_middleware = require("./session_middleware.js");
 // cloudinary.config({
 // 	cloud_name: "codigofacilito",
 // 	api_key: "",
@@ -31,6 +31,10 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
+app.use("/lenguajes",session_middleware.validate);
+app.use("/propiedades",session_middleware.validate);
+
+
 app.get("lenguajes/new",function(req,res){
 	res.render("languages/new");
 });
@@ -45,15 +49,30 @@ app.get("/propiedades/:id/visits",function(req,res){
 });
 app.post("/login",function(req,res){
 	console.log(req.body);
-	models.User.find({},function(error,user){
-		console.log(user);
-		if(!error && typeof user._id != "undefined"){
-			req.session.user_id = user._id;
-			res.redirect("/lenguajes");
-		}else{
-			res.send({user: user, body: req.body});
+	models.User.count({},function(err,user_count){
+		
+		if(user_count == 0){
+			var user = new models.User({email: req.body.email, password: req.body.password});
+			user.save(function(){
+				req.session.user_id = user._id;
+				res.redirect("/lenguajes");	
+			});
+			
 		}
-	})
+		else{
+			models.User.find({email: req.body.email, password: req.body.password},function(error,user){
+				console.log(user);
+				if(!error && user !== null && typeof user._id != "undefined"){
+					req.session.user_id = user._id;
+					res.redirect("/lenguajes");
+				}else{
+					res.send({user: user, body: req.body});
+				}
+			})		
+		}
+		
+	});
+	
 });
 app.get("/propiedades/new",function(req,res){
 	Language.find({},function(err,languages){

@@ -24,13 +24,14 @@ $(document).ready(function(){
 			html += "</ul>";
 			html +="</div>";
 	    $("#resultados").html(html);
-	    $("#myModal2").modal("show");
 		}else{
 			$('#resultados').html(''); // Clear #resultados div
 			    var html = "<p style='color: black; padding-top: 15px;'>No se ha encontrado la propiedad</p>";
 			    console.log("else");
 			    $("#resultados").html(html);
-			} 
-		});
-  });
+		} 
+		$("#myModal2").modal("show");	
+	});
+		
+ });
 }); 	
