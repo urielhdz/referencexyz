@@ -279,7 +279,7 @@ input:-ms-input-placeholder {
 }
 .posicion-fixed{
 	position: fixed;
-	z-index: 4000;
+	z-index: 40;
 }
 
 /* clases con tamaño de elementos*/
