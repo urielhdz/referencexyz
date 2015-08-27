@@ -47,7 +47,17 @@
 
 /*=======*/
 @media only screen and (max-width: 400px) {
-    #letra-tam{
+    #texto-azul{ 
+    	position: absolute;
+    	font-size:2em;
+    	text-align: center;
+    	padding-right: 20%; 
+    	padding-left:20%;
+    	padding-top: 15%;
+ 
+    }
+
+     #letra-tam{
     	font-size: 0.8em; 
     }
     .ancho{
@@ -55,9 +65,9 @@
 	}
 
 	.borde-blanco{
-		border-top: solid 10px white;
-		border-right: solid 10px white;
-		border-left: solid 10px white;
+		border-top: solid 1px white;
+		border-right: solid 1px white;
+		border-left: solid 1px white;
 	}    
 	
 	.boton-derecha{
@@ -67,11 +77,9 @@
 	.posicion-absoluta{
 		position: absolute;
 		margin-left: 3%;
-		margin-top: -20%;
-	}
-        
+		margin-top: -35%;
+	}                
  }
-
 @media (min-width: 401px) and (max-width: 599px) {
    .boton-derecha{
 		margin-left: 50%;
