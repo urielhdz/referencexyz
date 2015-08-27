@@ -173,6 +173,12 @@ router.route("/propiedades/:id")
 			});
 
 		})
+	})
+	.delete(function(req,res){
+		Property.remove({"_id":req.params.id},function(err){
+			if(err){ console.log(err); }
+			res.redirect("/propiedades");
+		});
 	});
 
 app.get("propiedades/:id/edit",function(req,res){
