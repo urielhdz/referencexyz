@@ -15,6 +15,36 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <%- if(typeof propiedad !== "undefined"){
+        <meta property="og:title" content="<%=propiedad.title%>" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="http://reference.xyz/propiedades/<%=propiedad._id%>" />
+        <meta property="og:image" content="http://i.ytimg.com/vi/ywnkDldgkCA/maxresdefault.jpg" />
+        <meta property="og:description" content="<%=propiedad.description%>" />
+      }
+      else{
+          <meta property="og:title" content="Reference" />
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content="http://reference.xyz/" />
+        }
+        
+      } %>
+    <%- if(typeof lenguaje !== "undefined"){
+        <meta property="og:title" content="<%=lenguaje.title%>" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="http://reference.xyz/lenguajes/<%=lenguaje._id%>" />
+        <meta property="og:image" content="http://i.ytimg.com/vi/ywnkDldgkCA/maxresdefault.jpg" />
+        <meta property="og:description" content="<%=lenguaje.description%>" />
+      }
+      else{
+          <meta property="og:title" content="Reference" />
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content="http://reference.xyz/" />
+        }
+        
+      } %>
+
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>	
 </head>
   <body>
