@@ -38,42 +38,15 @@ app.use("/propiedades",session_middleware.validate);
 app.get("lenguajes/new",function(req,res){
 	res.render("languages/new");
 });
-app.get("/login",function(req,res){
-	res.render("login");
-});
+
 app.get("/propiedades/:id/visits",function(req,res){
 	Property.findById(req.params.id,function(err,property){
 		res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(property.visits));
 	});
 });
-app.post("/login",function(req,res){
-	console.log(req.body);
-	models.User.count({},function(err,user_count){
-		
-		if(user_count == 0){
-			var user = new models.User({email: req.body.email, password: req.body.password});
-			user.save(function(){
-				req.session.user_id = user._id;
-				res.redirect("/lenguajes");	
-			});
-			
-		}
-		else{
-			models.User.find({email: req.body.email, password: req.body.password},function(error,user){
-				console.log(user);
-				if(!error && user !== null && typeof user._id != "undefined"){
-					req.session.user_id = user._id;
-					res.redirect("/lenguajes");
-				}else{
-					res.send({user: user, body: req.body});
-				}
-			})		
-		}
-		
-	});
-	
-});
+
+
 app.get("/propiedades/new",function(req,res){
 	Language.find({},function(err,languages){
 		
@@ -249,6 +222,36 @@ app.get("/",function(req,res){
 	});
 	
 });
-
+router.route("/login")
+	.get(function(req,res){
+		res.render("login");
+	})
+	.post(function(req,res){
+		models.User.count({},function(err,user_count){	
+			if(user_count == 0){
+				var user = new models.User({email: req.body.email, password: req.body.password});
+				user.save(function(){
+					req.session.user_id = user._id;
+					res.redirect("/lenguajes");	
+				});			
+			}
+			else{
+				models.User.findOne({email: req.body.email, password: req.body.password},function(error,user){
+					console.log(user);
+					if(!error && user !== null && typeof user._id != "undefined"){
+						req.session.user_id = user._id;
+						res.redirect("/lenguajes");
+					}else{
+						res.redirect("/login");
+					}
+				})		
+			}
+			
+		});
+	})
+	.delete(function(req,res){
+		req.session.user_id = null;
+		res.redirect("/");
+	});
 app.use("/",router);
 app.listen(8080);
