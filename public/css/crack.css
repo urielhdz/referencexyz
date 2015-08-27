@@ -172,6 +172,9 @@
 .fondo-blanco{
 	background-color: white; 
 }
+#fondo-blanco{
+	background: white;
+}
 
 /*Enviar//////////////////////////////////////////////////////////////////////////////////////////////////*/
 .enviar{
@@ -954,7 +957,7 @@ header nav ul li .caret {
   height: 56px;
   border-radius: 56px;
   background-color: black;
-  z-index: 100000;
+  z-index: 10;
 }
 
 .boton-red-social {
@@ -1150,6 +1153,110 @@ header nav ul li .caret {
 	color:blue;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+/*show.ejs//////////////////////////////*/
+*{
+	padding: 0%;
+	margin: 0%;
+}
+.ancho-izquierdo{
+	width: 23%;
+	position: fixed;
+	left: 0%;
+	background: white;
+}
+
+.ancho-centro{
+	width: 54%;
+	position: absolute;
+	left: 23%;
+	background: white;
+}
+
+.ancho-derecho{
+	width: 23%;
+	position: fixed;
+	left: 77%;
+}
+
+.sin-block{
+	display: inline-block;
+	margin-right: -4px;
+	vertical-align: top;
+}
+
+.margen-referenxyz{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.margen-centro{
+	padding:5px ;
+	padding-left: 80px;
+	padding-right: 50px;
+}
+
+.margen-descripcion{
+    margin-bottom: 20px;
+    margin-top: 80px;
+}
+.margen-autor{
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.margen-historia{
+	padding-left: 80px;
+	padding-top: 50px;
+	padding-right: 50px;
+	padding-bottom: 30px;
+}
+.margen-historia-descripcion{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.margen-abajo-autor{
+    padding-top: 40px;
+    padding-bottom: 45px;
+}
+
+.borde-redondo{
+	width: 65%;
+	padding-left: 50px;
+	padding-right: 10px;
+	border-radius: 50px;
+}
+.centrar-texto{
+	text-align: center;
+}
+.izquierda-texto{
+	text-align: right;
+}
+
+.tamano-letra-20{
+	font-size: 20px;
+}
+.tamano-letra-30{
+	font-size: 30px;
+}
+.tamano-letra-40{
+	font-size: 40px;
+}
+
+.sombreado{
+    box-shadow: 0 0 4px 0.2px gray;
+}
+
+.sombreado-autor{
+	box-shadow: 0 0 70px 4.9px rgb(239,240,243) inset;
+}
+=======
+=======
 
 @media (max-width:400px){
 	#contenedorB{
@@ -1162,8 +1269,13 @@ header nav ul li .caret {
 
 }
 
+>>>>>>> 3ea17e6c4821d77a3a123f7f1e73fb6ae21a669b
 #tabla-valores{
 	width: 55%;
 	position: absolute;
 	margin-left: 18%;
 }
+<<<<<<< HEAD
+>>>>>>> f41b044521edcc4de117a40a9ca98fe46687b6fb
+=======
+>>>>>>> 3ea17e6c4821d77a3a123f7f1e73fb6ae21a669b
