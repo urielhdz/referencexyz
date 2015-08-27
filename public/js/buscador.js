@@ -21,15 +21,17 @@ $(document).ready(function(){
 				html += "<a style='padding-top: 30px; color: blue; list-style:none;' href='/propiedades/"+resultado._id+"'>"+resultado.title+"</a>";
 				html += "</li>";
 			};
-		html += "</ul>";
-		html +="</div>";
+			html += "</ul>";
+			html +="</div>";
 	    $("#resultados").html(html);
 		}else{
 			$('#resultados').html(''); // Clear #resultados div
 			    var html = "<p style='color: black; padding-top: 15px;'>No se ha encontrado la propiedad</p>";
 			    console.log("else");
 			    $("#resultados").html(html);
-			} 
-		});
-  });
+		} 
+		$("#myModal2").modal("show");	
+	});
+		
+ });
 }); 	

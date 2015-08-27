@@ -21,6 +21,14 @@ property_schema.plugin(relationship,{relationshipPathName: "language"});
 
 var Property = mongoose.model("Propiedad",property_schema);
 
+var user_schema = new Schema({
+	email:String,
+	password:String
+});
+
+var User = mongoose.model("User",user_schema);
+
 module.exports.Language = Language;
 module.exports.Property = Property;
+module.exports.User = User;
 

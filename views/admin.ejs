@@ -18,6 +18,22 @@
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>	
 </head>
   <body>
+  	<nav>
+  		<ul class="nav nav-tabs">
+			  <li role="presentation"><a href="/">Home</a></li>
+			  <li role="presentation">
+			  	<a href="/propiedades">Propiedades</a>
+			  </li>
+			  <li role="presentation">
+			  	<a href="/lenguajes">Lenguajes</a>
+			  </li>
+			  <li role="presentation">
+			  	<form action="/login?_method=delete" method="POST">
+			  		<button type="submit">Cerrar sesión</button>	
+			  	</form>
+			  </li>
+			</ul>
+  	</nav>
     <%- body -%>
     <script src="/js/buscador.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
