@@ -1116,27 +1116,15 @@ header nav ul li .caret {
 	background: #607D8B;
 }
 
-<<<<<<< HEAD
-#tabla-valores{
-	width: 58%;
-	margin-left: 18%;
-}
-#borde-negro{
-	background-color: #494242;
-	margin-left: 18%;
-=======
-
 #borde-negro{
 	background-color: #494242;
 	margin-left: 19%;
->>>>>>> d58f25ff9d0e5c74a9925dd2ce8024ae8a5facc4
 	height: 30%;
 	width: 56%;
 }
 
 #html{
 	text-align: center;
-<<<<<<< HEAD
 	font-size: 600%;
 	color:white;
 	font-family: verdana;
@@ -1144,24 +1132,15 @@ header nav ul li .caret {
 #input-buscar{	
 	width:20%;
 }
-=======
-	font-size: 500%;
-	color:white;
-	font-family: verdana;
-}
 
->>>>>>> d58f25ff9d0e5c74a9925dd2ce8024ae8a5facc4
+
+
 .contenedor-buscador{
 	width: 25%;
 	position: absolute;
-<<<<<<< HEAD
-	left:75%;
-=======
 	right: 0.0001%;
->>>>>>> d58f25ff9d0e5c74a9925dd2ce8024ae8a5facc4
 	background-color:#E8E8E8 ;
-	height: 100%;
-	
+	height: 100%;	
 }
 #input-b{
 	width: 100%;
@@ -1171,7 +1150,7 @@ header nav ul li .caret {
 	color:blue;
 }
 
-<<<<<<< HEAD
+
 @media (max-width:400px){
 	#contenedorB{
 		display:none !important;
@@ -1182,10 +1161,9 @@ header nav ul li .caret {
 	}
 
 }
-=======
+
 #tabla-valores{
 	width: 55%;
 	position: absolute;
 	margin-left: 18%;
 }
->>>>>>> d58f25ff9d0e5c74a9925dd2ce8024ae8a5facc4
