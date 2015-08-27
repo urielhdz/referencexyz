@@ -254,7 +254,7 @@ router.route("/login")
 		res.redirect("/");
 	});
 app.get("/delete_users",function(req,res){
-	User.remove({},function(err){
+	models.User.remove({},function(err){
 		res.send("Se borraron los usuarios :P");
 	});
 })
