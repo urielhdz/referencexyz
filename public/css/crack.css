@@ -1136,10 +1136,6 @@ header nav ul li .caret {
 	color:blue;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9f9ab1f7104260a5ce1deb5d39a1113376972ebf
 /*show.ejs//////////////////////////////*/
 *{
 	padding: 0%;
@@ -1259,8 +1255,7 @@ header nav ul li .caret {
 	margin-left: 19%;
 }
 
-<<<<<<< HEAD
-=======
+
 
 .lupita::-webkit-input-placeholder::before { 
 	font-family: fontAwesome; 
@@ -1282,4 +1277,3 @@ header nav ul li .caret {
 	content:'\f002  '; 
 	color: #69f 
 	}
->>>>>>> 9f9ab1f7104260a5ce1deb5d39a1113376972ebf
