@@ -14,9 +14,9 @@ $(document).ready(function(){
 			console.log(resultados);
 			$('#resultados').html(''); // Clear #resultados div
 			var html = " <div>";
-			html += "<ul>";
+			html += "<ul style='padding-left: 20px; padding-top: 20px'>";
 			for (var i = resultados.length - 1; i >= 0; i--) {
-				html += "<li>";
+				html += "<li >";
 				var resultado = resultados[i];
 				html += "<a style='padding-top: 30px; color: blue; list-style:none;' href='/propiedades/"+resultado._id+"'>"+resultado.title+"</a>";
 				html += "</li>";

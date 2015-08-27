@@ -1,12 +1,20 @@
 <% layout('application') -%>
 <div class="row">
+<<<<<<< HEAD
 	<div id="contenedorB" class="col-md-2 contenedor-buscador text-center" style="height = 100%">
 		<form action="/search" id="buscador" style="padding-top: 5%;">
 		<input id="input-b"  name="keyword" type="text" value="" placeholder="Buscar" required>
+=======
+	<div class="col-xs-2 col-sm-2 col-md-3 contenedor-buscador" style="height = 100%">
+		<form action="/search" id="buscador" style="padding-top: 5%;" class="text-center">
+		<input id="input-b" style="width: 100%" name="keyword" type="text" value="" placeholder="Buscar" required>
+>>>>>>> d58f25ff9d0e5c74a9925dd2ce8024ae8a5facc4
 		</form>
 		<div id="resultados">
+			<p>Propiedades</p>
 		</div>	
 	</div>
+<<<<<<< HEAD
 </div>
 		<div id="borde-negro">
 			<p id="html">HTML</p>
@@ -37,3 +45,38 @@
 		%>
 	</table>
 </div>
+=======
+	<div >
+		<div  id="borde-negro">
+			<p id="html">HTML<p>
+		</div>
+		<div class="table-responsive ">
+			<table class="table table-striped" id="tabla-valores">
+				<thead>
+					<tr>
+						<th>Título</th>
+						<th>Descripción</th>
+						<th>Visitas</th>
+					</tr>
+				</thead>
+				<% for(var i=0; i<propiedades.length; i++){ 
+				  %>
+				  <%var propiedad = propiedades[i]%>
+					<tr>
+						<td><%=propiedades._id%></td>
+						<td><%=propiedades.title%></td>
+						<td><%=propiedades.description%></td>
+						<td><button type="button">Editar</button>-<button type="button">Eliminar</button></td>
+					</tr>
+					
+					<%
+					} 
+				%>
+				</table>
+			</div>
+
+
+	</div>
+	
+</div>
+>>>>>>> d58f25ff9d0e5c74a9925dd2ce8024ae8a5facc4

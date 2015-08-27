@@ -65,19 +65,41 @@
 				<p class = "color-rojo letra-titulo">REFERENCE.XYZ</p>
 				<p class = "letra-subtitulo color-rojo">Porque la sintasix es lo de menos, construimos un buscador</p>
 			</div>
-			<form action='https://codigofacilito.com/' method='get' class="misma-linea">
+			<form action="/search" id="buscador" class="misma-linea">
 				<div class="col-md-3 col-sm-2"></div>
 				<div class="col-md-6 col-sm-5 col-xs-8">
-					<input type="search" name="busqueda" placeholder="Busca una etiqueta o una propiedad" required="" maxlength="25" class = "ancho-input">
+					<input id="input-b" name="keyword" type="text" value="" placeholder="Busca una etiqueta o una propiedad" required="" maxlength="25" class = "ancho-input">
 				</div>	
 				<div class="col-md-1 col-sm-3 col-xs-4"> 
-					<button type="submit" class="sin-fondo sin-bordes sin-padding">
+					<button type="submit" class="sin-fondo sin-bordes sin-padding " data-toggle="modal" data-target="#myModal2">
 						<i class="fa fa-paper-plane enviar enviar-raton " style="font-size: 20px"></i>
+					</div>	
+					<div class ="col-md-2 col-sm-2"></div>
 					</button>
-				</div>	
-				<div class ="col-md-2 col-sm-2"></div>
 			</form>
+		
+			 <!-- Modal -->
+			  <div class="modal fade" id="myModal2" role="dialog">
+			    <div class="modal-dialog modal-lg">
+			    
+			      <!-- Modal content-->
+			      <div class="modal-content">
+			        <div class="modal-header " style="background-color: black">
+			          <button id = "cerrar"  type="button" class="close" data-dismiss="modal">&times;</button>
+			          <div style="display: inline -4px;">
+			          <h4 class="modal-title  letra-roboto centrar-texto" style="color: rgb(0,153,0); font-size: 25px display: inline;">RESULTADOS DE LA BÚSQUEDA</h4></div>
+			          <div   class="centrar-texto">
+			          <img src="./imgs/coco.jpg" height='75' style="border-radius:50%;" class="centrar-texto"></a></li></div>
+			        </div>
+			        <div class="modal-body letra-ruluko" style="font-size: 20px; padding-left: 10%;" id= "resultados" >
+			        </div>
+
+			      </div>
+			      
+			    </div>
+			  </div>
 		</div>
+		<div class = "row col-md-3 col-sm-2 col-xs-4"style="margin-left: 20%; padding: 3%;"></div>
  	</section>
 		
 	
@@ -101,7 +123,7 @@
 						<p class = "linea-negra">Empezar no tiene que ser un dolor de cabeza, esta plataforma es una guía de referencia para quienes quieren están desarrollando en los distintos lenguajes que aquí documentos.</p>
 					</div>
 					<div class="boton-derecha boton-padding-abajo">					  
-					  <button type="button" class="color-azul sin-borde fondo-blanco boton-letra-tam" data-toggle="modal" data-target="#myModal">+ Saber más</button>					 
+					  <button type="button" class="color-azul-rgb sin-borde fondo-blanco boton-letra-tam" data-toggle="modal" data-target="#myModal">+ Saber más</button>					 
 					  <div class="modal fade" id="myModal" role="dialog">
 					    <div class="modal-dialog modal-lg">
 					    
@@ -147,7 +169,7 @@
 								<div style="background-image: url(<%= articulos.image%>);background-position:center;" class="fondo tipo-letra centrar-texto color-blanco article-height-cover"></div>
 									<div class="bordes-abajo-imagen borde-texto">
 										<h2 class="letra-tam" style="height:30px"><%=articulos.title%></h2>
-										<a href = "<%=articulos.url%>" class="borde-texto color-azul">Leer más</a>
+										<a href = "<%=articulos.url%>" class="borde-texto color-azul-rgb">Leer más</a>
 									</div>	
 							</div>
 						</div>
@@ -260,8 +282,8 @@
               <div class="cuadricula-info" style="padding-top: 15%">
                 <h1 class="texto-blanco letra-nunito tamano-letra-avatar">Javier</h1>
                 <div style="padding-top: 3%">
-                   <a href="https://twitter.com/Harossone" class="texto-blanco"><i class="fa fa-twitter fa-2x color-twitter"></i></a>
-                  <a href="https://github.com/Haross" class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
+                   <a href="https://twitter.com/Harossone" target="_blank" class="texto-blanco"><i class="fa fa-twitter fa-2x color-twitter"></i></a>
+                  <a href="https://github.com/Haross" target="_blank" class="texto-blanco"><i class="fa fa-github fa-2x color-github"></i></a>
                 </div>
               </div>
             </div>
