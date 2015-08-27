@@ -1,4 +1,12 @@
 <% layout('application') -%>
+<head>
+	<!-- Open Graph data -->
+	<meta property="og:title" content="Codigo Facilito" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="http://codigofacilito.com/" />
+	<meta property="og:image" content="http://i.ytimg.com/vi/ywnkDldgkCA/maxresdefault.jpg" />
+	<meta property="og:description" content="Texto de ejemplo, ojala funcionara" />
+</head>
 <section>
 		<div class="boton-compartir text-center" >
 			<i class="fa fa-share-alt fa-2x texto-blanco"></i>
@@ -48,7 +56,7 @@
 		</header>
 		<div id='ver'>
     <header id="cabecera" class="cabecera-principal">
-      <button type="button" class="close">x</button>
+      <button type="button" class="close" id="close_header">x</button>
       <p id="texto-imagen">
       Un proyecto de 
       <a target="_blank" href="https://codigofacilito.com/"> 
@@ -71,7 +79,7 @@
 					<input id="input-b" name="keyword" type="text" value="" placeholder="Busca una etiqueta o una propiedad" required="" maxlength="25" class = "ancho-input">
 				</div>	
 				<div class="col-md-1 col-sm-3 col-xs-4"> 
-					<button type="submit" class="sin-fondo sin-bordes sin-padding " data-toggle="modal" data-target="#myModal2">
+					<button type="submit" class="sin-fondo sin-bordes sin-padding ">
 						<i class="fa fa-paper-plane enviar enviar-raton " style="font-size: 20px"></i>
 					</div>	
 					<div class ="col-md-2 col-sm-2"></div>
@@ -120,7 +128,7 @@
 			<section class = "ancho fondo-blanco posicion-absoluta" style="z-index:1">
 				<div id = "letra-tam" class = "fondo-blanco borde-blanco text-center">
 					<div>
-						<p class = "linea-negra">Empezar no tiene que ser un dolor de cabeza, esta plataforma es una guía de referencia para quienes quieren están desarrollando en los distintos lenguajes que aquí documentos.</p>
+						<p class = "linea-negra">Empezar no tiene que ser un dolor de cabeza, esta plataforma es una guía de referencia para quienes están desarrollando en los distintos lenguajes que aquí documentos.</p>
 					</div>
 					<div class="boton-derecha boton-padding-abajo">					  
 					  <button type="button"  class="color-azul-rgb sin-borde fondo-blanco boton-letra-tam" data-toggle="modal" data-target="#myModal">+ Saber más</button>					
@@ -152,7 +160,10 @@
 					<div>
 						<img class="img-responsive posicion-imagen-book tam-imagen-libro" src="imgs/book.png" alt="noFound">
 						<div id="texto-azul" style="width:100%;">
-							<p style="color:white">Tenemos registradas <%=total_propiedades%> propiedades</p>
+							<p style="color:white">Tenemos registradas <%=total_propiedades%> 
+							<a href="/propiedades" class="color-blanco">propiedades</a>
+							
+							</p>
 						</div>
 					</div>
 		
@@ -323,17 +334,14 @@
 	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 	</footer>
 	</section>
- 
-	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script>
 		$(document).ready(function(){
+			
 			$('#myModal').on('hidden.bs.modal', function (e) {
+				console.log(":/");
 				document.getElementById('myVideo').pause();
-			           
 			});
-	    $("button").click(function(){
+	    $("#close_header").click(function(){
 	    	$("button").off("click");
         $("#ver").fadeToggle(1000);
         $("#logo-codigo").fadeIn(5000);
