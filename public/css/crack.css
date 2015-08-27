@@ -1132,6 +1132,10 @@ header nav ul li .caret {
 	color:blue;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9f9ab1f7104260a5ce1deb5d39a1113376972ebf
 /*show.ejs//////////////////////////////*/
 *{
 	padding: 0%;
@@ -1251,3 +1255,27 @@ header nav ul li .caret {
 	margin-left: 19%;
 }
 
+<<<<<<< HEAD
+=======
+
+.lupita::-webkit-input-placeholder::before { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	}
+.lupita::-moz-placeholder::before  { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	} /* firefox 19+ */
+.lupita::-ms-input-placeholder::before  { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	} /* ie */
+.lupita::-moz-placeholder::before  { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	}
+>>>>>>> 9f9ab1f7104260a5ce1deb5d39a1113376972ebf
