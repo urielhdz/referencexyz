@@ -6,11 +6,12 @@ var method_override = require("method-override");
 var ejs_layout_engine = require("ejs-mate")
 var mongoose = require("mongoose");
 var http = require("http");
-mongoose.connect("mongodb://localhost/referencexyz_test");
+var session = require("express-session");
+mongoose.connect("mongodb://localhost/referencexyz");
 var models = require("./models.js"),
 	Language = models.Language,
 	Property = models.Property;
-
+var session_middleware = require("./session_middleware.js");
 // cloudinary.config({
 // 	cloud_name: "codigofacilito",
 // 	api_key: "",
@@ -20,25 +21,32 @@ var app = express();
 
 app.engine("ejs",ejs_layout_engine);
 app.use(express.static('public'));
+app.use(session({
+	secret: "asd123bhaub12hajbs",
+	resave: false,
+	saveUninitialized: false
+}));
+app.use(method_override("_method"));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
+app.use("/lenguajes",session_middleware.validate);
+app.use("/propiedades",session_middleware.validate);
+
+
 app.get("lenguajes/new",function(req,res){
 	res.render("languages/new");
 });
-app.get("/login",function(req,res){
-	res.render("login");
-});
+
 app.get("/propiedades/:id/visits",function(req,res){
 	Property.findById(req.params.id,function(err,property){
 		res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(property.visits));
 	});
 });
-app.post("/login",function(){
-	//TO DO
-});
+
+
 app.get("/propiedades/new",function(req,res){
 	Language.find({},function(err,languages){
 		
@@ -48,7 +56,7 @@ app.get("/propiedades/new",function(req,res){
 
 app.get("/search",function(req,res){
 	console.log("\n\n\n\n"+req.query.keyword+"\n\n\n\n");
-	Language.find({title: new RegExp(req.query.keyword,"i")},function(err,docs){
+	Property.find({title: new RegExp(req.query.keyword,"i")},function(err,docs){
 		if(err){console.log(err);}
 		res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(docs));
@@ -214,6 +222,36 @@ app.get("/",function(req,res){
 	});
 	
 });
-
+router.route("/login")
+	.get(function(req,res){
+		res.render("login");
+	})
+	.post(function(req,res){
+		models.User.count({},function(err,user_count){	
+			if(user_count == 0){
+				var user = new models.User({email: req.body.email, password: req.body.password});
+				user.save(function(){
+					req.session.user_id = user._id;
+					res.redirect("/lenguajes");	
+				});			
+			}
+			else{
+				models.User.findOne({email: req.body.email, password: req.body.password},function(error,user){
+					console.log(user);
+					if(!error && user !== null && typeof user._id != "undefined"){
+						req.session.user_id = user._id;
+						res.redirect("/lenguajes");
+					}else{
+						res.redirect("/login");
+					}
+				})		
+			}
+			
+		});
+	})
+	.delete(function(req,res){
+		req.session.user_id = null;
+		res.redirect("/");
+	});
 app.use("/",router);
 app.listen(8080);
