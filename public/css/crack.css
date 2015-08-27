@@ -1239,8 +1239,7 @@ header nav ul li .caret {
 .sombreado-autor{
 	box-shadow: 0 0 70px 4.9px rgb(239,240,243) inset;
 }
-=======
-=======
+
 
 @media (max-width:400px){
 	#contenedorB{
@@ -1253,13 +1252,30 @@ header nav ul li .caret {
 
 }
 
->>>>>>> 3ea17e6c4821d77a3a123f7f1e73fb6ae21a669b
 #tabla-valores{
 	width: 55%;
 	position: absolute;
 	margin-left: 19%;
 }
-<<<<<<< HEAD
->>>>>>> f41b044521edcc4de117a40a9ca98fe46687b6fb
-=======
->>>>>>> 3ea17e6c4821d77a3a123f7f1e73fb6ae21a669b
+
+
+.lupita::-webkit-input-placeholder::before { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	}
+.lupita::-moz-placeholder::before  { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	} /* firefox 19+ */
+.lupita::-ms-input-placeholder::before  { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	} /* ie */
+.lupita::-moz-placeholder::before  { 
+	font-family: fontAwesome; 
+	content:'\f002  '; 
+	color: #69f 
+	}
