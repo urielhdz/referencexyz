@@ -1120,17 +1120,12 @@ header nav ul li .caret {
 	color:white;
 	font-family: verdana;
 }
-#input-buscar{	
-	width:20%;
-}
-
-
 
 .contenedor-buscador{
 	width: 25%;
 	position: absolute;
 	right: 0.0001%;
-	background-color:#E8E8E8 ;
+	background-color: rgb(239,240,243) ;
 	height: 100%;	
 }
 #input-b{
@@ -1141,7 +1136,10 @@ header nav ul li .caret {
 	color:blue;
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9f9ab1f7104260a5ce1deb5d39a1113376972ebf
 /*show.ejs//////////////////////////////*/
 *{
 	padding: 0%;
