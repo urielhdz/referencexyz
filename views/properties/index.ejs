@@ -1,20 +1,17 @@
 <% layout('admin') -%>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
+
 <div class="table-responsive">
 		<h1>Panel de administracion</h1>
 		<p>Productos actuales</p>
 		
 		<table class="table table-hover">
-		<thead>
-			<th>#</th>
-			<th>Nombre</th>
-			<th>Descripcion</th>
-			<th>Acciones</th>
+		<thead>	
+			<tr>
+				<th>#</th>
+				<th>Nombre</th>
+				<th>Descripcion</th>
+				<th>Acciones</th>
+			</tr>
 		</thead>
 			<% for(var i=0; i<propiedades.length; i++){ 
 			  %>
@@ -23,12 +20,11 @@
 					<td><%=propiedad._id%></td>
 					<td><%=propiedad.title%></td>
 					<td><%=propiedad.description%></td>
-					
-					<form method="post" action="/properties/<%=propiedad._id%>?_method=delete">
-						<td><button type="button" class="btn btn-link">Mostrar</button></td>
-						<td><button type="button" class="btn btn-link">Editar</button></td>
-						<td><button onclick="return confirm('¿Desea Eliminar el elemento?:\n' +  form.action)" type="submit" class="btn btn-link " >Eliminar</button></td>
-					</form>
+					<td>
+						<form method="get" action="/propiedades/<%=propiedad._id%>"><button onclick="form.action" type="submit" class="color-azul-rgb sin-borde sin-fondo">Mostrar</button>
+						</form>
+						<form method="post" action="/propiedades/<%=propiedad._id%>?_method=delete" ><button onclick="return confirm('¿Desea Eliminar el elemento?:\n' +  form.action)" type="submit" class="color-azul-rgb sin-borde sin-fondo " >Eliminar</button> </form>
+					</td>
 					
 				</tr>
 				

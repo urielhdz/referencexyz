@@ -41,12 +41,39 @@
           <meta property="og:url" content="http://reference.xyz/" />        
       <% } %>
 
+    <% if (typeof propiedad !== "undefined"){ %>
+      <meta name="twitter:card" content="<%=summary%>" />
+      <meta name="twitter:type" content="article">
+      <meta name="twitter:site:id" content="twitter.id" />
+      <meta name="twitter:url" content="http://referece.xyz/propiedad/<%=propiedad._id%>" />
+      <meta name="twitter:title" content="<%=propiedad.title%>" />
+      <meta name="twitter:description" content="<%=propiedad.description%>"/>
+    <% } else { %>
+      <meta name="twitter:title" content="Reference"/>
+      <meta name="twitter:type" content="article"/>
+      <meta name="twitter:url" content="http://referece.xyz/"/>
+  <% } %>
+  <% if (typeof lenguaje !== "undefined"){ %>
+      <meta name="twitter:card" content="<%=summary%>" />
+      <meta name="twitter:type" content="article">
+      <meta name="twitter:site:id" content="twitter.id" />
+      <meta name="twitter:url" content="http://referece.xyz/lenguajes/<%=propiedad._id%>"/>
+      <meta name="twitter:title" content="<%=lenguaje.title%>"/>
+      <meta name="twitter:description" content="<%=lenguaje.description%>"/>
+    <% } else { %>
+      <meta name="twitter:title" content="Reference"/>
+      <meta name="twitter:type" content="article"/>
+      <meta name="twitter:url" content="http://referece.xyz/"/>
+  <% } %>
+  
+
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>	
 </head>
   <body>
     <%- body -%>
     <script src="/js/buscador.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="/js/main.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="/js/main.js"></script>
+		
   </body>
 </html>
