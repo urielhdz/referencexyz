@@ -6,7 +6,8 @@ var method_override = require("method-override");
 var ejs_layout_engine = require("ejs-mate")
 var mongoose = require("mongoose");
 var http = require("http");
-mongoose.connect("mongodb://localhost/referencexyz_test");
+var session = require("express-session");
+mongoose.connect("mongodb://localhost/referencexyz");
 var models = require("./models.js"),
 	Language = models.Language,
 	Property = models.Property;
@@ -20,6 +21,12 @@ var app = express();
 
 app.engine("ejs",ejs_layout_engine);
 app.use(express.static('public'));
+app.use(session({
+	secret: "asd123bhaub12hajbs",
+	resave: false,
+	saveUninitialized: false
+}));
+app.use(method_override("_method"));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
@@ -36,8 +43,17 @@ app.get("/propiedades/:id/visits",function(req,res){
     res.send(JSON.stringify(property.visits));
 	});
 });
-app.post("/login",function(){
-	//TO DO
+app.post("/login",function(req,res){
+	console.log(req.body);
+	models.User.find({},function(error,user){
+		console.log(user);
+		if(!error && typeof user._id != "undefined"){
+			req.session.user_id = user._id;
+			res.redirect("/lenguajes");
+		}else{
+			res.send({user: user, body: req.body});
+		}
+	})
 });
 app.get("/propiedades/new",function(req,res){
 	Language.find({},function(err,languages){
@@ -48,7 +64,7 @@ app.get("/propiedades/new",function(req,res){
 
 app.get("/search",function(req,res){
 	console.log("\n\n\n\n"+req.query.keyword+"\n\n\n\n");
-	Language.find({title: new RegExp(req.query.keyword,"i")},function(err,docs){
+	Property.find({title: new RegExp(req.query.keyword,"i")},function(err,docs){
 		if(err){console.log(err);}
 		res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(docs));
