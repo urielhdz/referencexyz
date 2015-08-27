@@ -64,7 +64,7 @@ app.get("/propiedades/new",function(req,res){
 
 app.get("/search",function(req,res){
 	console.log("\n\n\n\n"+req.query.keyword+"\n\n\n\n");
-	Language.find({title: new RegExp(req.query.keyword,"i")},function(err,docs){
+	Property.find({title: new RegExp(req.query.keyword,"i")},function(err,docs){
 		if(err){console.log(err);}
 		res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(docs));
