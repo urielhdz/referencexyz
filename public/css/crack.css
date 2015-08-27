@@ -1119,7 +1119,6 @@ header nav ul li .caret {
 	background: #607D8B;
 }
 
-
 #borde-negro{
 	background-color: #494242;
 	margin-left: 19%;
@@ -1129,23 +1128,32 @@ header nav ul li .caret {
 
 #html{
 	text-align: center;
-	font-size: 500%;
+	font-size: 600%;
 	color:white;
 	font-family: verdana;
 }
+#input-buscar{	
+	width:20%;
+}
+
+
 
 .contenedor-buscador{
+	width: 25%;
 	position: absolute;
 	right: 0.0001%;
 	background-color:#E8E8E8 ;
-	height: 100%;
-	
+	height: 100%;	
+}
+#input-b{
+	width: 100%;
 }
 
-th{
+.etiquetas-azules{
 	color:blue;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /*show.ejs//////////////////////////////*/
 *{
@@ -1248,9 +1256,26 @@ th{
 	box-shadow: 0 0 70px 4.9px rgb(239,240,243) inset;
 }
 =======
+=======
+
+@media (max-width:400px){
+	#contenedorB{
+		display:none !important;
+	}
+	#html{
+	text-align: center;
+	font-size: 400%;
+	}
+
+}
+
+>>>>>>> 3ea17e6c4821d77a3a123f7f1e73fb6ae21a669b
 #tabla-valores{
 	width: 55%;
 	position: absolute;
 	margin-left: 18%;
 }
+<<<<<<< HEAD
 >>>>>>> f41b044521edcc4de117a40a9ca98fe46687b6fb
+=======
+>>>>>>> 3ea17e6c4821d77a3a123f7f1e73fb6ae21a669b
