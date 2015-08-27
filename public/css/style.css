@@ -50,17 +50,7 @@
 
 
 /* medias queries*/
-@media only screen and (max-width: 400px) {
-    #texto-azul{ 
-    	position: absolute;
-    	font-size:2em;
-    	text-align: center;
-    	padding-right: 20%; 
-    	padding-left:20%;
-    	padding-top: 15%;
- 
-    }                 
- }
+
 @media only screen and (min-width: 600px) {
     #texto-azul{ font-size:400%;
     	position:absolute;
