@@ -1122,9 +1122,8 @@ header nav ul li .caret {
 }
 
 .contenedor-buscador{
-	width: 25%;
+	width: 100%;
 	position: absolute;
-	right: 0.0001%;
 	background-color: rgb(239,240,243) ;
 	height: 100%;	
 }
@@ -1140,6 +1139,10 @@ header nav ul li .caret {
 *{
 	padding: 0%;
 	margin: 0%;
+}
+
+.odometer {
+    font-size: 13px;
 }
 .ancho-izquierdo{
 	width: 23%;
@@ -1158,7 +1161,7 @@ header nav ul li .caret {
 .ancho-derecho{
 	width: 23%;
 	position: fixed;
-	left: 77%;
+	left: 78.5%;
 }
 
 .sin-block{
@@ -1171,13 +1174,11 @@ header nav ul li .caret {
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
-
 .margen-centro{
 	padding:5px ;
 	padding-left: 80px;
 	padding-right: 50px;
 }
-
 .margen-descripcion{
     margin-bottom: 20px;
     margin-top: 80px;
@@ -1189,6 +1190,9 @@ header nav ul li .caret {
     padding-left: 5px;
     margin-top: 0;
     margin-bottom: 0;
+}
+.margen-menu-abajo{
+	padding: 15px;
 }
 .margen-historia{
 	padding-left: 80px;
