@@ -1,6 +1,6 @@
 <% layout('application') -%>
 <div class="row">
-	<div class="col-md-2 contenedor-buscador text-center" style="height = 100%">
+	<div id="contenedorB" class="col-md-2 contenedor-buscador text-center" style="height = 100%">
 		<form action="/search" id="buscador" style="padding-top: 5%;">
 		<input id="input-b"  name="keyword" type="text" value="" placeholder="Buscar" required>
 		</form>
@@ -9,7 +9,7 @@
 	</div>
 </div>
 		<div id="borde-negro">
-			<p id="html">HTML<p>
+			<p id="html">HTML</p>
 		</div>
 <div class="table-responsive">
 		
@@ -17,9 +17,9 @@
 		<table class="table table-striped table-condensed" id="tabla-valores">
 		<thead>
 		<tr>
-			<th>Título</th>
-			<th>Descripción</th>
-			<th>Visitas</th>
+			<th class="etiquetas-azules">Título</th>
+			<th class="etiquetas-azules">Descripción</th>
+			<th class="etiquetas-azules">Visitas</th>
 		</tr>
 		</thead>
 		<% for(var i=0; i<propiedades.length; i++){ 
