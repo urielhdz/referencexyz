@@ -74,8 +74,12 @@
 	$(document).ready(function(){
 		var $elements = $("pre > code");
 		var data = $elements.html()
-		new_data = data.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
-		$elements.html(new_data);
+		if(data){
+			new_data = data.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");	
+			$elements.html(new_data);
+		}
+		
+		
   	for (var i = $elements.length - 1; i >= 0; i--) {
   		var el = $elements[i];
   		var lang = $(el).attr("class").split("-")[1];
