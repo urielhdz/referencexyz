@@ -278,11 +278,7 @@ router.route("/login")
 		req.session.user_id = null;
 		res.redirect("/");
 	});
-app.get("/delete_users",function(req,res){
-	models.User.remove({},function(err){
-		res.send("Se borraron los usuarios :P");
-	});
-})
+
 
 app.use("/",router);
 
