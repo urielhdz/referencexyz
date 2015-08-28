@@ -168,8 +168,8 @@ router.route("/propiedades")
 router.route("/propiedades/:id")
 	.get(function(req,res){
 		
-		Property.findById(req.params.id,function(err,propiedad){
-			if(err){console.log(err);}
+		Property.findOne({$or:[{"_id":req.params.id},{"slug":req.params.id}]},function(err,propiedad){
+			if(err || propiedad == null){console.log(err);redirect("/");}
 			Language.findById(propiedad.language,function(err,language){
 				propiedad.visits +=1;
 				propiedad.save();
@@ -198,15 +198,6 @@ router.route("/propiedades/:id")
 			propiedad.slug = req.body.slug;
 			propiedad.save();
 			res.redirect("/propiedades/"+propiedad._id);
-			/*propiedad.title = req.body.nombre;
-			propiedad.description = req.body.descripcion;
-			propiedad.language = req.body.language;
-			propiedad.markdown = req.body.markdown;
-			propiedad.slug = req.body.slug;
-
-			propiedad.save(function(){
-				res.redirect("/propiedades/"+propiedad._id);
-			});*/
 
 		})
 	})
