@@ -1141,18 +1141,12 @@ header nav ul li .caret {
 	background: #607D8B;
 }
 
-#borde-negro{
+.fondo-cafe{
 	background-color: #494242;
-
-	height: 20%;
-	width: 110%;
 }
 
 #html{
-	text-align: center;
 	font-size: 600%;
-	color:white;
-	font-family: verdana;
 }
 #input-buscar{	
 	width:20%;
@@ -1291,7 +1285,6 @@ header nav ul li .caret {
 
 #tabla-valores{
 	width: 100%;
-	position: absolute;
 	
 }
 
