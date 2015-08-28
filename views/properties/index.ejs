@@ -10,6 +10,7 @@
 				<th>#</th>
 				<th>Nombre</th>
 				<th>Descripcion</th>
+				<th>URL</th>
 				<th>Lenguaje</th>
 				<th>Acciones</th>
 			</tr>
@@ -21,6 +22,7 @@
 					<td><%=propiedad._id%></td>
 					<td><%=propiedad.title%></td>
 					<td><%=propiedad.description%></td>
+					<td><%=propiedad.custom_url %></td>
 					<td><%=propiedad.language%></td>
 					<td>
 						<form method="get" action="/propiedades/<%=propiedad._id%>"><button onclick="form.action" type="submit" class="color-azul-rgb sin-borde sin-fondo">Mostrar</button>
