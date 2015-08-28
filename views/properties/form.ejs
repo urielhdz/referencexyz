@@ -11,7 +11,7 @@
 			<label for="descripcion">Descripción</label>
 			<div id="epic_editor" style="height:400px;"></div>
 			<textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" style="display:none;"><%= property.description %>"</textarea>
-			<textarea class="form-control" id="markdown" name="markdown" placeholder="Descripción" style="display:none;"><%= property.markdown %>"</textarea>
+			<textarea class="form-control" id="markdown" name="markdown" placeholder="Descripción" style="display:none;"><% if(typeof property.markdown === "undefined" || property.markdown.length < 1){ %><%- property.description %><%}else{%><%- property.markdown %><%}%></textarea>
 		</div>
 
 		<div class="form-group">
@@ -40,7 +40,7 @@
 	$(document).ready(function(){
 		var editor = new EpicEditor({
 			container: "epic_editor",
-			clientSideStorage: true,
+			clientSideStorage: false,
 			theme:{
 				base: "../../../themes/base/epiceditor.css",
 				preview: "../../../themes/preview/github.css",

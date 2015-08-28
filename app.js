@@ -60,13 +60,19 @@ app.get("/propiedades/:id/visits",function(req,res){
 
 app.get("/propiedades/new",function(req,res){
 	Language.find({},function(err,languages){
-		
 		res.render("properties/form",{languages: languages,property: new Property()});	
 	});			
 });
 
+app.get("/propiedades_edit/:id",function(req,res){
+	Property.findById(req.params.id,function(err,propiedad){
+		Language.find({},function(err,languages){
+			res.render("properties/form",{property: propiedad,languages: languages});
+		});					
+	});	
+});
+
 app.get("/search",function(req,res){
-	console.log("\n\n\n\n"+req.query.keyword+"\n\n\n\n");
 	Property.find({title: new RegExp(req.query.keyword,"i")},function(err,docs){
 		if(err){console.log(err);}
 		res.setHeader('Content-Type', 'application/json');
@@ -106,7 +112,6 @@ router.route("/lenguajes/:id")
 
 			Language.findById(req.params.id,function(err,language){
 				Property.find({language: language._id},function(err,propiedades){
-					console.log("\n\n\n\n"+propiedades+"\n\n\n\n");
 					res.render("languages/show",{language: language, propiedades: propiedades});
 				});
 			});
@@ -186,6 +191,8 @@ router.route("/propiedades/:id")
 		Property.findById(req.params.id,function(err,propiedad){
 			propiedad.title = req.body.nombre;
 			propiedad.description = req.body.descripcion;
+			propiedad.language = req.body.language;
+			propiedad.markdown = req.body.markdown;
 
 			propiedad.save(function(){
 				res.redirect("/propiedades/"+propiedad._id);
@@ -200,11 +207,7 @@ router.route("/propiedades/:id")
 		});
 	});
 
-app.get("propiedades/:id/edit",function(req,res){
-	Property.findById(req.params.id,function(err,propiedad){
-		res.render("propiedades/edit",{propiedad: propiedad});
-	});	
-});
+
 
 app.get("/",function(req,res){
 	Property.count({},function(err,total_propiedades){
@@ -262,7 +265,7 @@ router.route("/login")
 			}
 			else{
 				models.User.findOne({email: req.body.email, password: req.body.password},function(error,user){
-					console.log(user);
+					
 					if(!error && user !== null && typeof user._id != "undefined"){
 						req.session.user_id = user._id;
 						res.redirect("/lenguajes");

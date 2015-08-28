@@ -24,6 +24,7 @@
 					<td><%=propiedad.language%></td>
 					<td>
 						<form method="get" action="/propiedades/<%=propiedad._id%>"><button onclick="form.action" type="submit" class="color-azul-rgb sin-borde sin-fondo">Mostrar</button>
+						<a href="/propiedades_edit/<%= propiedad._id %>">Editar</a>
 						</form>
 						<form method="post" action="/propiedades/<%=propiedad._id%>?_method=delete" ><button onclick="return confirm('¿Desea Eliminar el elemento?:\n' +  form.action)" type="submit" class="color-azul-rgb sin-borde sin-fondo " >Eliminar</button> </form>
 					</td>
