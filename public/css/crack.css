@@ -262,9 +262,6 @@ input:-ms-input-placeholder {
 		font-size: 2.5em;
 	}	
 }
-@media only screen and (min-device-width : 900px){
-	.altura-completa{height: auto;}
-}
 /*clases que contienen background */
 .fondo-azul{
 	background: rgb(22, 113, 158);
@@ -1146,9 +1143,9 @@ header nav ul li .caret {
 
 #borde-negro{
 	background-color: #494242;
-	margin-left: 19%;
-	height: 30%;
-	width: 56%;
+
+	height: 20%;
+	width: 110%;
 }
 
 #html{
@@ -1160,10 +1157,13 @@ header nav ul li .caret {
 #input-buscar{	
 	width:20%;
 }
-
+.contenedorB{
+	margin-left: 3%;
+}
 
 
 .contenedor-buscador{
+	position: absolute;
 	width: 90%;
 	margin-left: 3%;
 }
@@ -1214,8 +1214,8 @@ header nav ul li .caret {
 }
 .margen-centro{
 	padding:5px ;
-	padding-left: 80px;
-	padding-right: 50px;
+	padding-left: 15px;
+	padding-right: 20px;
 }
 .margen-descripcion{
     margin-bottom: 20px;
@@ -1278,13 +1278,9 @@ header nav ul li .caret {
 .sombreado-autor{
 	box-shadow: 0 0 70px 4.9px rgb(239,240,243) inset;
 }
-=======
-=======
 
 @media (max-width:400px){
-	#contenedorB{
-		display:none !important;
-	}
+	
 	#html{
 	text-align: center;
 	font-size: 400%;
@@ -1294,9 +1290,9 @@ header nav ul li .caret {
 
 
 #tabla-valores{
-	width: 55%;
+	width: 100%;
 	position: absolute;
-	margin-left: 19%;
+	
 }
 
 .lupita::-webkit-input-placeholder::before { 
