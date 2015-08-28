@@ -1,7 +1,8 @@
 <% layout('application') -%>
 <div class="margen-sup50 col-md-8 col-xs-11 col-sm-10 center-block" style="float:none !important;">
 	<h1>Agregar propiedad</h1>
-	<form action="/propiedades" method="POST" id="properties_fomr">
+	<% action = (typeof property._id === "undefined") ? "/propiedades" : "/propiedades/"+property._id+"?_method=PUT" %>
+	<form action="<%= action %>" method="POST" id="properties_fomr">
 		<div class="form-group">
 			<label for="nombre">Título</label>
 			<input type="text" required id="nombre" name="nombre" class="form-control" placeholder="Título" value="<%= property.title %>">	

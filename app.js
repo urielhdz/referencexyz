@@ -7,9 +7,6 @@ var ejs_layout_engine = require("ejs-mate")
 var mongoose = require("mongoose");
 var http = require("http");
 var session = require("express-session");
-var models = require("./models.js"),
-	Language = models.Language,
-	Property = models.Property;
 var session_middleware = require("./session_middleware.js");
 // cloudinary.config({
 // 	cloud_name: "codigofacilito",
@@ -29,6 +26,10 @@ if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
 }
 
 mongoose.connect("mongodb://"+connection_string);
+
+var models = require("./models"),
+		Property = models.Property,
+		Language = models.Language;
 
 app.engine("ejs",ejs_layout_engine);
 app.use(express.static('public'));
@@ -188,15 +189,24 @@ router.route("/propiedades/:id")
 		});	
 	})
 	.put(function(req,res){
+		console.log("\n\n\n:(\n\n\n")
 		Property.findById(req.params.id,function(err,propiedad){
 			propiedad.title = req.body.nombre;
 			propiedad.description = req.body.descripcion;
 			propiedad.language = req.body.language;
 			propiedad.markdown = req.body.markdown;
+			propiedad.slug = req.body.slug;
+			propiedad.save();
+			res.redirect("/propiedades/"+propiedad._id);
+			/*propiedad.title = req.body.nombre;
+			propiedad.description = req.body.descripcion;
+			propiedad.language = req.body.language;
+			propiedad.markdown = req.body.markdown;
+			propiedad.slug = req.body.slug;
 
 			propiedad.save(function(){
 				res.redirect("/propiedades/"+propiedad._id);
-			});
+			});*/
 
 		})
 	})
