@@ -1,52 +1,75 @@
 <% layout('application') -%>
-<header >
-	<div class="fondo-header">
-		<div class="ancho-izquierdo sin-block ">
-			<div class="inline margen-izquierda centrar-texto tamano-letra-30 sombreado">
-				<p class="margen-referenxyz">referencexyz</p>
-				<div class="sombreado tamano-letra-30 margen-menu-abajo">
-					<p>contenido :D que se despliegan así bien chidas :B</p>
-				</div>
-			</div>
-		</div>
 
-		<div class="ancho-centro sin-block">
-			<div class="inline margen-centro tamano-letra-30 sombreado">
-				<p class="margen-descripcion">Descripcion</p>
-				<div class="sombreado-autor borde-redondo">
-					<p class="margen-autor tamano-letra-20 izquierda-texto">Hecho por Uriel</p>
-				</div>
-				<div class="margen-abajo-autor">
-					<p>En la sima xyz se prologan una distancia de 09'45'2' con una densidad de rpg(0,0,0), y lo repiter, y lo repites, y lo repites, no te asustes, no te asustes todo esta en mi cabeza...</p>
-				</div>
+<div class="fondo-header row altura-completa">
+	<div class="col-xs-12 col-md-3 altura-completa sin-padding fondo-gris">
+		<div class="centrar-texto">
+			<div class="fondo-blanco padding-largo borde-abajo">
+				<a href="/">
+					<img src="/imgs/logo_small.png" width="100">
+					<h1 class="color-negro sin-margen sin-padding tamano-letra-20">ReferenceXYZ</h1>	
+				</a>
+				
 			</div>
-			<div class="sombreado margen-historia tamano-letra-30">
-				<p>Historia</p>
-				<div >
-					<p class="margen-historia-descripcion">La historia no vale nada nada nada nada el oro sí :V andrea y leli se la pasan cotorreando y yo las molesto porque sí :V mientras rodrigo olvida tu cargador je je je </p>
-				</div>
-			</div>
-		</div>
-
-		<div class="row ancho-derecho sin-block sombreado">
-			<div id="contenedorB" class="col-md-2 contenedor-buscador" style="height = 100%">
-				<form action="/search" id="buscador" style="padding-top: 5%; padding-bottom: 5%;" class="text-center">
-					<input id="input-b" style="width: 100%" name="keyword" type="text" value="" placeholder="  " required>
-				</form>
-			<div id="resultados">
-				<div>
-					<p class="text-center">Propiedades</p>
-				</div>	
-			</div>
-			<div>
-				<div class="margen inline">
-					<p class="inline">Visitas</p>
-					<div id="odometer" class=" odometer odometer-auto-theme odometer-animating-up  odometer-ribbon-inner ">0</div>
-				</div>
+			<div class="margen-menu-abajo">
+				
 			</div>
 		</div>
 	</div>
-</header>
+
+	<div class="col-xs-12 col-md-6 altura-completa scroll-y sombreado relative" style="z-index:3;">
+		<div class="inline margen-centro">
+			<h1 class="tamano-letra-20"><%= propiedad.title %></h1>
+			<div class="sombreado-autor borde-redondo">
+				<p class="margen-autor izquierda-texto">
+					<a href="/lenguajes/<%=language._id%>"><%=language.title%></a>
+					
+				</p>
+			</div>
+			<div class="margen-abajo-autor">
+				<%- propiedad.description %>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-12 col-md-3 sin-padding altura-completa fondo-gris" style="padding-top:-1px !important;">
+		<div class="fondo-blanco" style="min-height:80px;">
+			<div id="contenedorB" class="contenedor-buscador padding-largo">
+				<form action="/search" id="buscador">
+					<label for="keyword">Buscar:</label>
+					<input id="input-b" id="keyword" style="width: 100%" name="keyword" type="text" value="" placeholder="Buscar etiqueta" class="lupita" required>
+				</form>
+			</div>
+		</div>
+		<div>
+			<div id="resultados">
+			</div>
+			<aside>
+				<div class="text-center fondo-blanco" style="padding-bottom:10px;">
+					<div class="fondo-rojo color-blanco tamano-letra-20 padding-largo">Cursos</div>
+					<% for(var i = cursos.length-1;i>=0;i--){ %>
+						<% curso = cursos[i] %>
+						<aside class="text-center" style="margin-top:2.5em;">
+							<a href="<%= curso.link %>">
+								<img src="<%=curso.img_url%>" width="80">
+								<h3 style="font-size:16px;" class="color-rojo"><%= curso.title %></h3>
+							</a>
+						</aside>
+					<%}%>
+				</div>
+				<div class="padding-largo  text-center" style="margin-top:4em;">
+					<div class="letra-mediana">
+						<div class="block-en-linea fondo-blanco" style="padding: 7.5px 10px;min-width:80px;">
+							Visitas:	
+						</div>
+						<div id="odometer" class="odometer odometer-auto-theme odometer-animating-up  odometer-ribbon-inner color-blanco fondo-negro padding-largo" style="margin-top:-5px;min-width:120px;">0</div>
+					</div>
+				</div>
+			</aside>
+		</div>
+		
+	</div>
+</div>
+
 <script>
 	$(document).ready(function(){
 		setInterval(function(){

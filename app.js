@@ -158,7 +158,18 @@ router.route("/propiedades/:id")
 				Language.findById(propiedad.language,function(err,language){
 					propiedad.visits +=1;
 					propiedad.save();
-					res.render("properties/show",{propiedad: propiedad, language: language});	
+					var cursos = [
+						{title: "Diseño Web Frontend", link:"https://codigofacilito.com/premium/frontend",
+							img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/042/medium/42.png?1422556431"
+						},
+						{title: "CSS Básico a Avanzado", link:"https://codigofacilito.com/premium/css3",
+							img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/041/medium/41.png?1422556455"
+						},
+						{title: "HTML5 Avanzado", link:"https://codigofacilito.com/premium/html5",
+							img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/043/medium/43.png?1422556412"
+						}
+					];
+					res.render("properties/show",{propiedad: propiedad, language: language, cursos: cursos});	
 				});			
 			});	
 		}
