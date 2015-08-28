@@ -154,7 +154,7 @@ router.route("/propiedades")
 			}
 			var property = new Property(data);
 			property.save(function(err){
-				res.redirect("/propiedades/"+property._id);
+				res.redirect("/propiedades/"+property.slug);
 			});
 		})
 
@@ -169,7 +169,7 @@ router.route("/propiedades/:id")
 	.get(function(req,res){
 		var ObjectId = require('mongoose').Types.ObjectId;
 		var objId = new ObjectId( (req.params.id.length < 12) ? "123456789012" : req.params.id );
-		Property.findOne({$or:[{"_id":objId},{"slug":req.params.id}]},function(err,propiedad){
+		Property.findOne({"slug":req.params.id},function(err,propiedad){
 			if(err || propiedad == null){console.log(err);res.send(err);}
 			else{
 				Language.findById(propiedad.language,function(err,language){
@@ -201,7 +201,7 @@ router.route("/propiedades/:id")
 			propiedad.markdown = req.body.markdown;
 			propiedad.slug = req.body.slug;
 			propiedad.save();
-			res.redirect("/propiedades/"+propiedad._id);
+			res.redirect("/propiedades/"+propiedad.slug);
 
 		})
 	})
