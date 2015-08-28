@@ -18,7 +18,7 @@ $(document).ready(function(){
 			for (var i = resultados.length - 1; i >= 0; i--) {
 				html += "<li >";
 				var resultado = resultados[i];
-				html += "<a style='padding-top: 30px; color: blue; list-style:none;' href='/propiedades/"+resultado._id+"'>"+resultado.title+"</a>";
+				html += "<a style='padding-top: 30px; color: blue; list-style:none;' href='/propiedades/"+resultado.slug+"'>"+resultado.title+"</a>";
 				html += "</li>";
 			};
 			html += "</ul>";
