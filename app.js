@@ -61,7 +61,7 @@ app.get("/propiedades/:id/visits",function(req,res){
 app.get("/propiedades/new",function(req,res){
 	Language.find({},function(err,languages){
 		
-		res.render("properties/new",{languages: languages});	
+		res.render("properties/form",{languages: languages,property: new Property()});	
 	});			
 });
 
@@ -142,7 +142,9 @@ router.route("/propiedades")
 			var data = {
 				title: req.body.nombre,
 				description: req.body.descripcion,
-				lenguaje: req.body.lenguaje_id
+				language: req.body.language,
+				slug: req.body.slug,
+				markdown: req.body.markdown
 			}
 			var property = new Property(data);
 			property.save(function(err){
@@ -159,31 +161,26 @@ router.route("/propiedades")
 
 router.route("/propiedades/:id")
 	.get(function(req,res){
-		if(req.params.id == "new" || typeof req.params.id == "undefined"){
-			Language.find({},function(err,languages){
-				res.render("properties/new",{languages: languages});	
+		
+		Property.findById(req.params.id,function(err,propiedad){
+			if(err){console.log(err);}
+			Language.findById(propiedad.language,function(err,language){
+				propiedad.visits +=1;
+				propiedad.save();
+				var cursos = [
+					{title: "Diseño Web Frontend", link:"https://codigofacilito.com/premium/frontend",
+						img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/042/medium/42.png?1422556431"
+					},
+					{title: "CSS Básico a Avanzado", link:"https://codigofacilito.com/premium/css3",
+						img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/041/medium/41.png?1422556455"
+					},
+					{title: "HTML5 Avanzado", link:"https://codigofacilito.com/premium/html5",
+						img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/043/medium/43.png?1422556412"
+					}
+				];
+				res.render("properties/show",{propiedad: propiedad, language: language, cursos: cursos});	
 			});			
-		}else{
-			Property.findById(req.params.id,function(err,propiedad){
-				if(err){console.log(err);}
-				Language.findById(propiedad.language,function(err,language){
-					propiedad.visits +=1;
-					propiedad.save();
-					var cursos = [
-						{title: "Diseño Web Frontend", link:"https://codigofacilito.com/premium/frontend",
-							img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/042/medium/42.png?1422556431"
-						},
-						{title: "CSS Básico a Avanzado", link:"https://codigofacilito.com/premium/css3",
-							img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/041/medium/41.png?1422556455"
-						},
-						{title: "HTML5 Avanzado", link:"https://codigofacilito.com/premium/html5",
-							img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/043/medium/43.png?1422556412"
-						}
-					];
-					res.render("properties/show",{propiedad: propiedad, language: language, cursos: cursos});	
-				});			
-			});	
-		}
+		});	
 	})
 	.put(function(req,res){
 		Property.findById(req.params.id,function(err,propiedad){
