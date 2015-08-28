@@ -72,9 +72,17 @@
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 <script>
 	$(document).ready(function(){
-		var data = $("pre > code").html()
+		var $elements = $("pre > code");
+		var data = $elements.html()
 		new_data = data.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
-		$("pre > code").html(new_data);
+		$elements.html(new_data);
+  	for (var i = $elements.length - 1; i >= 0; i--) {
+  		var el = $elements[i];
+  		var lang = $(el).attr("class").split("-")[1];
+			lang = lang.replace("html","markup");
+  		$(el).attr("class","language-"+lang);
+  	};
+  	Prism.highlightAll();
 		setInterval(function(){
 			$.ajax({
 				url: "/propiedades/<%= propiedad._id %>/visits",
