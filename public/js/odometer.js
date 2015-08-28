@@ -1,6 +1,3 @@
-setTimeout(function(){
-    odometer.innerHTML = 0;
-}, 1000);
 
 
 (function() {

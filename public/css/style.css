@@ -227,12 +227,3 @@ header nav ul li .caret {
 	height:100%;
 }
 
-.seccion-principal {
-	display:block;
-	background:url("../imgs/laptop.png") center bottom no-repeat #36474F;
-	-webkit-background-size: auto auto;
-    -moz-background-size: auto auto;
-    background-size: 45% 52%;
-	min-height:800px;
-}
-

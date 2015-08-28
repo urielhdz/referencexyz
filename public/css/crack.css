@@ -40,7 +40,7 @@ html,body{
 	margin-left:auto;
 }
 .espacio-grande-arriba{
-	margin-top: 150px;
+	margin-top: 200px;
 }
 .misma-linea{
 	display: inline;
@@ -135,7 +135,7 @@ html,body{
 	color: white;
 }
 .color-rojo{
-	color: red;
+	color: #e53935;
 }
 .color-blanco{
   color: #FFFFFF;
@@ -177,6 +177,9 @@ html,body{
 }
 #fondo-blanco{
 	background: white;
+}
+.bold{
+	font-weight: bold;
 }
 
 /*Enviar//////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -760,8 +763,8 @@ header nav ul li .caret {
 	display:block;
 	background:url("../imgs/laptop.png") center bottom no-repeat #36474F;
 	-webkit-background-size: auto auto;
-    -moz-background-size: auto auto;
-    background-size: 45% 52%;
+  -moz-background-size: auto auto;
+  background-size: 40% auto;
 	min-height:800px;
 }
 
