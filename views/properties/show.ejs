@@ -40,10 +40,27 @@
 			</div>
 			<div>
 				<div class="margen inline">
-					<p class="inline">Visitas hasta el momento</p>
-					<div id="odometer" class=" odometer odometer-auto-theme odometer-animating-up  odometer-ribbon-inner odometer-theme-car">0</div>
+					<p class="inline">Visitas</p>
+					<div id="odometer" class=" odometer odometer-auto-theme odometer-animating-up  odometer-ribbon-inner ">0</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </header>
+<script>
+	$(document).ready(function(){
+		setInterval(function(){
+			$.ajax({
+				url: "/propiedades/<%= propiedad._id %>/visits",
+				dataType:"JSON",
+				success:function(data){
+					console.log(data);
+					document.getElementById('odometer').innerHTML = data;
+				},
+				error: function(err){
+					console.log(err);
+				}
+			});
+		},1000);
+	});
+</script>
