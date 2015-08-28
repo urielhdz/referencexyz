@@ -203,7 +203,6 @@ router.route("/propiedades/:id")
 		});	
 	})
 	.put(function(req,res){
-		console.log("\n\n\n:(\n\n\n")
 		Property.findById(req.params.id,function(err,propiedad){
 			propiedad.title = req.body.nombre;
 			propiedad.description = req.body.descripcion;
