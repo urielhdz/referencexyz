@@ -1,7 +1,7 @@
 <% layout('application') -%>
 
-<div class="fondo-header row altura-completa">
-	<div class="col-xs-12 col-md-3 altura-completa sin-padding fondo-gris">
+<div class="fondo-header row altura-completa fondo-gris">
+	<div class="col-xs-12 col-md-3 sin-padding fondo-gris">
 		<div class="centrar-texto">
 			<div class="fondo-blanco padding-largo borde-abajo">
 				<a href="/">
@@ -16,7 +16,7 @@
 		</div>
 	</div>
 
-	<div class="col-xs-12 col-md-6 altura-completa scroll-y sombreado relative" style="z-index:3;">
+	<div class="col-xs-12 col-md-6 altura-completa fondo-blanco scroll-y sombreado relative" style="z-index:3;">
 		<div class="inline margen-centro">
 			<h1 class="tamano-letra-20"><%= propiedad.title %></h1>
 			<div class="sombreado-autor borde-redondo">
@@ -31,7 +31,7 @@
 		</div>
 	</div>
 
-	<div class="col-xs-12 col-md-3 sin-padding altura-completa fondo-gris" style="padding-top:-1px !important;">
+	<div class="col-xs-12 col-md-3 sin-padding fondo-gris" style="padding-top:-1px !important;">
 		<div class="fondo-blanco" style="min-height:80px;">
 			<div id="contenedorB" class="contenedor-buscador padding-largo">
 				<form action="/search" id="buscador">

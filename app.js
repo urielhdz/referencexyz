@@ -7,7 +7,6 @@ var ejs_layout_engine = require("ejs-mate")
 var mongoose = require("mongoose");
 var http = require("http");
 var session = require("express-session");
-mongoose.connect("mongodb://localhost/referencexyz");
 var models = require("./models.js"),
 	Language = models.Language,
 	Property = models.Property;
@@ -18,6 +17,18 @@ var session_middleware = require("./session_middleware.js");
 // 	api_secret: ""
 // });
 var app = express();
+
+var connection_string = '127.0.0.1:27017/nodetest';
+// if OPENSHIFT env variables are present, use the available connection info:
+if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+  connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+  process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+  process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+  process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+  process.env.OPENSHIFT_APP_NAME;
+}
+
+mongoose.connect("mongodb://"+connection_string);
 
 app.engine("ejs",ejs_layout_engine);
 app.use(express.static('public'));
@@ -275,5 +286,10 @@ app.get("/delete_users",function(req,res){
 		res.send("Se borraron los usuarios :P");
 	});
 })
+
 app.use("/",router);
-app.listen(8080);
+
+
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+app.listen(port,ipaddress);

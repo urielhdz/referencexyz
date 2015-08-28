@@ -262,6 +262,9 @@ input:-ms-input-placeholder {
 		font-size: 2.5em;
 	}	
 }
+@media only screen and (min-device-width : 900px){
+	.altura-completa{height: auto;}
+}
 /*clases que contienen background */
 .fondo-azul{
 	background: rgb(22, 113, 158);
