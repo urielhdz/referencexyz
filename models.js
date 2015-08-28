@@ -20,6 +20,9 @@ var property_schema = new Schema({
 
 property_schema.plugin(relationship,{relationshipPathName: "language"});
 
+property_schema.virtual("url").get(function(){
+	return this.slug || this._id;
+});
 
 var Property = mongoose.model("Propiedad",property_schema);
 

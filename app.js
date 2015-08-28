@@ -167,25 +167,29 @@ router.route("/propiedades")
 
 router.route("/propiedades/:id")
 	.get(function(req,res){
-		
-		Property.findOne({$or:[{"_id":req.params.id},{"slug":req.params.id}]},function(err,propiedad){
-			if(err || propiedad == null){console.log(err);redirect("/");}
-			Language.findById(propiedad.language,function(err,language){
-				propiedad.visits +=1;
-				propiedad.save();
-				var cursos = [
-					{title: "Diseño Web Frontend", link:"https://codigofacilito.com/premium/frontend",
-						img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/042/medium/42.png?1422556431"
-					},
-					{title: "CSS Básico a Avanzado", link:"https://codigofacilito.com/premium/css3",
-						img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/041/medium/41.png?1422556455"
-					},
-					{title: "HTML5 Avanzado", link:"https://codigofacilito.com/premium/html5",
-						img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/043/medium/43.png?1422556412"
-					}
-				];
-				res.render("properties/show",{propiedad: propiedad, language: language, cursos: cursos});	
-			});			
+		var ObjectId = require('mongoose').Types.ObjectId;
+		var objId = new ObjectId( (req.params.id.length < 12) ? "123456789012" : req.params.id );
+		Property.findOne({$or:[{"_id":objId},{"slug":req.params.id}]},function(err,propiedad){
+			if(err || propiedad == null){console.log(err);res.send(err);}
+			else{
+				Language.findById(propiedad.language,function(err,language){
+					propiedad.visits +=1;
+					propiedad.save();
+					var cursos = [
+						{title: "Diseño Web Frontend", link:"https://codigofacilito.com/premium/frontend",
+							img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/042/medium/42.png?1422556431"
+						},
+						{title: "CSS Básico a Avanzado", link:"https://codigofacilito.com/premium/css3",
+							img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/041/medium/41.png?1422556455"
+						},
+						{title: "HTML5 Avanzado", link:"https://codigofacilito.com/premium/html5",
+							img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/043/medium/43.png?1422556412"
+						}
+					];
+					res.render("properties/show",{propiedad: propiedad, language: language, cursos: cursos});	
+				});				
+			}
+			
 		});	
 	})
 	.put(function(req,res){

@@ -10,7 +10,7 @@
 	<form action="<%= action %>" method="POST" id="properties_fomr">
 		<div class="form-group">
 			<label for="nombre">Título</label>
-			<input type="text" required id="nombre" name="nombre" class="form-control" placeholder="Título" value="<%= property.title %>">	
+			<input type="text" required id="nombre" name="nombre" class="form-control" placeholder="Título" value="<%- property.title %>">	
 		</div>
 
 		<div class="form-group">
@@ -33,7 +33,7 @@
 		</div>
 		<div class="form-group">
 			<label for="nombre">Custom url</label>
-			<input type="text" required id="slug" name="slug" class="form-control" placeholder="Título" value="<%= property.slug %>">	
+			<input type="text" required id="slug" name="slug" class="form-control" placeholder="URL" value="<%- property.slug %>">	
 		</div>
 		<div class="form-field text-right">
 			<input type="submit" value="Enviar" class="btn btn-info">
