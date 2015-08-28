@@ -1,17 +1,23 @@
 <% layout('application') -%>
 <div class="margen-sup50 col-md-8 col-xs-11 col-sm-10 center-block" style="float:none !important;">
 	<h1>Agregar propiedad</h1>
-	<form action="/propiedades" method="POST" id="properties_fomr">
+	<%if(typeof property.title === "undefined"){%>
+		<% action = "/propiedades" %>
+	<%}else{%>
+		<%action = "/propiedades/"+property._id+"?_method=PUT"%>
+	<%}%>
+	
+	<form action="<%= action %>" method="POST" id="properties_fomr">
 		<div class="form-group">
 			<label for="nombre">Título</label>
-			<input type="text" required id="nombre" name="nombre" class="form-control" placeholder="Título">	
+			<input type="text" required id="nombre" name="nombre" class="form-control" placeholder="Título" value="<%- property.title %>">	
 		</div>
 
 		<div class="form-group">
 			<label for="descripcion">Descripción</label>
 			<div id="epic_editor" style="height:400px;"></div>
-			<textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" style="display:none;">				
-			</textarea>
+			<textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" style="display:none;"><%= property.description %>"</textarea>
+			<textarea class="form-control" id="markdown" name="markdown" placeholder="Descripción" style="display:none;"><% if(typeof property.markdown === "undefined" || property.markdown.length < 1){ %><%- property.description %><%}else{%><%- property.markdown %><%}%></textarea>
 		</div>
 
 		<div class="form-group">
@@ -24,6 +30,10 @@
 					<%}%>
 				<%}%>
 			</select>
+		</div>
+		<div class="form-group">
+			<label for="nombre">Custom url</label>
+			<input type="text" required id="slug" name="slug" class="form-control" placeholder="URL" value="<%- property.slug %>">	
 		</div>
 		<div class="form-field text-right">
 			<input type="submit" value="Enviar" class="btn btn-info">
@@ -44,13 +54,14 @@
 			},
 			file:{
 				name: "new_property",
-				defaultContent: $("#descripcion").val(	)
+				defaultContent: $("#markdown").val(	)
 			}
 		});
 		editor.load()
 		$("#properties_fomr").on("submit",function(ev){
 			//ev.preventDefault();
 			$("#descripcion").html(editor.exportFile("new_property","html"));
+			$("#markdown").html(editor.exportFile("new_property"));
 		});
 	});
 </script>

@@ -13,11 +13,16 @@ var property_schema = new Schema({
 	title:String,
 	description:String,
 	visits:{type: Number,default:0},
-	language: {type: Schema.ObjectId, ref: "Language",childPath: "propiedades"}
+	language: {type: Schema.ObjectId, ref: "Language",childPath: "propiedades"},
+	slug:String,
+	markdown:String
 });
 
 property_schema.plugin(relationship,{relationshipPathName: "language"});
 
+property_schema.virtual("url").get(function(){
+	return this.slug || this._id;
+});
 
 var Property = mongoose.model("Propiedad",property_schema);
 

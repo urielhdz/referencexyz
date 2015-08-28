@@ -7,9 +7,6 @@ var ejs_layout_engine = require("ejs-mate")
 var mongoose = require("mongoose");
 var http = require("http");
 var session = require("express-session");
-var models = require("./models.js"),
-	Language = models.Language,
-	Property = models.Property;
 var session_middleware = require("./session_middleware.js");
 // cloudinary.config({
 // 	cloud_name: "codigofacilito",
@@ -29,6 +26,10 @@ if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
 }
 
 mongoose.connect("mongodb://"+connection_string);
+
+var models = require("./models"),
+		Property = models.Property,
+		Language = models.Language;
 
 app.engine("ejs",ejs_layout_engine);
 app.use(express.static('public'));
@@ -60,13 +61,19 @@ app.get("/propiedades/:id/visits",function(req,res){
 
 app.get("/propiedades/new",function(req,res){
 	Language.find({},function(err,languages){
-		
-		res.render("properties/new",{languages: languages});	
+		res.render("properties/form",{languages: languages,property: new Property()});	
 	});			
 });
 
+app.get("/propiedades_edit/:id",function(req,res){
+	Property.findById(req.params.id,function(err,propiedad){
+		Language.find({},function(err,languages){
+			res.render("properties/form",{property: propiedad,languages: languages});
+		});					
+	});	
+});
+
 app.get("/search",function(req,res){
-	console.log("\n\n\n\n"+req.query.keyword+"\n\n\n\n");
 	Property.find({title: new RegExp(req.query.keyword,"i")},function(err,docs){
 		if(err){console.log(err);}
 		res.setHeader('Content-Type', 'application/json');
@@ -106,7 +113,6 @@ router.route("/lenguajes/:id")
 
 			Language.findById(req.params.id,function(err,language){
 				Property.find({language: language._id},function(err,propiedades){
-					console.log("\n\n\n\n"+propiedades+"\n\n\n\n");
 					res.render("languages/show",{language: language, propiedades: propiedades});
 				});
 			});
@@ -142,7 +148,9 @@ router.route("/propiedades")
 			var data = {
 				title: req.body.nombre,
 				description: req.body.descripcion,
-				lenguaje: req.body.lenguaje_id
+				language: req.body.language,
+				slug: req.body.slug,
+				markdown: req.body.markdown
 			}
 			var property = new Property(data);
 			property.save(function(err){
@@ -159,13 +167,11 @@ router.route("/propiedades")
 
 router.route("/propiedades/:id")
 	.get(function(req,res){
-		if(req.params.id == "new" || typeof req.params.id == "undefined"){
-			Language.find({},function(err,languages){
-				res.render("properties/new",{languages: languages});	
-			});			
-		}else{
-			Property.findById(req.params.id,function(err,propiedad){
-				if(err){console.log(err);}
+		var ObjectId = require('mongoose').Types.ObjectId;
+		var objId = new ObjectId( (req.params.id.length < 12) ? "123456789012" : req.params.id );
+		Property.findOne({$or:[{"_id":objId},{"slug":req.params.id}]},function(err,propiedad){
+			if(err || propiedad == null){console.log(err);res.send(err);}
+			else{
 				Language.findById(propiedad.language,function(err,language){
 					propiedad.visits +=1;
 					propiedad.save();
@@ -181,18 +187,21 @@ router.route("/propiedades/:id")
 						}
 					];
 					res.render("properties/show",{propiedad: propiedad, language: language, cursos: cursos});	
-				});			
-			});	
-		}
+				});				
+			}
+			
+		});	
 	})
 	.put(function(req,res){
+		console.log("\n\n\n:(\n\n\n")
 		Property.findById(req.params.id,function(err,propiedad){
 			propiedad.title = req.body.nombre;
 			propiedad.description = req.body.descripcion;
-
-			propiedad.save(function(){
-				res.redirect("/propiedades/"+propiedad._id);
-			});
+			propiedad.language = req.body.language;
+			propiedad.markdown = req.body.markdown;
+			propiedad.slug = req.body.slug;
+			propiedad.save();
+			res.redirect("/propiedades/"+propiedad._id);
 
 		})
 	})
@@ -203,11 +212,7 @@ router.route("/propiedades/:id")
 		});
 	});
 
-app.get("propiedades/:id/edit",function(req,res){
-	Property.findById(req.params.id,function(err,propiedad){
-		res.render("propiedades/edit",{propiedad: propiedad});
-	});	
-});
+
 
 app.get("/",function(req,res){
 	Property.count({},function(err,total_propiedades){
@@ -265,7 +270,7 @@ router.route("/login")
 			}
 			else{
 				models.User.findOne({email: req.body.email, password: req.body.password},function(error,user){
-					console.log(user);
+					
 					if(!error && user !== null && typeof user._id != "undefined"){
 						req.session.user_id = user._id;
 						res.redirect("/lenguajes");
@@ -281,11 +286,7 @@ router.route("/login")
 		req.session.user_id = null;
 		res.redirect("/");
 	});
-app.get("/delete_users",function(req,res){
-	models.User.remove({},function(err){
-		res.send("Se borraron los usuarios :P");
-	});
-})
+
 
 app.use("/",router);
 
