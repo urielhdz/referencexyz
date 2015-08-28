@@ -49,6 +49,7 @@
 		});
 		editor.load()
 		$("#properties_fomr").on("submit",function(ev){
+			//ev.preventDefault();
 			$("#descripcion").html(editor.exportFile("new_property","html"));
 		});
 	});
