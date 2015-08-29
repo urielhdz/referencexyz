@@ -17,7 +17,7 @@ var app = express();
 
 var connection_string = '127.0.0.1:27017/nodetest';
 // if OPENSHIFT env variables are present, use the available connection info:
-if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+if(process.env.MONGO_DB_PASSWORD){
   connection_string = process.env.MONGO_DB_USER + ":" +
   process.env.MONGO_DB_PASSWORD + "@" +
   process.env.MONGO_DB_HOST + ':' +
@@ -302,4 +302,5 @@ app.use("/",router);
 
 var ipaddress = process.env.NODE_IP || "127.0.0.1";
 var port = process.env.NODE_PORT || 8080;
+console.log(process.env.NODE_PORT);
 app.listen(port,ipaddress);
