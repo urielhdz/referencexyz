@@ -16,54 +16,34 @@
   <link rel="stylesheet" href="http://github.hubspot.com/odometer/themes/odometer-theme-minimal.css" />
 
   <% if(typeof propiedad !== "undefined"){ %>
-        <meta property="og:title" content="<%=propiedad.title%>" />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="http://reference.xyz/propiedades/<%=propiedad._id%>" />
-        <meta property="og:image" content="http://i.ytimg.com/vi/ywnkDldgkCA/maxresdefault.jpg" />
-        <meta property="og:description" content="<%=propiedad.description%>" />
-      <% }else{ %>
-  
-      <meta property="og:title" content="Reference" />
-      <meta property="og:type" content="article" />
-      <meta property="og:url" content="http://reference.xyz/" />
-  <% }%>
-    <% if(typeof lenguaje !== "undefined"){ %>
-        <meta property="og:title" content="<%=lenguaje.title%>" />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="http://reference.xyz/lenguajes/<%=lenguaje._id%>" />
-        <meta property="og:image" content="http://i.ytimg.com/vi/ywnkDldgkCA/maxresdefault.jpg" />
-        <meta property="og:description" content="<%=lenguaje.description%>" />
-      
-      <% }else{ %>
-          <meta property="og:title" content="Reference" />
-          <meta property="og:type" content="article" />
-          <meta property="og:url" content="http://reference.xyz/" />        
-      <% } %>
-
-    <% if (typeof propiedad !== "undefined"){ %>
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site:id" />
-      <meta name="twitter:url" content="http://referece.xyz/propiedad/<%=propiedad._id%>" />
-      <meta name="twitter:title" content="<%=propiedad.title%>" />
-      <meta name="twitter:description" content="<%=propiedad.description%>"/>
-    <% } else { %>
-      <meta name="twitter:title" content="Reference"/>
-      <meta name="twitter:type" content="article"/>
-      <meta name="twitter:url" content="http://referece.xyz/"/>
-  <% } %>
-  <% if (typeof lenguaje !== "undefined"){ %>
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site:id" />
-      <meta name="twitter:url" content="http://referece.xyz/lenguajes/<%=propiedad._id%>"/>
-      <meta name="twitter:title" content="<%=lenguaje.title%>"/>
-      <meta name="twitter:description" content="<%=lenguaje.description%>"/>
-    <% } else { %>
-      <meta name="twitter:title" content="Reference"/>
-      <meta name="twitter:type" content="article"/>
-      <meta name="twitter:url" content="http://referencia.xyz/"/>
+    <meta property="og:title" content="<%=propiedad.title%>" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:url" content="http://referencia.xyz/propiedades/<%=propiedad.slug%>" />
+    <meta property="og:image" content="http://i.ytimg.com/vi/ywnkDldgkCA/maxresdefault.jpg" />
+    <meta property="og:description" content="<%=propiedad.desc%>" />
+  <% } else if(typeof lenguaje !== "undefined"){ %>
+    <meta property="og:title" content="<%=lenguaje.title%>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://referencia.xyz/lenguajes/<%=lenguaje._id%>" />
+    <meta property="og:image" content="http://i.ytimg.com/vi/ywnkDldgkCA/maxresdefault.jpg" />
+    <meta property="og:description" content="<%=lenguaje.description%>" />
+  <% }else{ %>
+    <meta property="og:title" content="ReferenciaXYZ" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Empezar no tiene que ser un dolor de cabeza, esta plataforma es una guía de referencia para quienes están desarrollando en los distintos lenguajes que aquí documentos." />
+    <meta property="og:url" content="http://referencia.xyz/" />        
   <% } %>
   
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+    ga('create', 'UA-40561603-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>	
 </head>
   <body>
