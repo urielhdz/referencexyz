@@ -1,15 +1,25 @@
 <% layout('application') -%>
-<div class="boton-compartir text-center" >
-	<i class="fa fa-share-alt fa-2x texto-blanco"></i>
-	<div >   
+<section>
+	<div class="boton-compartir text-center" >
+		<i class="fa fa-share-alt fa-2x texto-blanco"></i>
+		<div >   
 		  <a href="javascript:fbshareCurrentPage()" target="_blank" alt="Share on Facebook" class="boton-red-social first" style ="background-color: blue">
 		    <i class="fa fa-facebook fa-2x  texto-blanco "></i>
 		  </a>
 		  <a href="javascript:twshareCurrentPage()" target="_blank" alt="Share on Twitter"  class="boton-red-social second" style ="background-color: aqua">
 		    <i class="fa fa-twitter fa-2x texto-blanco"></i>
-	  </a>
+		  </a>
+		</div>
 	</div>
-</div>
+	<script language="javascript">
+		    function fbshareCurrentPage()
+		    {window.open("https://www.facebook.com/sharer/sharer.php?u="+escape(window.location.href)+"&t="+document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false; }
+	</script>
+	<script language="javascript">
+		    function twshareCurrentPage()
+		    {window.open("https://twitter.com/intent/tweet?url="+escape(window.location.href)+"&t="+document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false; }
+	</script>
+</section>
 <div class="fondo-header row altura-completa">
 	<div class="col-xs-12 col-md-3 altura-completa sin-padding fondo-gris">
 		<div class="centrar-texto">
