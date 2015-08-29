@@ -1,40 +1,24 @@
-<% layout('admin') -%>
+<% layout('application') -%>
 
-<div class="table-responsive">
-		<h1>Panel de administracion</h1>
-		<p>Productos actuales</p>
-		<td><form action="/propiedades/new"><button type="submit" class="btn btn-link">Nueva Propiedad</button></form></td>
-		<table class="table table-hover">
-		<thead>	
-			<tr>
-				<th>#</th>
-				<th>Nombre</th>
-				<th>Descripcion</th>
-				<th>URL</th>
-				<th>Lenguaje</th>
-				<th>Acciones</th>
-			</tr>
-		</thead>
-			<% for(var i=0; i<propiedades.length; i++){ 
-			  %>
-			  <%var propiedad = propiedades[i]%>
-				<tr>
-					<td><%=propiedad._id%></td>
-					<td><%=propiedad.title%></td>
-					<td><%=propiedad.description%></td>
-					<td><%=propiedad.slug %></td>
-					<td><%=propiedad.language%></td>
-					<td>
-						<form method="get" action="/propiedades/<%=propiedad.url%>"><button onclick="form.action" type="submit" class="color-azul-rgb sin-borde sin-fondo">Mostrar</button>
-						<a href="/propiedades_edit/<%= propiedad._id %>">Editar</a>
-						</form>
-						<form method="post" action="/propiedades/<%=propiedad._id%>?_method=delete" ><button onclick="return confirm('¿Desea Eliminar el elemento?:\n' +  form.action)" type="submit" class="color-azul-rgb sin-borde sin-fondo " >Eliminar</button> </form>
-					</td>
+<p class="tamano-letra-30" style="padding:1em 10px;">Primero selecciona un lenguaje</p>
+
+<div class="row padding-largo">
+	<%for(var i = 0;i<languages.length;i++){ %>
+		<% var language = languages[i]; %>
+		<div class="col-md-4 col-sm-6 col-xs-12 borde-col" style="margin-top:1em;">
+			<div class="fondo-blanco borde-row sin-padding">
+				<div class="fondo-rojo tipo-letra centrar-texto color-blanco article-height-cover" style="padding-top:1px;">
+					<h2 class="letra-tam-30 color-blanco" style="padding-top:20px;"><%=language.title%></h2>
+				</div>
+					<div>
+						<p class="letra-tam" ><%=language.description%></p>
+						<div style="text-align:right;">
+							<a href="/lenguajes/<%=language.title%>" class="btn btn-info">Ver más</a>
+						</div>	
+					</div>
 					
-				</tr>
-				
-				<%
-				} 
-			%>
-	</table>
+			</div>
+		</div>
+	<%}%>		
 </div>
+	

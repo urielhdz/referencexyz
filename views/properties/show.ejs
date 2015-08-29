@@ -20,73 +20,15 @@
 		    {window.open("https://twitter.com/intent/tweet?url="+escape(window.location.href)+"&t="+document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false; }
 	</script>
 </section>
-<div class="fondo-header row altura-completa fondo-gris">
-	<div class="col-xs-12 col-md-3 sin-padding fondo-gris">
-		<div class="centrar-texto">
-			<div class="fondo-blanco padding-largo borde-abajo">
-				<a href="/">
-					<img src="/imgs/logo_small.png" width="100">
-					<h1 class="color-negro sin-margen sin-padding tamano-letra-20">ReferenceXYZ</h1>	
-				</a>
-				
-			</div>
-			<div class="margen-menu-abajo">
-				
-			</div>
-		</div>
+<div style="padding:2em;">
+	<h1 class="tamano-letra-20"><%= propiedad.title %></h1>
+	<div class="sombreado-autor borde-redondo">
+		<p class="margen-autor izquierda-texto">
+			<a href="/lenguajes/<%=language.title%>"><%=language.title%></a>
+		</p>
 	</div>
-
-	<div class="col-xs-12 col-md-6 altura-completa fondo-blanco scroll-y sombreado relative" style="z-index:3;">
-		<div class="inline margen-centro">
-			<h1 class="tamano-letra-20"><%= propiedad.title %></h1>
-			<div class="sombreado-autor borde-redondo">
-				<p class="margen-autor izquierda-texto">
-					<a href="/lenguajes/<%=language._id%>"><%=language.title%></a>
-					
-				</p>
-			</div>
-			<div class="margen-abajo-autor">
-				<%- propiedad.description %>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-xs-12 col-md-3 sin-padding fondo-gris" style="padding-top:-1px !important;">
-		<div class="fondo-blanco" style="min-height:80px;">
-			<div id="contenedorB" class="contenedor-buscador padding-largo">
-				<form action="/search" id="buscador">
-					<label for="keyword">Buscar:</label>
-					<input id="input-b" id="keyword" style="width: 100%" name="keyword" type="text" value="" placeholder="Buscar etiqueta" class="lupita" required>
-				</form>
-			</div>
-		</div>
-		<div>
-			<div id="resultados">
-			</div>
-			<aside>
-				<div class="text-center fondo-blanco" style="padding-bottom:10px;">
-					<div class="fondo-rojo color-blanco tamano-letra-20 padding-largo">Cursos</div>
-					<% for(var i = cursos.length-1;i>=0;i--){ %>
-						<% curso = cursos[i] %>
-						<aside class="text-center" style="margin-top:2.5em;">
-							<a href="<%= curso.link %>"  target="_blank">
-								<img src="<%=curso.img_url%>" width="80">
-								<h3 style="font-size:16px;" class="color-rojo"><%= curso.title %></h3>
-							</a>
-						</aside>
-					<%}%>
-				</div>
-				<div class="padding-largo  text-center" style="margin-top:4em;">
-					<div class="letra-mediana">
-						<div class="block-en-linea fondo-blanco" style="padding: 7.5px 10px;min-width:80px;">
-							Visitas:	
-						</div>
-						<div id="odometer" class="odometer odometer-auto-theme odometer-animating-up  odometer-ribbon-inner color-blanco fondo-negro padding-largo" style="margin-top:-5px;min-width:120px;">0</div>
-					</div>
-				</div>
-			</aside>
-		</div>
-		
+	<div class="margen-abajo-autor text-justificado">
+		<%- propiedad.description %>
 	</div>
 </div>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>

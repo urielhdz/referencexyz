@@ -25,7 +25,6 @@ if(process.env.MONGO_DB_PASSWORD){
   process.env.MONGO_DB_PORT + '/' +
   process.env.MONGO_DB_DATABASE;
 }
-console.log(connection_string);
 mongoose.connect("mongodb://"+connection_string);
 
 var models = require("./models"),
@@ -44,8 +43,8 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-app.use("/lenguajes",session_middleware.validate);
-app.use("/propiedades",session_middleware.validate);
+app.use("/admin/lenguajes",session_middleware.validate);
+app.use("/admin/propiedades",session_middleware.validate);
 
 
 app.get("lenguajes/new",function(req,res){
@@ -100,8 +99,19 @@ router.route("/lenguajes")
 		})
 
 		.get(function(req,res){
+			var cursos = [
+				{title: "Diseño Web Frontend", link:"https://codigofacilito.com/premium/frontend",
+					img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/042/medium/42.png?1422556431"
+				},
+				{title: "CSS Básico a Avanzado", link:"https://codigofacilito.com/premium/css3",
+					img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/041/medium/41.png?1422556455"
+				},
+				{title: "HTML5 Avanzado", link:"https://codigofacilito.com/premium/html5",
+					img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/043/medium/43.png?1422556412"
+				}
+			];
 			Language.find({},function(err,languages){
-				res.render("languages/index",{languages: languages});	
+				res.render("languages/index",{languages: languages,cursos:cursos});	
 			});
 
 		});
@@ -122,8 +132,8 @@ router.route("/lenguajes/:id")
 					img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/043/medium/43.png?1422556412"
 				}
 			];
-			Language.findById(req.params.id,function(err,language){
-				Property.find({language: language._id},function(err,propiedades){
+			Language.findOne({title: req.params.id},function(err,language){
+				Property.find({language: language._id}).sort({title: 1}).find(function(err,propiedades){
 					res.render("languages/show",{language: language, propiedades: propiedades,cursos:cursos});
 				});
 			});
@@ -170,8 +180,19 @@ router.route("/propiedades")
 		})
 
 		.get(function(req,res){
-			Property.find({},function(err,propiedades){
-				res.render("properties/index",{propiedades: propiedades});	
+			var cursos = [
+				{title: "Diseño Web Frontend", link:"https://codigofacilito.com/premium/frontend",
+					img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/042/medium/42.png?1422556431"
+				},
+				{title: "CSS Básico a Avanzado", link:"https://codigofacilito.com/premium/css3",
+					img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/041/medium/41.png?1422556455"
+				},
+				{title: "HTML5 Avanzado", link:"https://codigofacilito.com/premium/html5",
+					img_url: "http://codigofacilito.com/system/cursos/avatars/000/000/043/medium/43.png?1422556412"
+				}
+			];
+			Language.find({},function(err,languages){
+				res.render("properties/index",{languages: languages,cursos:cursos});	
 			});
 
 		});
@@ -275,7 +296,7 @@ router.route("/login")
 				var user = new models.User({email: req.body.email, password: req.body.password});
 				user.save(function(){
 					req.session.user_id = user._id;
-					res.redirect("/lenguajes");	
+					res.redirect("/admin/lenguajes");	
 				});			
 			}
 			else{
@@ -283,7 +304,7 @@ router.route("/login")
 					
 					if(!error && user !== null && typeof user._id != "undefined"){
 						req.session.user_id = user._id;
-						res.redirect("/lenguajes");
+						res.redirect("/admin/lenguajes");
 					}else{
 						res.redirect("/login");
 					}
@@ -297,11 +318,18 @@ router.route("/login")
 		res.redirect("/");
 	});
 
+app.get("/admin/lenguajes",function(req,res){
+	Language.find({},function(err,languages){
+		res.render("admin/languages",{languages: languages});	
+	});
+});
+app.get("/admin/propiedades",function(req,res){
+	Property.find({},function(err,propiedades){
+		res.render("admin/properties",{propiedades: propiedades});	
+	});
+});
 
 app.use("/",router);
-
-
 var ipaddress = process.env.NODE_IP || "127.0.0.1";
 var port = process.env.NODE_PORT || 8080;
-console.log(process.env.NODE_PORT);
 app.listen(port,ipaddress);

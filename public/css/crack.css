@@ -19,6 +19,9 @@ html,body{
 }
 
 /*Alineacion texto////////////////////////////////////////////////////////////////////////////////*/
+.texto-justificado{
+	text-align:justify;
+}
 .centrar-texto{
 	text-align: center;
 }

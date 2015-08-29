@@ -6,6 +6,7 @@
 
 	<title>Reference.xyz</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css">
 	
 	<link type="text/css" rel="stylesheet" href="/css/crack.css">
 	<link type="text/css" rel="stylesheet" href="/css/carta-en-medio.css">
@@ -16,22 +17,41 @@
   <link rel="stylesheet" href="http://github.hubspot.com/odometer/themes/odometer-theme-minimal.css" />
 
   <% if(typeof propiedad !== "undefined"){ %>
-    <meta property="og:title" content="<%=propiedad.title%>" />
-    <meta property="og:type" content="Article" />
-    <meta property="og:url" content="http://referencia.xyz/propiedades/<%=propiedad.slug%>" />
-    <meta property="og:image" content="http://i.ytimg.com/vi/ywnkDldgkCA/maxresdefault.jpg" />
-    <meta property="og:description" content="<%=propiedad.desc%>" />
+    <meta property="og:title" content="<%=propiedad.title%>" >
+    <meta property="og:type" content="Article" >
+    <meta property="og:url" content="http://referencia.xyz/propiedades/<%=propiedad.slug%>" >
+    <meta property="og:image" content="http://i.ytimg.com/vi/ywnkDldgkCA/maxresdefault.jpg" >
+    <meta property="og:description" content="Conoce qué es y cómo se usa <%= propiedad.title %> de <%= language.title %>">
+    <meta name="twitter:type" content="article">
+    <meta name="twitter:site:id" content="twitter.id" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="http://referece.xyz/propiedades/<%=propiedad.slug%>" />
+    <meta name="twitter:title" content="<%=propiedad.title%>" />
+    <meta name="twitter:description" content="Conoce qué es y cómo se usa <%= propiedad.title %> de <%= language.title %>"/>
+
   <% } else if(typeof lenguaje !== "undefined"){ %>
     <meta property="og:title" content="<%=lenguaje.title%>" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://referencia.xyz/lenguajes/<%=lenguaje._id%>" />
+    <meta property="og:url" content="http://referencia.xyz/lenguajes/<%=lenguaje.title%>" />
     <meta property="og:image" content="http://i.ytimg.com/vi/ywnkDldgkCA/maxresdefault.jpg" />
     <meta property="og:description" content="<%=lenguaje.description%>" />
+    <meta name="twitter:type" content="article">
+    <meta name="twitter:site:id" content="twitter.id" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="http://referencia.xyz/lenguajes/<%=lenguaje.title%>" />
+    <meta name="twitter:title" content="<%=lenguaje.title%>" />
+    <meta name="twitter:description" content="<%= lenguaje.description %>"/>
   <% }else{ %>
     <meta property="og:title" content="ReferenciaXYZ" />
     <meta property="og:type" content="article" />
     <meta property="og:description" content="Empezar no tiene que ser un dolor de cabeza, esta plataforma es una guía de referencia para quienes están desarrollando en los distintos lenguajes que aquí documentos." />
-    <meta property="og:url" content="http://referencia.xyz/" />        
+    <meta property="og:url" content="http://referencia.xyz/" />    
+    <meta name="twitter:type" content="article">
+    <meta name="twitter:site:id" content="twitter.id" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="http://referencia.xyz" />
+    <meta name="twitter:title" content="Referencia.xyz para conocer cómo usar diferentes teconologías" />
+    <meta name="twitter:description" content="Empezar no tiene que ser un dolor de cabeza, esta plataforma es una guía de referencia para quienes están desarrollando en los distintos lenguajes que aquí documentos."/>    
   <% } %>
   
   <script>
@@ -47,11 +67,66 @@
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>	
 </head>
   <body>
-    <%- body -%>
+    <div class="row altura-completa">
+      <div class="col-xs-12 col-md-3 sin-padding">
+        <div class="centrar-texto">
+          <div class="fondo-blanco padding-largo borde-abajo">
+            <a href="/">
+              <img src="/imgs/logo_small.png" width="100">
+              <h1 class="color-negro sin-margen sin-padding tamano-letra-20">ReferenceXYZ</h1>  
+            </a>
+            
+          </div>
+          <div class="margen-menu-abajo">
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 fondo-blanco altura-completa scroll-y sombreado sin-padding" style="z-index:3;">
+        <%- body -%>
+      </div>
+      <div class="col-xs-12 col-md-3 sin-padding altura-completa fondo-gris" style="padding-top:-1px !important;">
+        <div class="fondo-blanco" style="min-height:80px;">
+          <div id="contenedorB" class="contenedor-buscador padding-largo">
+            <form action="/search" id="buscador">
+              <label for="keyword">Buscar:</label>
+              <input id="input-b" id="keyword" style="width: 100%" name="keyword" type="text" value="" placeholder="Buscar etiqueta" class="lupita" required>
+            </form>
+          </div>
+        </div>
+        <div>
+          <div id="resultados">
+          </div>
+          
+        </div>
+        <div class="text-center fondo-blanco" style="padding-bottom:10px;">
+          <div class="fondo-rojo color-blanco tamano-letra-20 padding-largo">Cursos</div>
+          <% for(var i = cursos.length-1;i>=0;i--){ %>
+            <% curso = cursos[i] %>
+            <aside class="text-center" style="margin-top:2.5em;">
+              <a href="<%= curso.link %>" target="_blank">
+                <img src="<%=curso.img_url%>" width="80">
+                <h3 style="font-size:16px;" class="color-rojo"><%= curso.title %></h3>
+              </a>
+            </aside>
+          <%}%>
+        </div>
+        <% if(typeof propiedad !== "undefined"){ %>
+          <div class="padding-largo  text-center" style="margin-top:4em;">
+            <div class="letra-mediana">
+              <div class="block-en-linea fondo-blanco" style="padding: 7.5px 10px;min-width:80px;">
+                Visitas:  
+              </div>
+              <div id="odometer" class="odometer odometer-auto-theme odometer-animating-up  odometer-ribbon-inner color-blanco fondo-negro padding-largo" style="margin-top:-5px;min-width:120px;">0</div>
+            </div>
+          </div>
+        <%}%>
+      </div>
+    </div>
     <script src="/js/buscador.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="/js/main.js"></script>
-  <script src="/js/odometer.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  	<script src="/js/main.js"></script>
+    <script src="/js/odometer.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
   </body>
 </html>

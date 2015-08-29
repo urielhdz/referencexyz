@@ -1,35 +1,25 @@
-<% layout('admin') -%>
+<% layout('application') -%>
 
-<div class="table-responsive">
-		<h1>Panel de administracion </h1>
-		<p>Productos actuales</p>
-		<h2><form action="/lenguajes/new"><button type="submit" class = "sin-borde color-rojo sin-fondo">Nuevo lenguaje</button></form></h2>
-		<table class="table table-hover">
-		<thead>	
-			<tr>
-				<th>#</th>
-				<th>Nombre</th>
-				<th>Descripcion</th>
-				<th>Acciones</th>
-			</tr>
-		</thead>
-			<% for(var i=0; i<languages.length; i++){ 
-			  %>
-			  <%var lenguaje = languages[i]%>
-				<tr>
-					<td><%=lenguaje._id%></td>
-					<td><%=lenguaje.title%></td>
-					<td><%=lenguaje.description%></td>
-					<td>
-						<form method="get" action="/lenguajes/<%=lenguaje._id%>"><button onclick="form.action" type="submit" class="color-azul-rgb sin-borde sin-fondo">Mostrar</button>
-						</form>
-						<form method="post" action="/lenguajes/<%=lenguaje._id%>?_method=delete" ><button onclick="return confirm('¿Desea Eliminar el elemento?:\n' +  form.action)" type="submit" class="color-azul-rgb sin-borde sin-fondo " >Eliminar</button> </form>
-					</td>
-					
-				</tr>
-				
-				<%
-				} 
-			%>
-	</table>
+<div class="text-center color-blanco fondo-cafe">
+	<p id="html">Lenguajes</p>
 </div>
+<div class="row padding-largo">
+	<%for(var i = 0;i<languages.length;i++){ %>
+		<% var language = languages[i]; %>
+		<div class="col-md-4 col-sm-6 col-xs-12 borde-col" style="margin-top:1em;">
+			<div class="fondo-blanco borde-row sin-padding">
+				<div class="fondo-rojo tipo-letra centrar-texto color-blanco article-height-cover" style="padding-top:1px;">
+					<h2 class="letra-tam-30 color-blanco" style="padding-top:20px;"><%=language.title%></h2>
+				</div>
+					<div>
+						<p class="letra-tam" ><%=language.description%></p>
+						<div style="text-align:right;">
+							<a href="/lenguajes/<%=language.title%>" class="btn btn-info">Ver más</a>
+						</div>	
+					</div>
+					
+			</div>
+		</div>
+	<%}%>		
+</div>
+	
