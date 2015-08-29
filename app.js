@@ -300,6 +300,6 @@ router.route("/login")
 app.use("/",router);
 
 
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ipaddress = process.env.NODE_IP || "127.0.0.1";
+var port = process.env.NODE_PORT || 8080;
 app.listen(port,ipaddress);
