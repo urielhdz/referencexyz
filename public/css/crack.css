@@ -125,7 +125,7 @@ html,body{
      background: #FFFFFF;
 }
 .gran-porcentaje-espacio-izquierda{
-	margin-left: 85%;
+	left: 85%;
 }
 .espacio-pequeño-arriba{
 	padding-top:2%;
