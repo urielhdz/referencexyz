@@ -54,7 +54,11 @@ app.get("lenguajes/new",function(req,res){
 app.get("/propiedades/:id/visits",function(req,res){
 	Property.findById(req.params.id,function(err,property){
 		res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(property.visits));
+		if(!property == null){
+			res.send(JSON.stringify("0"));
+		}
+		
+    
 	});
 });
 
